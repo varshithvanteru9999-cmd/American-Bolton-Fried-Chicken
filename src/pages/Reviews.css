@@ -1,0 +1,367 @@
+/* ===== Reviews page ===== */
+.reviews-page {
+  background: #f3f3f5;
+  min-height: 100vh;
+  min-height: 100dvh;
+  padding: 28px 20px 60px;
+}
+
+/* Header */
+.reviews-header {
+  max-width: 1180px;
+  margin: 0 auto 22px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.reviews-header h1 {
+  margin: 0 0 6px;
+  font-size: 1.7rem;
+  font-weight: 800;
+  color: var(--text-main);
+}
+
+.reviews-info-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: #1976d2;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.reviews-order-now {
+  background: var(--afc-gold);
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.03em;
+  padding: 12px 26px;
+  border-radius: 8px;
+  white-space: nowrap;
+}
+
+/* Body grid */
+.reviews-body {
+  max-width: 1180px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 24px;
+  align-items: start;
+}
+
+/* LEFT */
+.reviews-main {
+  background: #f7f7f8;
+  border-radius: 14px;
+  padding: 16px;
+}
+
+.reviews-list-head-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 6px 6px 16px;
+  flex-wrap: wrap;
+}
+.reviews-list-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+.write-review-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: var(--afc-gold);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 9px 16px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.15s;
+}
+.write-review-btn:hover { background: #c51430; }
+
+.reviews-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  max-height: calc(100vh - 220px);
+  overflow-y: auto;
+  padding: 2px 8px 2px 2px;
+  scrollbar-width: thin;
+}
+
+.review-card {
+  background: var(--surface);
+  border-radius: 10px;
+  padding: 18px 20px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+}
+
+.review-card h4 {
+  margin: 0 0 8px;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.review-card p {
+  margin: 10px 0 0;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #444;
+}
+.review-card .review-text { white-space: pre-line; }
+
+/* Foodhub source tag */
+.review-foodhub {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  color: #e2231a;
+}
+
+/* Owner response */
+.review-response {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid #eee;
+}
+.review-response-head {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #1aa5a0;
+}
+.review-response p {
+  margin: 6px 0 0;
+  white-space: pre-line;
+  color: var(--text-muted);
+  font-size: 0.86rem;
+}
+
+.review-stars {
+  display: inline-flex;
+  gap: 2px;
+}
+
+.reviews-empty {
+  color: var(--text-muted);
+  margin: 0 !important;
+}
+
+/* RIGHT */
+.reviews-side {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.reviews-summary {
+  background: var(--surface);
+  border-radius: 14px;
+  padding: 26px 20px;
+  text-align: center;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.05);
+}
+
+.reviews-score {
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--text-main);
+  line-height: 1;
+}
+
+.reviews-count {
+  margin-top: 8px;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.reviews-recommend {
+  margin-top: 8px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #1aa179;
+}
+
+.reviews-sort {
+  background: var(--surface);
+  border-radius: 14px;
+  padding: 22px 24px;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.05);
+}
+
+.reviews-sort h3 {
+  margin: 0 0 16px;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.sort-option {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 0;
+  cursor: pointer;
+}
+
+.sort-option input {
+  width: 18px;
+  height: 18px;
+  accent-color: #1aa179;
+  flex-shrink: 0;
+}
+
+.sort-all {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.sort-stars-row {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sort-count {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+/* Responsive */
+@media (max-width: 880px) {
+  .reviews-header {
+    flex-direction: column;
+  }
+  .reviews-header h1 {
+    font-size: 1.3rem;
+  }
+  .reviews-body {
+    grid-template-columns: 1fr;
+  }
+  .reviews-side {
+    order: -1;
+  }
+}
+
+/* ==========================================================================
+   AMERICAN FRIED CHICKEN — shared page theme layer
+   Appended to each page stylesheet so the brand palette and type reach every
+   route without rewriting the structural rules underneath.
+   ========================================================================== */
+
+/* --- Page headers ------------------------------------------------------- */
+.info-header,
+.reviews-header,
+.about-hero,
+.static-page-header {
+  background: var(--afc-navy);
+  border-bottom: 3px solid var(--afc-red);
+  color: var(--afc-cream);
+}
+
+.info-header h1,
+.reviews-header h1,
+.about-hero h1,
+.static-page-header h1 {
+  font-family: 'Source Serif 4', Georgia, serif;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #fff;
+}
+
+.info-order-now {
+  background: var(--afc-red);
+  color: #fff;
+  font-family: 'Source Serif 4', Georgia, serif;
+  letter-spacing: 0.08em;
+  border-radius: var(--radius-sm);
+}
+
+.info-order-now:hover { background: var(--afc-red-light); }
+
+/* --- Cards / panels ----------------------------------------------------- */
+.info-card,
+.review-card,
+.about-card,
+.static-card {
+  background: var(--surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+}
+
+.info-card-head {
+  font-family: 'Source Serif 4', Georgia, serif;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--afc-navy);
+  border-bottom: 2px solid var(--afc-gold);
+}
+
+/* --- Section headings across static pages ------------------------------- */
+.static-page h2,
+.about-page h2,
+.reviews-page h2 {
+  font-family: 'Source Serif 4', Georgia, serif;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--afc-navy);
+}
+
+/* --- Buttons ------------------------------------------------------------ */
+.primary-btn,
+.checkout-btn,
+.place-order-btn,
+.review-submit-btn {
+  background: var(--afc-red);
+  color: #fff;
+  font-family: 'Source Serif 4', Georgia, serif;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  border-radius: var(--radius-sm);
+  box-shadow: 0 3px 0 var(--afc-red-dark);
+  border: none;
+}
+
+.primary-btn:hover,
+.checkout-btn:hover,
+.place-order-btn:hover,
+.review-submit-btn:hover { background: var(--afc-red-light); }
+
+/* --- Ratings ------------------------------------------------------------ */
+.info-rating,
+.review-stars,
+.rating-star { color: var(--afc-gold); }
+
+/* --- Prices ------------------------------------------------------------- */
+.price,
+.item-price,
+.total-price,
+.summary-total {
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-weight: 600;
+  color: var(--afc-red);
+}

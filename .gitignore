@@ -1,0 +1,52 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Environment variables (contain database credentials — never commit)
+.env
+.env.*
+!.env.example
+
+screenshots/
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Deployment artifacts
+*.tar.gz
+*.zip
+favourite-chicken-deploy.*
+deploy_pkg/
+
+# Generated documentation artifacts (regenerate via npm run docs:html / docs:pdf)
+docs/PROJECT_DOCUMENTATION.html
+docs/PROJECT_DOCUMENTATION.pdf
+
+# Source asset folders — the originals you dropped in; the processed copies
+# that the app actually uses live in public/images/
+Background image/
+Reorder image/
+Admin bh image/
+new logo/
+food items list/
+
+# Deployment artefact, rebuilt by `npm run build` + the packaging script
+afcbolton-site.zip

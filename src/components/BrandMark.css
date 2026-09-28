@@ -1,0 +1,55 @@
+.afc-brandmark {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  line-height: 1;
+}
+
+.afc-crest {
+  display: block;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.afc-wordmark {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Source Serif 4', Georgia, serif;
+  text-transform: uppercase;
+}
+
+.afc-wordmark-top {
+  font-size: 0.62rem;
+  font-weight: 500;
+  letter-spacing: 0.26em;
+}
+
+.afc-wordmark-main {
+  font-size: 1.02rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  margin-top: 1px;
+}
+
+.afc-wordmark-sub {
+  font-size: 0.5rem;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  margin-top: 3px;
+  opacity: 0.75;
+}
+
+/* On the navy nav */
+.afc-brandmark-light .afc-wordmark-top { color: var(--afc-cream); }
+.afc-brandmark-light .afc-wordmark-main { color: #fff; }
+.afc-brandmark-light .afc-wordmark-sub { color: var(--afc-gold); }
+
+/* On cream/white panels */
+.afc-brandmark-dark .afc-wordmark-top { color: var(--afc-red); }
+.afc-brandmark-dark .afc-wordmark-main { color: var(--afc-navy); }
+.afc-brandmark-dark .afc-wordmark-sub { color: var(--text-muted); }
+
+@media (max-width: 480px) {
+  .afc-wordmark-main { font-size: 0.9rem; }
+  .afc-wordmark-top { font-size: 0.55rem; }
+}

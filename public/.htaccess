@@ -1,0 +1,54 @@
+# ============================================================================
+# Hostinger (Apache) configuration
+#
+# SPA ROUTING: this is a single-page app — /admin, /about, /category/Pizza and
+# the rest are client-side routes with no matching file on disk. Without the
+# rewrite below Apache returns 404 for every route except "/", including on a
+# page refresh or a shared link.
+# ============================================================================
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # Never rewrite the service worker or the manifest — they must be served
+  # from their real paths for the PWA to install and update correctly.
+  RewriteRule ^(sw\.js|workbox-.*\.js|manifest\.webmanifest|admin\.webmanifest|registerSW\.js)$ - [L]
+
+  # Serve real files and directories as-is
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+
+  # Everything else falls through to the SPA entry point
+  RewriteRule . /index.html [L]
+</IfModule>
+
+# --- Caching ---------------------------------------------------------------
+# Hashed assets are immutable and safe to cache hard. index.html and the
+# service worker must NOT be cached, or visitors keep getting the old build.
+<IfModule mod_headers.c>
+  <FilesMatch "\.(js|css|woff2|webp|png|jpg|jpeg|svg|ico)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+
+  <FilesMatch "^(index\.html|sw\.js|registerSW\.js|.*\.webmanifest)$">
+    Header set Cache-Control "no-cache, no-store, must-revalidate"
+  </FilesMatch>
+
+  # Basic hardening
+  Header set X-Content-Type-Options "nosniff"
+  Header set X-Frame-Options "SAMEORIGIN"
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+
+# --- Compression -----------------------------------------------------------
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css text/javascript application/javascript application/json image/svg+xml
+</IfModule>
+
+# --- MIME types ------------------------------------------------------------
+<IfModule mod_mime.c>
+  AddType application/manifest+json .webmanifest
+  AddType image/webp .webp
+</IfModule>

@@ -1,0 +1,4041 @@
+/* ==========================================================================
+   AMERICAN FRIED CHICKEN — THEME OVERRIDE LAYER
+   "Ivory & Sage" — light, professional.
+
+   Imported LAST (from main.jsx) so it wins over the per-page stylesheets.
+   Those files were authored against two earlier themes (a light diner theme,
+   then a dark premium one) and still hardcode surfaces and text colours in
+   ~90 places; rather than rewrite every one, this layer restates surfaces,
+   type and depth in the current palette.
+
+   Palette roles:
+     ground   #F8F6F1  warm ivory page
+     surface  #FFFFFF  white card
+     ink      #2A2622  warm charcoal text
+     muted    #7A736A  taupe secondary text
+     action   #4F7A5B  muted sage  (--afc-gold)
+     accent   #B4552D  terracotta  (--afc-red), prices and emphasis
+
+   Structure is untouched — only colour, type and depth.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Base
+   -------------------------------------------------------------------------- */
+body {
+  background-color: var(--bg-color);
+  color: var(--text-main);
+}
+
+/* --------------------------------------------------------------------------
+   2. Panels & cards
+   Every panel is a white card on the ivory ground, separated by a hairline
+   warm border rather than a heavy shadow.
+   -------------------------------------------------------------------------- */
+.menu-item-card,
+.recommended-card,
+.mobile-category-item,
+.modal-content,
+.cart-drawer,
+.cart-drawer-item,
+.info-card,
+.review-card,
+.about-card,
+.static-card,
+.footer-column,
+.checkout-card,
+.checkout-section,
+.account-card,
+.reorder-card,
+.category-card,
+.search-panel,
+.offer-card,
+.track-status-card,
+.desktop-app-banner,
+.mobile-app-banner,
+.afc-orderbar {
+  background: var(--surface) !important;
+  border: 1px solid var(--border-color);
+  color: var(--text-main);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Inset controls sit slightly recessed against the white card */
+.search-result-row,
+.schedule-option,
+.addon-row,
+.option-choice,
+.sort-option,
+.login-input,
+.unsub-input,
+.track-input-row input {
+  background: var(--surface-alt) !important;
+  border-color: var(--border-color) !important;
+  color: var(--text-main) !important;
+}
+
+/* --------------------------------------------------------------------------
+   3. Typography
+   Headings take the warm serif; body copy stays Inter. Any light-on-dark
+   colour left over from the previous theme is re-stated as warm charcoal.
+   -------------------------------------------------------------------------- */
+h1, h2, h3, h4, h5, h6,
+.modal-content h2,
+.modal-content h3,
+.afc-section-head,
+.category-title,
+.info-card-head,
+.footer-column h4 {
+  font-family: 'Source Serif 4', Georgia, serif !important;
+  color: var(--text-main);
+  text-transform: none !important;
+  letter-spacing: 0 !important;
+}
+
+.afc-section-head {
+  font-size: 1.45rem !important;
+  font-weight: 600 !important;
+  color: var(--text-main) !important;
+}
+
+/* Section rule fades from sage rather than gold */
+.afc-section-head::after {
+  background: linear-gradient(
+    90deg,
+    rgba(79, 122, 91, 0.55) 0%,
+    rgba(79, 122, 91, 0.18) 60%,
+    transparent 100%
+  ) !important;
+  height: 1px !important;
+}
+
+.item-desc,
+.rec-info p,
+.search-result-info span,
+.modal-subtitle,
+.text-muted {
+  color: var(--text-muted) !important;
+}
+
+/* --------------------------------------------------------------------------
+   4. Prices & accents
+   Terracotta is the price colour: warm, distinct from the sage action colour,
+   so money never reads as a button.
+   -------------------------------------------------------------------------- */
+.item-price,
+.price,
+.total-price,
+.summary-total,
+.recommended-card .rec-info p,
+.search-result-price,
+.modal-total-price {
+  font-family: 'Inter', sans-serif !important;
+  font-weight: 700 !important;
+  letter-spacing: 0 !important;
+  color: var(--afc-red) !important;
+  font-variant-numeric: tabular-nums;
+}
+
+/* --------------------------------------------------------------------------
+   5. Navigation
+   White nav on the ivory page, separated by a hairline rule.
+   -------------------------------------------------------------------------- */
+.exact-navbar {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+}
+
+.navbar-links a {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  color: var(--text-muted);
+}
+
+.navbar-links a::after { background: var(--afc-gold); }
+
+.navbar-links a:hover,
+.navbar-links a.active { color: var(--afc-gold); }
+
+.navbar-install-btn {
+  background: transparent;
+  border: 1px solid var(--afc-gold);
+  color: var(--afc-gold);
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+}
+
+.navbar-install-btn:hover {
+  background: rgba(79, 122, 91, 0.08);
+}
+
+.profile-login-btn { color: var(--text-muted); }
+.profile-login-btn:hover { color: var(--afc-gold); background: var(--surface-hover); }
+.navbar-user-name, .profile-id strong { color: var(--text-main); }
+
+/* Sticky category rail */
+.afc-catrail {
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.afc-catrail-chip {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+}
+
+.afc-catrail-chip:hover { color: var(--text-main); }
+
+.afc-catrail-chip.active {
+  color: var(--afc-gold);
+  border-bottom-color: var(--afc-gold);
+}
+
+/* Mobile bottom bar */
+.mobile-bottom-nav {
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-top: 1px solid var(--border-color);
+  box-shadow: 0 -2px 12px rgba(42, 38, 34, 0.06);
+}
+
+.bottom-nav-item {
+  font-family: 'Inter', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+}
+
+.bottom-nav-item.active { color: var(--afc-gold); }
+
+/* --------------------------------------------------------------------------
+   6. Menu item cards
+   -------------------------------------------------------------------------- */
+.menu-item-card {
+  border-left: 1px solid var(--border-color);
+  transition: transform var(--transition-fast),
+              box-shadow var(--transition-fast),
+              border-color var(--transition-fast);
+}
+
+.menu-item-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--border-strong);
+  box-shadow: var(--shadow-md);
+}
+
+.menu-item-card .item-details h4,
+.recommended-card .rec-info h4 {
+  font-family: 'Source Serif 4', Georgia, serif !important;
+  font-weight: 600;
+  color: var(--text-main) !important;
+}
+
+/* Add button: sage ring that fills on hover */
+.menu-item-card .add-btn {
+  background: var(--surface);
+  border: 1px solid var(--afc-gold);
+  color: var(--afc-gold);
+  box-shadow: none;
+}
+
+.menu-item-card .add-btn:hover {
+  background: var(--afc-gold);
+  color: #FFFFFF;
+  transform: scale(1.06);
+}
+
+/* Mobile category rows */
+.mobile-category-item {
+  border-left: 3px solid var(--afc-gold) !important;
+  font-family: 'Source Serif 4', Georgia, serif !important;
+  font-size: 1.02rem !important;
+  text-transform: none !important;
+  letter-spacing: 0 !important;
+  color: var(--text-main) !important;
+}
+
+.mobile-category-item .chevron { color: var(--afc-gold); }
+
+/* --------------------------------------------------------------------------
+   7. Deal strip
+   A pale sage panel — an offer should feel inviting, not like an alert.
+   -------------------------------------------------------------------------- */
+.afc-dealstrip {
+  background: #F2F6F1 !important;
+  border: 1px solid #DCE6DA !important;
+  border-left: 3px solid var(--afc-gold) !important;
+  box-shadow: none;
+}
+
+.afc-dealstrip:hover { box-shadow: var(--shadow-md); }
+
+.afc-dealstrip-badge {
+  background: var(--afc-gold);
+  color: #FFFFFF;
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+}
+
+.afc-dealstrip-copy strong {
+  font-family: 'Source Serif 4', Georgia, serif;
+  text-transform: none;
+  letter-spacing: 0;
+  color: var(--text-main);
+}
+
+.afc-dealstrip-copy span { color: var(--text-muted); }
+.afc-dealstrip-cta { color: var(--afc-gold); font-family: 'Inter', sans-serif; }
+
+/* --------------------------------------------------------------------------
+   8. Fulfilment toggle & order bar
+   -------------------------------------------------------------------------- */
+.toggle-switch-container { background: var(--surface-hover) !important; }
+
+.toggle-switch-bg {
+  background: var(--surface) !important;
+  box-shadow: var(--shadow-sm);
+}
+
+.toggle-btn { color: var(--text-muted) !important; }
+.toggle-btn strong { color: inherit !important; }
+.toggle-btn.active,
+.toggle-btn.active strong { color: var(--afc-gold) !important; }
+
+.other-tabs .tab {
+  background: var(--surface) !important;
+  border: 1px solid var(--border-color) !important;
+  color: var(--text-main) !important;
+}
+
+.other-tabs .tab:hover { border-color: var(--afc-gold) !important; }
+
+/* --------------------------------------------------------------------------
+   9. Buttons across pages
+   Sage fill, white label.
+   -------------------------------------------------------------------------- */
+.modal-add-btn,
+.primary-btn,
+.checkout-btn,
+.place-order-btn,
+.review-submit-btn,
+.email-login-btn,
+.app-install-btn,
+.footer-install-btn,
+.info-order-now,
+.unsub-btn,
+.reviews-order-now,
+.write-review-btn,
+.review-write-btn,
+.category-order-btn,
+.reorder-btn,
+.account-save-btn {
+  background: var(--afc-gold) !important;
+  color: #FFFFFF !important;
+  border: none !important;
+  font-family: 'Inter', sans-serif !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.08em !important;
+  box-shadow: var(--shadow-sm) !important;
+}
+
+.modal-add-btn:hover:not(:disabled),
+.primary-btn:hover,
+.checkout-btn:hover,
+.place-order-btn:hover,
+.review-submit-btn:hover,
+.email-login-btn:hover,
+.app-install-btn:hover,
+.footer-install-btn:hover,
+.info-order-now:hover,
+.unsub-btn:hover,
+.reviews-order-now:hover,
+.write-review-btn:hover,
+.category-order-btn:hover,
+.reorder-btn:hover {
+  background: var(--afc-gold-soft) !important;
+  transform: translateY(-1px);
+}
+
+/* Destructive actions stay terracotta and distinguishable */
+.remove-btn,
+.delete-btn,
+.cart-remove,
+.trash-btn { color: var(--afc-red) !important; }
+
+/* Floating basket: the single loudest CTA */
+.floating-basket {
+  background: var(--afc-gold) !important;
+  color: #FFFFFF !important;
+  box-shadow: 0 -4px 18px rgba(79, 122, 91, 0.26) !important;
+}
+
+.basket-info { color: #FFFFFF !important; font-family: 'Inter', sans-serif !important; }
+
+.basket-btn {
+  background: #FFFFFF !important;
+  color: var(--afc-gold-deep) !important;
+  font-family: 'Inter', sans-serif !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.06em !important;
+}
+
+/* --------------------------------------------------------------------------
+   10. Cart drawer & modals
+   -------------------------------------------------------------------------- */
+.cart-drawer { background: var(--bg-color) !important; }
+
+.cart-header {
+  background: var(--surface) !important;
+  border-bottom: 1px solid var(--border-color) !important;
+}
+
+.cart-header h3 { color: var(--text-main) !important; }
+.cart-header button, .cart-header svg { color: var(--text-muted); }
+
+.modal-content { border-top: 3px solid var(--afc-gold) !important; }
+.modal-overlay { background: rgba(42, 38, 34, 0.42) !important; }
+.modal-close { color: var(--text-muted); }
+.modal-close:hover { color: var(--afc-gold); }
+
+/* --------------------------------------------------------------------------
+   11. Footer
+   A deep warm charcoal band anchors the light page.
+   -------------------------------------------------------------------------- */
+.exact-footer,
+.footer-columns-section,
+.footer-bottom-bar,
+.footer-brand-band {
+  background: var(--afc-navy-dark) !important;
+}
+
+.footer-brand-band { border-bottom: 1px solid rgba(248, 246, 241, 0.12); }
+
+.footer-column {
+  background: rgba(248, 246, 241, 0.04) !important;
+  border: 1px solid rgba(248, 246, 241, 0.10);
+  box-shadow: none;
+}
+
+.footer-column h4 { color: #C4D6C7 !important; }
+.footer-column a, .footer-link-btn { color: rgba(248, 246, 241, 0.72) !important; }
+.footer-column a:hover, .footer-link-btn:hover { color: #FFFFFF !important; }
+
+.footer-tagline {
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-style: italic;
+  text-transform: none;
+  letter-spacing: 0.01em;
+  color: #C4D6C7;
+}
+
+.footer-contact { color: rgba(248, 246, 241, 0.66); }
+.footer-contact a { color: #C4D6C7; }
+.fbb-app p, .fbb-section { color: rgba(248, 246, 241, 0.78); }
+
+.lang-select {
+  background: transparent;
+  border: 1px solid rgba(248, 246, 241, 0.26);
+  color: rgba(248, 246, 241, 0.86);
+}
+
+/* --------------------------------------------------------------------------
+   12. Hero
+   The hero sits over the photograph, so its text stays light-on-image with a
+   scrim behind it — this is the one place the page is not ivory.
+   -------------------------------------------------------------------------- */
+.afc-hero-tag {
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-style: italic;
+  font-size: 1.05rem;
+  text-transform: none;
+  letter-spacing: 0.01em;
+  color: #FFFFFF;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+}
+
+.afc-hero-meta-item {
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  color: var(--text-main);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  font-weight: 500;
+}
+
+.afc-hero-meta-item:hover { background: #FFFFFF; }
+.afc-hero-meta-item .star { color: var(--afc-red); }
+
+.afc-hero .search-toggle {
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  color: var(--text-main);
+}
+
+.afc-hero .search-toggle:hover { background: #FFFFFF; color: var(--afc-gold); }
+
+/* --------------------------------------------------------------------------
+   13. Page backgrounds
+   -------------------------------------------------------------------------- */
+.info-page,
+.about-page,
+.reviews-page,
+.static-page,
+.legal-page,
+.checkout-page,
+.account-page,
+.reorder-page,
+.category-page {
+  background-color: var(--bg-color) !important;
+  color: var(--text-main);
+}
+
+.info-header,
+.reviews-header,
+.about-hero,
+.static-page-header {
+  background: var(--surface) !important;
+  border-bottom: 1px solid var(--border-color) !important;
+}
+
+.info-header h1,
+.reviews-header h1,
+.about-hero h1,
+.static-page-header h1 { color: var(--text-main) !important; }
+
+/* The photograph is a HERO on this theme, not a page texture. The previous
+   dark theme kept the image fixed behind the whole page; on ivory that leaves
+   a muddy grey band behind the menu, because a light scrim over dark pixels
+   greys out rather than turning ivory.
+
+   So the image layer itself is clipped to the top of the page instead of
+   being veiled: it occupies only the hero band, and everything below is clean
+   ivory. `background-attachment: scroll` lets it scroll away with the hero. */
+.order-now-page::after {
+  position: absolute !important;
+  inset: 0 0 auto 0 !important;
+  height: 660px !important;
+  background-attachment: scroll !important;
+  background-position: center top !important;
+}
+
+/* Scrim covers only the hero band, fading the image into the ivory page */
+.order-now-page::before {
+  position: absolute !important;
+  inset: 0 0 auto 0 !important;
+  height: 660px !important;
+  background: linear-gradient(
+    180deg,
+    rgba(248, 246, 241, 0) 0%,
+    rgba(248, 246, 241, 0) 55%,
+    rgba(248, 246, 241, 0.55) 78%,
+    rgba(248, 246, 241, 0.94) 93%,
+    var(--bg-color) 100%
+  ) !important;
+}
+
+@media (max-width: 768px) {
+  .order-now-page::after,
+  .order-now-page::before { height: 420px !important; }
+}
+
+/* --------------------------------------------------------------------------
+   14. Crest
+   -------------------------------------------------------------------------- */
+.navbar-logo .afc-crest,
+.footer-brand-inner .afc-crest {
+  box-shadow: 0 0 0 1px var(--border-color);
+}
+
+.afc-brandmark-light .afc-wordmark-top { color: var(--afc-red); }
+.afc-brandmark-light .afc-wordmark-main {
+  font-family: 'Source Serif 4', Georgia, serif;
+  color: var(--text-main);
+}
+.afc-brandmark-light .afc-wordmark-sub { color: var(--text-muted); }
+
+/* In the footer the band is dark, so the wordmark inverts there */
+.footer-brand-inner .afc-wordmark-top { color: #C4D6C7; }
+.footer-brand-inner .afc-wordmark-main { color: #F8F6F1; }
+.footer-brand-inner .afc-wordmark-sub { color: rgba(248, 246, 241, 0.6); }
+
+/* --------------------------------------------------------------------------
+   15. Forms
+   -------------------------------------------------------------------------- */
+input, textarea, select {
+  background: var(--surface);
+  border: 1px solid var(--border-color);
+  color: var(--text-main);
+}
+
+input::placeholder, textarea::placeholder { color: var(--text-muted); }
+
+input:focus, textarea:focus, select:focus {
+  border-color: var(--afc-gold);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(79, 122, 91, 0.14);
+}
+
+/* --------------------------------------------------------------------------
+   16. Status banners
+   -------------------------------------------------------------------------- */
+.status-banner {
+  background: var(--surface-alt) !important;
+  border: 1px solid var(--border-color) !important;
+  color: var(--text-main) !important;
+}
+
+.status-text { color: var(--text-main) !important; }
+.preorder-banner { background: #F1F5F9 !important; border-color: #DCE5EE !important; }
+.closed-banner { background: #FBF1EC !important; border-color: #F0DACE !important; }
+
+/* --------------------------------------------------------------------------
+   17. Menu section containers
+   These wrappers are plain ivory: the white cards inside provide the
+   structure, so a second panel behind them would double the borders.
+   -------------------------------------------------------------------------- */
+.recommended-section,
+.menu-category-section,
+.menu-sections {
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.category-title,
+.recommended-section h3 {
+  background: transparent !important;
+  color: var(--text-main) !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+/* --------------------------------------------------------------------------
+   18. Text contrast repairs
+   Elements that were authored light-on-dark and are now light-on-light.
+   -------------------------------------------------------------------------- */
+.app-banner-content strong,
+.mobile-app-banner strong,
+.desktop-app-banner strong,
+.review-card h4,
+.reviews-list h4,
+.info-card p,
+.info-address,
+.info-phone,
+.checkout-section h3,
+.account-section-head,
+.static-page h1,
+.static-page h2,
+.static-page h3,
+.static-page p,
+.static-page li,
+.rating-number,
+.rating-score {
+  color: var(--text-main) !important;
+}
+
+.app-banner-content p,
+.mobile-app-banner p,
+.desktop-app-banner p,
+.review-card p,
+.review-date,
+.info-hours td { color: var(--text-muted) !important; }
+
+.reviews-main,
+.reviews-side,
+.reviews-summary,
+.reviews-sort,
+.rating-summary,
+.sort-panel {
+  background: var(--surface) !important;
+  border: 1px solid var(--border-color);
+  color: var(--text-main);
+}
+
+.rating-recommend { color: var(--afc-gold) !important; }
+.review-stars, .rating-star, .info-rating { color: #C9922E !important; }
+
+.info-map { background: var(--surface-alt); border: 1px solid var(--border-color); }
+
+.about-categories li,
+.about-category,
+.category-chip,
+.about-cat-label,
+.info-cuisines span,
+.cuisine-tag { color: var(--text-main) !important; }
+
+/* Cart totals */
+.cart-summary,
+.cart-total-row,
+.basket-summary {
+  background: var(--surface-alt) !important;
+  color: var(--text-main) !important;
+}
+
+.cart-total-row *, .cart-summary * { color: var(--text-main) !important; }
+.cart-total-row .total-price,
+.cart-summary .total-price { color: var(--afc-red) !important; }
+
+/* --------------------------------------------------------------------------
+   19. Third-party marks
+   The payment logos and the hygiene badge belong to other organisations and
+   are not restyled — on a light page they simply need no plate.
+   -------------------------------------------------------------------------- */
+.pay-item {
+  background: rgba(248, 246, 241, 0.94);
+  border-radius: var(--radius-sm);
+  padding: 5px 9px;
+}
+
+/* Brand marks keep their own colours; the plate is what makes them legible
+   against the dark footer band. */
+.vbv-text, .electron-text { color: #1A1F71 !important; }
+.mc-text { color: #2A2622 !important; }
+.omnireach-ltd, .omnireach-powered, .fh-powered { color: rgba(248, 246, 241, 0.72) !important; }
+
+.hygiene-card-footer,
+.hygiene-card {
+  background: #FFFFFF !important;
+  border: 1px solid var(--border-color);
+}
+
+.hcf-title, .hcf-date, .hygiene-title,
+.hygiene-card-footer *, .hygiene-card * { color: #2A2622 !important; }
+.hcf-verygood { background: #2E7D32 !important; color: #FFFFFF !important; }
+.hcf-dot { background: #FFFFFF; color: #2A2622; border: 1px solid var(--border-color); }
+.hcf-dot.active { background: #2A2622 !important; color: #FFFFFF !important; }
+
+/* --------------------------------------------------------------------------
+   20. Quantity stepper
+   -------------------------------------------------------------------------- */
+.qty-selector {
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+}
+
+.qty-selector button {
+  background: transparent !important;
+  color: var(--afc-gold) !important;
+}
+
+.qty-selector button:hover { background: rgba(79, 122, 91, 0.10) !important; }
+.qty-selector span { color: var(--text-main); }
+
+/* --------------------------------------------------------------------------
+   21. Badges
+   -------------------------------------------------------------------------- */
+.promo-badge,
+.cart-badge,
+.basket-count,
+.bottom-nav-badge {
+  background: var(--afc-red) !important;
+  color: #FFFFFF !important;
+}
+
+
+/* --------------------------------------------------------------------------
+   22. Empty states
+   -------------------------------------------------------------------------- */
+.cart-empty,
+.search-hint,
+.schedule-empty,
+.empty-state {
+  color: var(--text-muted) !important;
+}
+
+/* Gallery hover overlays sit on photography, so they keep light text on a
+   dark veil rather than taking the page's ink colour. */
+.gallery-more-overlay,
+.about-gallery-overlay span {
+  color: #FFFFFF !important;
+  background-color: rgba(42, 38, 34, 0.62);
+}
+
+
+/* ==========================================================================
+   23. SOFT UI — reference styling (rfentity.com)
+   Panels lose their outline entirely: separation comes from a soft double
+   shadow rather than a drawn border, corners are generously rounded, and
+   every control is a full pill. Frosted glass is reserved for surfaces that
+   float over imagery, where there is actually something to refract.
+   ========================================================================== */
+
+/* --- Panels: borderless, rounded, softly lifted ------------------------- */
+.menu-item-card,
+.recommended-card,
+.mobile-category-item,
+.info-card,
+.review-card,
+.about-card,
+.static-card,
+.checkout-card,
+.checkout-section,
+.account-card,
+.reorder-card,
+.category-card,
+.offer-card,
+.track-status-card,
+.desktop-app-banner,
+.mobile-app-banner,
+.reviews-main,
+.reviews-side,
+.reviews-summary,
+.reviews-sort,
+.rating-summary,
+.sort-panel {
+  background: var(--surface) !important;
+  border: none !important;
+  border-radius: var(--radius-md) !important;
+  box-shadow: var(--shadow-soft) !important;
+}
+
+.menu-item-card:hover,
+.recommended-card:hover,
+.mobile-category-item:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-soft-lift) !important;
+}
+
+/* The mobile category rows keep a sage marker, but as a soft inset bar
+   rather than a hard border so the rounded corner stays clean. */
+.mobile-category-item {
+  border-left: none !important;
+  box-shadow: var(--shadow-soft), inset 3px 0 0 var(--afc-gold) !important;
+}
+
+/* --- Pill controls ------------------------------------------------------ */
+.afc-catrail-chip,
+.other-tabs .tab,
+.schedule-tab-btn,
+.group-order-btn,
+.filter-chip,
+.sort-option {
+  border-radius: var(--radius-full) !important;
+}
+
+.other-tabs .tab {
+  background: var(--surface) !important;
+  border: none !important;
+  box-shadow: var(--shadow-soft) !important;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+}
+
+.other-tabs .tab:hover { box-shadow: var(--shadow-soft-lift) !important; }
+
+/* Fulfilment toggle: a white pill sliding inside a soft recessed track */
+.toggle-switch-container {
+  background: var(--surface-hover) !important;
+  border-radius: var(--radius-full) !important;
+  padding: 4px;
+}
+
+.toggle-switch-bg {
+  background: var(--surface) !important;
+  border-radius: var(--radius-full) !important;
+  box-shadow: var(--shadow-soft) !important;
+}
+
+.toggle-btn { border-radius: var(--radius-full) !important; }
+
+/* --- Buttons: full pills, bold wide-tracked labels ---------------------- */
+.modal-add-btn,
+.primary-btn,
+.checkout-btn,
+.place-order-btn,
+.review-submit-btn,
+.email-login-btn,
+.app-install-btn,
+.footer-install-btn,
+.info-order-now,
+.unsub-btn,
+.reviews-order-now,
+.write-review-btn,
+.review-write-btn,
+.category-order-btn,
+.reorder-btn,
+.account-save-btn,
+.navbar-install-btn,
+.basket-btn,
+.social-btn {
+  border-radius: var(--radius-full) !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.13em !important;
+  text-transform: uppercase !important;
+  font-size: 0.76rem !important;
+  padding: 13px 28px !important;
+  box-shadow: var(--shadow-soft) !important;
+}
+
+.modal-add-btn:hover:not(:disabled),
+.primary-btn:hover,
+.checkout-btn:hover,
+.place-order-btn:hover,
+.app-install-btn:hover,
+.info-order-now:hover,
+.reviews-order-now:hover {
+  box-shadow: var(--shadow-soft-lift) !important;
+}
+
+/* Secondary action: charcoal pill, as the reference uses beside its red */
+.btn-secondary,
+.social-btn {
+  background: var(--afc-navy) !important;
+  color: #FFFFFF !important;
+  border: none !important;
+}
+
+.social-btn:hover { background: var(--afc-navy-light) !important; }
+
+/* --- Circular icon buttons ---------------------------------------------- */
+.menu-item-card .add-btn,
+.profile-login-btn,
+.afc-hero .search-toggle,
+.modal-close,
+.qty-selector button {
+  border-radius: 50% !important;
+  background: var(--surface) !important;
+  border: none !important;
+  box-shadow: var(--shadow-soft) !important;
+}
+
+.menu-item-card .add-btn {
+  color: var(--afc-gold) !important;
+  width: 34px;
+  height: 34px;
+}
+
+.menu-item-card .add-btn:hover {
+  background: var(--afc-gold) !important;
+  color: #FFFFFF !important;
+  box-shadow: var(--shadow-soft-lift) !important;
+}
+
+/* --- Meta chips: pale, rounded, small caps ------------------------------ */
+.item-tag,
+.info-cuisines span,
+.cuisine-tag {
+  background: #EEF1F4 !important;
+  border: none !important;
+  border-radius: var(--radius-full) !important;
+  color: #3F4A54 !important;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+/* Option rows keep their layout but take the soft, borderless treatment */
+.option-choice,
+.addon-row {
+  background: #F1F3F5 !important;
+  border: none !important;
+  border-radius: var(--radius-full) !important;
+}
+
+/* --- Status badge: dark pill with a coloured dot, floating on imagery --- */
+.status-badge,
+.item-badge {
+  background: var(--afc-navy) !important;
+  color: #FFFFFF !important;
+  border-radius: var(--radius-full) !important;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 6px 13px;
+  box-shadow: var(--shadow-soft);
+}
+
+/* --- Section headings: uppercase, widely tracked ------------------------ */
+.afc-section-head {
+  font-family: 'Inter', sans-serif !important;
+  font-size: 0.86rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.16em !important;
+  text-transform: uppercase !important;
+  color: var(--text-muted) !important;
+}
+
+.afc-section-head::after {
+  background: var(--border-color) !important;
+  height: 1px !important;
+}
+
+/* Item names stay in the serif — it is what keeps this from reading as a
+   generic SaaS dashboard. */
+.menu-item-card .item-details h4,
+.recommended-card .rec-info h4 {
+  font-size: 1.02rem !important;
+  letter-spacing: -0.005em !important;
+}
+
+/* --- Deal strip --------------------------------------------------------- */
+.afc-dealstrip {
+  border: none !important;
+  border-radius: var(--radius-md) !important;
+  box-shadow: var(--shadow-soft) !important;
+  background: #F2F6F1 !important;
+}
+
+.afc-dealstrip:hover { box-shadow: var(--shadow-soft-lift) !important; }
+.afc-dealstrip-badge { border-radius: 50%; box-shadow: none; }
+
+/* --- Modals, drawers, search ------------------------------------------- */
+.modal-content,
+.search-panel,
+.cart-drawer-item {
+  border: none !important;
+  border-radius: var(--radius-lg) !important;
+  box-shadow: var(--shadow-float) !important;
+}
+
+.modal-content { border-top: none !important; }
+
+.login-input,
+.unsub-input,
+input, textarea, select {
+  border-radius: var(--radius-full) !important;
+  border: none !important;
+  background: #F1F3F5 !important;
+  padding-left: 18px;
+  padding-right: 18px;
+}
+
+textarea { border-radius: var(--radius-md) !important; }
+
+input:focus, textarea:focus, select:focus {
+  box-shadow: 0 0 0 3px rgba(79, 122, 91, 0.18) !important;
+}
+
+/* ==========================================================================
+   24. FROSTED GLASS
+   Only surfaces that sit over photography get real glass — that is where a
+   blur has something to refract. Over the flat ivory page a translucent
+   panel would simply look washed out.
+   ========================================================================== */
+.exact-navbar,
+.afc-catrail,
+.mobile-bottom-nav {
+  background: var(--glass-bg-strong) !important;
+  backdrop-filter: var(--glass-blur) !important;
+  -webkit-backdrop-filter: var(--glass-blur) !important;
+  border-color: rgba(255, 255, 255, 0.6) !important;
+  box-shadow: var(--shadow-soft) !important;
+}
+
+/* Hero controls sit directly on the photograph: heavier glass, lit edge */
+.afc-hero-meta-item,
+.afc-hero .search-toggle {
+  background: var(--glass-bg) !important;
+  backdrop-filter: var(--glass-blur) !important;
+  -webkit-backdrop-filter: var(--glass-blur) !important;
+  border: 1px solid var(--glass-edge) !important;
+  border-radius: var(--radius-full) !important;
+  box-shadow: 0 4px 18px rgba(42, 38, 34, 0.14) !important;
+  color: var(--text-main) !important;
+  font-weight: 600;
+}
+
+.afc-hero-meta-item:hover,
+.afc-hero .search-toggle:hover {
+  background: var(--glass-bg-strong) !important;
+}
+
+/* The order bar straddles the photo edge, so it gets glass too */
+.afc-orderbar {
+  background: var(--glass-bg-strong) !important;
+  backdrop-filter: var(--glass-blur) !important;
+  -webkit-backdrop-filter: var(--glass-blur) !important;
+  border: none !important;
+  box-shadow: var(--shadow-soft) !important;
+}
+
+/* Browsers without backdrop-filter fall back to a near-opaque panel rather
+   than an unreadable transparent one. */
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .exact-navbar,
+  .afc-catrail,
+  .mobile-bottom-nav,
+  .afc-orderbar,
+  .afc-hero-meta-item,
+  .afc-hero .search-toggle {
+    background: rgba(255, 255, 255, 0.96) !important;
+  }
+}
+
+
+/* --------------------------------------------------------------------------
+   25. Soft-UI corrections
+   -------------------------------------------------------------------------- */
+
+/* Cards clip their own content, so an image sitting flush to the top edge
+   takes the card's rounded corners instead of poking out square. */
+.menu-item-card,
+.recommended-card,
+.category-card {
+  overflow: hidden;
+}
+
+.recommended-card img,
+.category-card img {
+  border-radius: 0 !important;
+}
+
+/* Thumbnails inside list-style item cards stay independently rounded */
+.menu-item-card .item-image-wrapper,
+.menu-item-card .item-image {
+  border-radius: var(--radius-sm) !important;
+  overflow: hidden;
+}
+
+/* The add button was sage-on-white at 1px — too faint to find. Give it a
+   filled sage disc so it reads as the primary control on the card. */
+.menu-item-card .add-btn {
+  background: var(--afc-gold) !important;
+  color: #FFFFFF !important;
+  box-shadow: 0 2px 8px rgba(79, 122, 91, 0.32) !important;
+}
+
+.menu-item-card .add-btn:hover {
+  background: var(--afc-gold-soft) !important;
+  box-shadow: 0 4px 14px rgba(79, 122, 91, 0.42) !important;
+}
+
+/* Recommended tiles: the name sits under the image, so give the text block
+   a little breathing room now the card has no border. */
+.recommended-card .rec-info { padding: 12px 14px 14px; }
+
+
+/* A transformed element creates its own paint context, which on some engines
+   lets a child image escape the parent's rounded clip. Isolating the card
+   restores the clip so image corners follow the card radius. */
+.menu-item-card,
+.recommended-card,
+.category-card {
+  isolation: isolate;
+  will-change: transform;
+}
+
+.recommended-card img,
+.category-card img {
+  display: block;
+  border-top-left-radius: var(--radius-md) !important;
+  border-top-right-radius: var(--radius-md) !important;
+}
+
+
+/* ==========================================================================
+   26. MENU CARDS — reference layout (rfentity.com vehicle cards)
+   The reference card is VERTICAL: a large image fills the top, then the
+   text block sits beneath it, with the price on the bottom-left and a round
+   arrow/action button on the bottom-right.
+
+   Ours was a horizontal row (text left, thumbnail right). The DOM order is
+   details -> image -> button, so flex `order` reorders it into the reference
+   layout without touching the JSX.
+   ========================================================================== */
+.menu-item-card {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: stretch !important;
+  justify-content: flex-start !important;
+  padding: 0 !important;
+  min-height: 0 !important;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Image first, full-bleed across the card top */
+.menu-item-card .item-image-wrapper {
+  order: 1;
+  width: 100%;
+  height: 168px;
+  flex-shrink: 0;
+  border-radius: 0 !important;
+  overflow: hidden;
+  background: #EEF1F4;
+}
+
+.menu-item-card .item-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 0 !important;
+}
+
+/* Text block beneath the image */
+.menu-item-card .item-details {
+  order: 2;
+  padding: 14px 16px 52px !important;   /* room for the button bottom-right */
+  height: auto !important;
+  padding-right: 16px !important;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.menu-item-card .item-details h4 {
+  margin: 0 !important;
+  font-size: 1.04rem !important;
+  line-height: 1.3;
+}
+
+.menu-item-card .item-desc {
+  margin: 0 !important;
+  font-size: 0.8rem !important;
+  line-height: 1.5;
+  /* Keep every card the same height regardless of description length */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.menu-item-card .item-price {
+  margin: 8px 0 0 !important;
+  font-size: 1.22rem !important;
+  font-weight: 700 !important;
+}
+
+/* Round action button pinned to the bottom-right, as in the reference */
+.menu-item-card .add-btn {
+  order: 3;
+  position: absolute !important;
+  right: 14px;
+  bottom: 14px;
+  top: auto !important;
+  left: auto !important;
+  margin: 0 !important;
+  width: 36px;
+  height: 36px;
+}
+
+/* Cards in a row share one height so the grid stays even */
+.items-grid { align-items: stretch; }
+
+/* Unavailable cards keep the layout but read as disabled */
+.menu-item-card.item-unavailable .item-image { filter: grayscale(1); opacity: 0.55; }
+
+.menu-item-card .item-unavailable-label {
+  margin: 6px 0 0 !important;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--afc-red) !important;
+}
+
+/* Three across on desktop gives each card room for the taller image */
+@media (min-width: 1024px) {
+  .items-grid { grid-template-columns: repeat(3, 1fr) !important; gap: 18px !important; }
+}
+
+@media (max-width: 1023px) and (min-width: 640px) {
+  .items-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 14px !important; }
+}
+
+@media (max-width: 639px) {
+  .items-grid { grid-template-columns: 1fr !important; gap: 12px !important; }
+  .menu-item-card .item-image-wrapper { height: 150px; }
+}
+
+
+/* --------------------------------------------------------------------------
+   27. Card layout corrections
+   -------------------------------------------------------------------------- */
+
+/* Every card in a row is the same height, and the text block grows to fill
+   it, so the price and button always sit on a common baseline. */
+.menu-item-card { height: 100%; }
+.menu-item-card .item-details { flex: 1 1 auto; }
+
+/* The price is pushed to the bottom of the text block regardless of how
+   short the title or description is. */
+.menu-item-card .item-price { margin-top: auto !important; }
+
+/* A broken or missing image would otherwise render the alt text as squared
+   overflowing content. Clip it and hide the broken-image glyph — the pale
+   wrapper reads as an intentional placeholder instead. */
+.menu-item-card .item-image-wrapper {
+  position: relative;
+  border-top-left-radius: var(--radius-md);
+  border-top-right-radius: var(--radius-md);
+}
+
+.menu-item-card .item-image {
+  color: transparent;          /* hides alt text if the file 404s */
+  font-size: 0;
+}
+
+/* Cards with no image at all keep the same proportions as their neighbours */
+.menu-item-card:not(:has(.item-image-wrapper)) .item-details {
+  padding-top: 18px !important;
+}
+
+
+/* Mobile cards keep a shallower image band. NOTE: several product photos have
+   a grey studio background baked into the file itself — that grey is in the
+   source image, not a layout artifact, so no CSS ratio fixes it. Replacing
+   those photos is the real fix. */
+@media (max-width: 639px) {
+  .menu-item-card .item-image-wrapper { height: 160px !important; }
+}
+
+
+/* ==========================================================================
+   28. COMPACT CARDS + FULL-PAGE SCROLLING BANNER
+   ========================================================================== */
+
+/* --- Banner across the whole page --------------------------------------
+   The image layer was clipped to a 660px hero band. It now spans the full
+   document height and scrolls with the page (`position: absolute` on the
+   page element, not `fixed`), so the photograph travels with the user
+   rather than sitting still behind a moving page.
+   ---------------------------------------------------------------------- */
+.order-now-page::after {
+  position: absolute !important;
+  inset: 0 !important;
+  height: auto !important;
+  min-height: 100% !important;
+  background-attachment: scroll !important;
+  background-position: center top !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+}
+
+/* The veil now runs the full height too. It stays light over the hero so the
+   crest and food read, then settles to a steady wash behind the menu — heavy
+   enough that white cards and charcoal text keep their contrast, light enough
+   that the photograph is still clearly present. */
+.order-now-page::before {
+  position: absolute !important;
+  inset: 0 !important;
+  height: auto !important;
+  min-height: 100% !important;
+  background: linear-gradient(
+    180deg,
+    rgba(248, 246, 241, 0) 0px,
+    rgba(248, 246, 241, 0) 340px,
+    rgba(248, 246, 241, 0.72) 560px,
+    rgba(248, 246, 241, 0.92) 720px,
+    rgba(248, 246, 241, 0.92) 100%
+  ) !important;
+}
+
+@media (max-width: 768px) {
+  .order-now-page::after,
+  .order-now-page::before {
+    height: auto !important;
+    min-height: 100% !important;
+  }
+
+  .order-now-page::before {
+    background: linear-gradient(
+      180deg,
+      rgba(248, 246, 241, 0) 0px,
+      rgba(248, 246, 241, 0) 230px,
+      rgba(248, 246, 241, 0.74) 380px,
+      rgba(248, 246, 241, 0.93) 480px,
+      rgba(248, 246, 241, 0.93) 100%
+    ) !important;
+  }
+}
+
+/* --- Compact cards ------------------------------------------------------
+   Roughly a third shorter: a shallower image band, tighter padding and a
+   smaller action button, so more of the menu fits on screen at once.
+   ---------------------------------------------------------------------- */
+.menu-item-card .item-image-wrapper {
+  height: 118px !important;
+}
+
+.menu-item-card .item-details {
+  padding: 10px 12px 40px !important;
+  gap: 2px;
+}
+
+.menu-item-card .item-details h4 {
+  font-size: 0.9rem !important;
+  line-height: 1.25;
+}
+
+.menu-item-card .item-desc {
+  font-size: 0.72rem !important;
+  line-height: 1.4;
+  -webkit-line-clamp: 2;
+}
+
+.menu-item-card .item-price {
+  font-size: 1rem !important;
+  margin-top: auto !important;
+}
+
+.menu-item-card .add-btn {
+  width: 28px;
+  height: 28px;
+  right: 10px;
+  bottom: 10px;
+}
+
+.menu-item-card .add-btn svg { width: 14px; height: 14px; }
+
+/* More columns now the cards are smaller */
+@media (min-width: 1280px) {
+  .items-grid { grid-template-columns: repeat(4, 1fr) !important; gap: 14px !important; }
+}
+
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .items-grid { grid-template-columns: repeat(3, 1fr) !important; gap: 14px !important; }
+}
+
+@media (min-width: 640px) and (max-width: 1023px) {
+  .items-grid { grid-template-columns: repeat(3, 1fr) !important; gap: 12px !important; }
+}
+
+/* Two across on phones rather than one full-width card per row */
+@media (max-width: 639px) {
+  .items-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 10px !important; }
+
+  .menu-item-card .item-image-wrapper { height: 104px !important; }
+  .menu-item-card .item-details { padding: 9px 10px 36px !important; }
+  .menu-item-card .item-details h4 { font-size: 0.82rem !important; }
+  .menu-item-card .item-desc { font-size: 0.68rem !important; -webkit-line-clamp: 2; }
+  .menu-item-card .item-price { font-size: 0.92rem !important; }
+  .menu-item-card .add-btn { width: 26px; height: 26px; right: 8px; bottom: 8px; }
+}
+
+/* Recommended tiles shrink to match */
+.recommended-card { width: 168px !important; min-width: 168px !important; }
+.recommended-card img { height: 112px !important; }
+.recommended-card .rec-info { padding: 9px 11px 11px !important; }
+.recommended-card .rec-info h4 { font-size: 0.82rem !important; }
+.recommended-card .rec-info p { font-size: 0.9rem !important; }
+
+
+/* --- Banner on the remaining pages --------------------------------------
+   The order page carries the photograph on its own pseudo-elements. The
+   other routes had a flat ivory ground, so they get the same treatment via
+   a shared pair of layers, keeping one continuous backdrop across the app.
+   ---------------------------------------------------------------------- */
+.info-page,
+.about-page,
+.reviews-page,
+.static-page,
+.legal-page,
+.checkout-page,
+.account-page,
+.reorder-page,
+.category-page {
+  position: relative;
+  background-color: transparent !important;
+  isolation: isolate;
+}
+
+.info-page::after,
+.about-page::after,
+.reviews-page::after,
+.static-page::after,
+.legal-page::after,
+.checkout-page::after,
+.account-page::after,
+.reorder-page::after,
+.category-page::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  min-height: 100%;
+  background-image: url('/images/afc-bg-desktop.webp');
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  pointer-events: none;
+  z-index: -2;
+}
+
+.info-page::before,
+.about-page::before,
+.reviews-page::before,
+.static-page::before,
+.legal-page::before,
+.checkout-page::before,
+.account-page::before,
+.reorder-page::before,
+.category-page::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  min-height: 100%;
+  /* These pages are text-heavy and have no hero to protect, so the veil is
+     even and heavier than the order page's — legibility wins over drama. */
+  background: rgba(248, 246, 241, 0.90);
+  pointer-events: none;
+  z-index: -1;
+}
+
+@media (max-width: 768px) {
+  .info-page::after,
+  .about-page::after,
+  .reviews-page::after,
+  .static-page::after,
+.legal-page::after,
+  .checkout-page::after,
+  .account-page::after,
+  .reorder-page::after,
+  .category-page::after {
+    background-image: url('/images/afc-bg-mobile.webp');
+  }
+}
+
+/* The page body sits on the ivory ground so the fixed chrome still has a
+   colour behind it before the page layers paint. */
+body { background-color: var(--bg-color); }
+
+
+/* On phones the backdrop now spans a very tall document, so `cover` scales the
+   image up until the crest fills the hero and collides with the tagline.
+   Sizing it to the viewport instead keeps the scene at its intended size and
+   lets it repeat softly down the page. */
+@media (max-width: 768px) {
+  .order-now-page::after {
+    background-size: 100% 100vh !important;
+    background-repeat: repeat-y !important;
+  }
+
+  .info-page::after,
+  .about-page::after,
+  .reviews-page::after,
+  .static-page::after,
+.legal-page::after,
+  .checkout-page::after,
+  .account-page::after,
+  .reorder-page::after,
+  .category-page::after {
+    background-size: 100% 100vh !important;
+    background-repeat: repeat-y !important;
+  }
+}
+
+/* Desktop: anchor the scene to the top and let it repeat rather than stretch,
+   so a long menu page does not distort the photograph. */
+@media (min-width: 769px) {
+  .order-now-page::after { background-size: 100% auto !important; }
+}
+
+
+/* --------------------------------------------------------------------------
+   29. Legal pages
+   Terms, Terms of Use, Privacy and Allergy Info wrap in `.legal-page` /
+   `.legal-card`, which the earlier theme passes missed — they were still on
+   the default surface with no banner behind them.
+   -------------------------------------------------------------------------- */
+.legal-card {
+  background: var(--surface) !important;
+  border: none !important;
+  border-radius: var(--radius-md) !important;
+  box-shadow: var(--shadow-soft) !important;
+  color: var(--text-main) !important;
+}
+
+.legal-card h1,
+.legal-card h2,
+.legal-card h3 {
+  font-family: 'Source Serif 4', Georgia, serif !important;
+  color: var(--text-main) !important;
+}
+
+.legal-card p,
+.legal-card li,
+.legal-card td,
+.legal-card .tou-sub {
+  color: var(--text-main) !important;
+}
+
+.legal-card a { color: var(--afc-gold) !important; }
+.legal-card a:hover { color: var(--afc-gold-deep) !important; }
+
+.legal-contact {
+  background: var(--surface-alt) !important;
+  border: none !important;
+  border-radius: var(--radius-sm) !important;
+  color: var(--text-main) !important;
+}
+
+
+/* ==========================================================================
+   30. HOME BANNER ACROSS THE WHOLE PAGE
+   Two bugs kept the photograph confined to the top of the order page:
+
+     1. `background-size: 100% auto` with `no-repeat` drew the image once, at
+        its natural aspect ratio (~810px tall) on a ~10,000px page — so all
+        but the first screen had no image at all.
+     2. The ivory veil ramped to 92% opacity by 720px, which erased whatever
+        image there was below the hero.
+
+   The image now tiles vertically down the full page, and the veil settles to
+   a level that keeps menu text readable while leaving the photograph clearly
+   visible behind it.
+   ========================================================================== */
+.order-now-page::after {
+  background-size: 100% auto !important;
+  background-repeat: repeat-y !important;   /* was no-repeat */
+  background-position: center top !important;
+}
+
+.order-now-page::before {
+  background: linear-gradient(
+    180deg,
+    rgba(248, 246, 241, 0) 0px,
+    rgba(248, 246, 241, 0) 330px,
+    rgba(248, 246, 241, 0.58) 560px,
+    rgba(248, 246, 241, 0.72) 760px,
+    rgba(248, 246, 241, 0.72) 100%
+  ) !important;
+}
+
+@media (max-width: 768px) {
+  .order-now-page::after {
+    background-size: 100% auto !important;
+    background-repeat: repeat-y !important;
+  }
+
+  .order-now-page::before {
+    background: linear-gradient(
+      180deg,
+      rgba(248, 246, 241, 0) 0px,
+      rgba(248, 246, 241, 0) 225px,
+      rgba(248, 246, 241, 0.62) 380px,
+      rgba(248, 246, 241, 0.76) 520px,
+      rgba(248, 246, 241, 0.76) 100%
+    ) !important;
+  }
+}
+
+/* The other routes get the same treatment so the backdrop is continuous
+   across the app rather than only on the home page. */
+.info-page::after,
+.about-page::after,
+.reviews-page::after,
+.static-page::after,
+.legal-page::after,
+.checkout-page::after,
+.account-page::after,
+.reorder-page::after,
+.category-page::after {
+  background-size: 100% auto !important;
+  background-repeat: repeat-y !important;
+}
+
+.info-page::before,
+.about-page::before,
+.reviews-page::before,
+.static-page::before,
+.legal-page::before,
+.checkout-page::before,
+.account-page::before,
+.reorder-page::before,
+.category-page::before {
+  background: rgba(248, 246, 241, 0.80) !important;
+}
+
+
+/* ==========================================================================
+   31. BACKGROUND VISIBILITY
+   The cards are deliberately left alone — solid white, as they are in the
+   reference design. What changes here is only the veil BETWEEN the photo and
+   the page: dropping it from 72% to 40% lets the photograph read clearly in
+   the gutters and between cards, while the cards themselves stay opaque so
+   menu text keeps full contrast.
+   ========================================================================== */
+.order-now-page::before {
+  background: linear-gradient(
+    180deg,
+    rgba(248, 246, 241, 0) 0px,
+    rgba(248, 246, 241, 0) 330px,
+    rgba(248, 246, 241, 0.28) 560px,
+    rgba(248, 246, 241, 0.40) 780px,
+    rgba(248, 246, 241, 0.40) 100%
+  ) !important;
+}
+
+@media (max-width: 768px) {
+  .order-now-page::before {
+    background: linear-gradient(
+      180deg,
+      rgba(248, 246, 241, 0) 0px,
+      rgba(248, 246, 241, 0) 225px,
+      rgba(248, 246, 241, 0.32) 380px,
+      rgba(248, 246, 241, 0.46) 540px,
+      rgba(248, 246, 241, 0.46) 100%
+    ) !important;
+  }
+}
+
+/* Section headings sit directly on the photograph rather than on a card, so
+   they need their own contrast now the veil is lighter. */
+.afc-section-head {
+  color: var(--text-main) !important;
+  text-shadow: 0 1px 3px rgba(248, 246, 241, 0.9);
+}
+
+/* Cards keep a slightly deeper shadow so they read as lifted off a busy
+   photograph rather than floating on flat ivory. Colour is unchanged. */
+.menu-item-card,
+.recommended-card,
+.mobile-category-item,
+.desktop-app-banner,
+.mobile-app-banner {
+  box-shadow: 0 2px 6px rgba(42, 38, 34, 0.10),
+              0 10px 28px rgba(42, 38, 34, 0.12) !important;
+}
+
+
+/* The mobile backdrop is sized to the viewport and tiled, so the final tile
+   can end mid-page and leave a bare ivory strip above the footer. Sizing the
+   tile to a fixed height that divides evenly and letting it repeat removes
+   the gap without stretching the scene. */
+@media (max-width: 768px) {
+  .order-now-page::after {
+    background-size: 100% auto !important;
+    background-repeat: repeat-y !important;
+    background-position: center top !important;
+  }
+}
+
+
+/* --------------------------------------------------------------------------
+   32. Gap between the page and the footer
+   The route element (.order-now-page) ends before .exact-footer begins, and
+   the strip between them belongs to .app-container, which carried no
+   backdrop — so the photograph stopped short of the footer. Putting the
+   image on the container as well closes that strip, on every route.
+   -------------------------------------------------------------------------- */
+.app-container {
+  position: relative;
+  background-image: url('/images/afc-bg-desktop.webp');
+  background-size: 100% auto;
+  background-repeat: repeat-y;
+  background-position: center top;
+  background-attachment: scroll;
+  background-color: var(--bg-color);
+}
+
+/* Veil over the container image, matching the routes' steady-state level */
+.app-container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(248, 246, 241, 0.40);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Keep the real content above that veil.
+   `:not()` guards are essential: the cart drawer and floating basket are
+   `position: fixed` overlays, and forcing them to `relative` drops them into
+   normal document flow — which appended ~900px of empty drawer below the
+   footer. Only stack the in-flow children. */
+.app-container > *:not(.cart-drawer):not(.floating-basket):not(.mobile-bottom-nav) {
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 768px) {
+  .app-container { background-image: url('/images/afc-bg-mobile.webp'); }
+  .app-container::before { background: rgba(248, 246, 241, 0.46); }
+}
+
+
+/* The sticky nav and category rail sit above scrolling content, so their
+   frosted glass needs enough opacity to stop menu text reading through them.
+   Raised from 0.86/0.94 now the backdrop behind is much more visible. */
+.exact-navbar,
+.afc-catrail,
+.mobile-bottom-nav {
+  background: rgba(255, 255, 255, 0.97) !important;
+}
+
+@supports ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .exact-navbar,
+  .afc-catrail,
+  .mobile-bottom-nav {
+    background: rgba(255, 255, 255, 0.93) !important;
+  }
+}
+
+
+/* ==========================================================================
+   33. NO VEIL — photograph at full strength
+   Every ivory wash over the backdrop is removed so the image shows exactly as
+   supplied. The cards stay solid white, so menu text keeps its contrast from
+   the card itself rather than from a tint over the photo.
+   ========================================================================== */
+.order-now-page::before,
+.info-page::before,
+.about-page::before,
+.reviews-page::before,
+.static-page::before,
+.legal-page::before,
+.checkout-page::before,
+.account-page::before,
+.reorder-page::before,
+.category-page::before,
+.app-container::before {
+  background: none !important;
+  display: none !important;
+}
+
+/* Section headings sit directly on the photograph with no tint behind them
+   now, so they carry their own plate to stay legible over any part of it. */
+/* An earlier `.category-title` rule sets `background: transparent !important`,
+   so the plate needs !important too or the heading sits bare on the photo. */
+.afc-section-head,
+.category-title.afc-section-head {
+  color: var(--text-main) !important;
+  background: rgba(255, 255, 255, 0.94) !important;
+  padding: 9px 20px !important;
+  border-radius: var(--radius-full) !important;
+  align-self: flex-start !important;
+  text-shadow: none !important;
+  box-shadow: var(--shadow-soft) !important;
+  display: inline-flex !important;
+  width: auto !important;
+  flex: 0 0 auto !important;
+}
+
+.afc-section-head::after { display: none !important; }
+
+
+/* The heading markup is <h3 class="afc-section-head"><span>Text</span></h3>.
+   Putting the plate on the inner span rather than the h3 sidesteps the
+   specificity fight with the older `.category-title, .recommended-section h3`
+   rule entirely, and hugs the text rather than the full-width heading row. */
+.afc-section-head {
+  background: none !important;
+  padding: 0 !important;
+  box-shadow: none !important;
+  display: flex !important;
+  width: auto !important;
+}
+
+.afc-section-head > span {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.94);
+  color: var(--text-main);
+  padding: 9px 20px;
+  border-radius: var(--radius-full);
+  box-shadow: var(--shadow-soft);
+  white-space: nowrap;
+}
+
+
+/* ==========================================================================
+   34. Empty strip below the footer
+   `.order-now-page` carried `min-height: 100vh` from the original layout, to
+   stop a short page looking bare. Now that the element paints the background
+   photograph, that rule adds a full extra viewport of image BELOW the footer
+   on a long page — 900px of empty backdrop the user has to scroll past.
+
+   The page has far more than a screenful of content, so the guard is no
+   longer needed and is removed.
+   ========================================================================== */
+.order-now-page {
+  min-height: 0 !important;
+}
+
+/* The container backdrop should end with the content, not extend past it */
+.app-container {
+  min-height: 0 !important;
+}
+
+.order-now-page::after,
+.order-now-page::before,
+.info-page::after,
+.info-page::before,
+.about-page::after,
+.about-page::before,
+.reviews-page::after,
+.reviews-page::before,
+.static-page::after,
+.static-page::before,
+.legal-page::after,
+.legal-page::before,
+.checkout-page::after,
+.checkout-page::before,
+.account-page::after,
+.account-page::before,
+.reorder-page::after,
+.reorder-page::before,
+.category-page::after,
+.category-page::before {
+  min-height: 0 !important;
+}
+
+
+/* Restate the overlay positioning so no later rule can pull these back into
+   the document flow. */
+.cart-drawer {
+  position: fixed !important;
+  top: 0 !important;
+  height: 100vh !important;
+  z-index: 1002 !important;
+}
+
+.floating-basket { position: fixed !important; }
+
+
+/* ==========================================================================
+   35. HERO-ONLY BANNER  (supersedes the full-page tiling above)
+   The photograph is a BANNER: it belongs to the top of the page, not behind
+   the menu. Earlier passes tiled it down the whole document; this block
+   confines it to the hero band again and restores the clean ivory ground
+   everywhere below.
+   ========================================================================== */
+
+/* No backdrop on the app container at all */
+.app-container {
+  background-image: none !important;
+  background-color: var(--bg-color) !important;
+}
+
+.app-container::before { display: none !important; }
+
+/* The order page's image layer is clipped to the hero band and does not
+   repeat; everything below it is the flat ivory page.
+
+   NOTE: no `background-color` on this element. An element paints its own
+   background ABOVE a pseudo-element with a negative z-index, so setting one
+   here hides the banner entirely. The ivory ground comes from <body>. */
+.order-now-page {
+  background-color: transparent !important;
+}
+
+.order-now-page::after {
+  position: absolute !important;
+  inset: 0 0 auto 0 !important;
+  height: 660px !important;
+  min-height: 0 !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  background-position: center top !important;
+}
+
+/* Scrim spans only the banner, fading the image into the ivory page */
+.order-now-page::before {
+  display: block !important;
+  position: absolute !important;
+  inset: 0 0 auto 0 !important;
+  height: 660px !important;
+  min-height: 0 !important;
+  background: linear-gradient(
+    180deg,
+    rgba(248, 246, 241, 0) 0%,
+    rgba(248, 246, 241, 0) 62%,
+    rgba(248, 246, 241, 0.72) 86%,
+    var(--bg-color) 100%
+  ) !important;
+}
+
+@media (max-width: 768px) {
+  .order-now-page::after,
+  .order-now-page::before { height: 420px !important; }
+
+  .order-now-page::after {
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+  }
+}
+
+/* The other routes lose the backdrop entirely — they are text pages and read
+   better on the plain ivory ground. */
+.info-page::after,
+.about-page::after,
+.reviews-page::after,
+.static-page::after,
+.legal-page::after,
+.checkout-page::after,
+.account-page::after,
+.reorder-page::after,
+.category-page::after,
+.info-page::before,
+.about-page::before,
+.reviews-page::before,
+.static-page::before,
+.legal-page::before,
+.checkout-page::before,
+.account-page::before,
+.reorder-page::before,
+.category-page::before {
+  display: none !important;
+}
+
+.info-page,
+.about-page,
+.reviews-page,
+.static-page,
+.legal-page,
+.checkout-page,
+.account-page,
+.reorder-page,
+.category-page {
+  background-color: var(--bg-color) !important;
+}
+
+/* Section headings sit on the ivory page again, so the white pill they wore
+   to stay legible over photography is no longer needed. */
+.afc-section-head > span {
+  background: none;
+  padding: 0;
+  box-shadow: none;
+  border-radius: 0;
+}
+
+.afc-section-head {
+  display: flex !important;
+  align-items: center;
+  gap: 12px;
+}
+
+.afc-section-head::after {
+  display: block !important;
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--border-color) !important;
+}
+
+
+/* The heading plate was only needed while text sat on the photograph. On the
+   ivory page it reads as a stray chip, so it is removed and the heading goes
+   back to plain text with a hairline rule. */
+.afc-section-head > span,
+.category-title.afc-section-head > span {
+  background: none !important;
+  padding: 0 !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  display: inline !important;
+}
+
+
+/* ==========================================================================
+   36. PAGE BACKGROUND BELOW THE BANNER + BANNER MOVED UP
+   Two distinct images now:
+     - the BANNER (afc-bg-*)      : the crest scene, in the hero only
+     - the PAGE BG (afc-page-bg-*): the street scene, everywhere below it
+   ========================================================================== */
+
+/* --- Banner moves up ---------------------------------------------------- */
+/* Shorter hero band, and the image anchored higher in frame, so the banner
+   sits nearer the top of the page. */
+.order-now-page::after {
+  height: 520px !important;
+  background-position: center 38% !important;
+}
+
+.order-now-page::before {
+  height: 520px !important;
+}
+
+.afc-hero {
+  min-height: 460px !important;
+}
+
+.afc-hero-inner {
+  padding-bottom: 18px !important;
+}
+
+/* --- Page background below the banner ----------------------------------- */
+/* Painted on .app-container so it covers the whole column beneath the hero,
+   including the strip between the menu and the footer. It scrolls with the
+   page. */
+.app-container {
+  position: relative;
+  background-image: url('/images/afc-page-bg-desktop.webp') !important;
+  background-size: 100% auto !important;
+  background-repeat: repeat-y !important;
+  background-position: center top !important;
+  background-attachment: scroll !important;
+  background-color: var(--bg-color) !important;
+}
+
+/* Veil over the page background: heavy enough that menu text and white cards
+   keep their contrast, light enough that the scene still reads. */
+.app-container::before {
+  content: "" !important;
+  display: block !important;
+  position: absolute !important;
+  inset: 0 !important;
+  background: rgba(248, 246, 241, 0.72) !important;
+  pointer-events: none !important;
+  z-index: 0 !important;
+}
+
+@media (max-width: 768px) {
+  .order-now-page::after,
+  .order-now-page::before { height: 380px !important; }
+
+  .afc-hero { min-height: 330px !important; }
+
+  .app-container {
+    background-image: url('/images/afc-page-bg-mobile.webp') !important;
+  }
+
+  .app-container::before { background: rgba(248, 246, 241, 0.76) !important; }
+}
+
+
+/* The mobile banner asset is the plain landscape scene (no blurred filler),
+   so it is shown whole at the top of the band rather than cropped into. */
+@media (max-width: 768px) {
+  .order-now-page::after {
+    background-size: 100% auto !important;
+    background-position: center top !important;
+    background-repeat: no-repeat !important;
+    height: 56vw !important;
+  }
+
+  .order-now-page::before { height: 56vw !important; }
+  .afc-hero { min-height: 56vw !important; }
+}
+
+
+/* ==========================================================================
+   37. PAGE BACKGROUND AS ONE IMAGE (no tiling, no blur)
+   The previous rule tiled the scene with `repeat-y`, so the same photo
+   appeared several times down the page. It is now a SINGLE image covering the
+   whole area below the banner: `background-size: cover` with `no-repeat`, and
+   `background-attachment: fixed` so one copy stays put while the page scrolls
+   over it rather than being stretched to a 10,000px column.
+   ========================================================================== */
+.app-container {
+  background-image: url('/images/afc-page-bg-desktop.webp') !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  background-position: center center !important;
+  background-attachment: fixed !important;
+}
+
+@media (max-width: 768px) {
+  .app-container {
+    background-image: url('/images/afc-page-bg-mobile.webp') !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    background-position: center center !important;
+    /* `fixed` triggers an iOS zoom/crop bug, so phones keep `scroll`; with
+       `cover` on a no-repeat background the single image still fills the
+       viewport rather than tiling. */
+    background-attachment: scroll !important;
+  }
+}
+
+/* No blur anywhere on the backdrop layers */
+.app-container,
+.app-container::before,
+.order-now-page::after,
+.order-now-page::before {
+  filter: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+
+/* On phones `background-attachment: scroll` makes `cover` size the image to
+   the whole DOCUMENT, so on a tall page it zooms far past the scene and shows
+   a soft, near-abstract crop. Sizing it to the VIEWPORT keeps one sharp copy
+   on screen; `fixed` is avoided because of the iOS zoom bug, so the image is
+   pinned with a fixed background-size instead. */
+@media (max-width: 768px) {
+  .app-container {
+    background-size: auto 100vh !important;
+    background-position: center top !important;
+    background-repeat: no-repeat !important;
+    background-attachment: fixed !important;
+  }
+}
+
+
+/* ==========================================================================
+   38. PAGE BACKGROUND SHOWN CLEARLY — no white wash
+   The ivory veil over the page background is removed entirely, so the scene
+   below the banner reads at full strength. Contrast for menu text now comes
+   from the white cards themselves, not from tinting the photograph.
+   ========================================================================== */
+.app-container::before {
+  display: none !important;
+  background: none !important;
+}
+
+/* Section headings sit directly on the photograph again, so they keep their
+   own plate — without it they are unreadable over the food. */
+.afc-section-head > span,
+.category-title.afc-section-head > span {
+  display: inline-block !important;
+  background: rgba(255, 255, 255, 0.94) !important;
+  padding: 9px 20px !important;
+  border-radius: var(--radius-full) !important;
+  box-shadow: var(--shadow-soft) !important;
+}
+
+.afc-section-head::after { display: none !important; }
+
+/* The deal strip is a translucent panel, so give it a solid ground rather
+   than letting the photo show through the copy. */
+.afc-dealstrip {
+  background: rgba(242, 246, 241, 0.96) !important;
+}
+
+
+/* ==========================================================================
+   39. STATIC CATEGORY RAIL + TRANSPARENT NAVBAR
+   ========================================================================== */
+
+/* --- Category rail sits in the page and scrolls away like normal content -- */
+.afc-catrail {
+  position: static !important;
+  top: auto !important;
+  background: rgba(255, 255, 255, 0.94) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border-bottom: 1px solid var(--border-color) !important;
+  box-shadow: var(--shadow-soft) !important;
+}
+
+/* The scroll-margin offsets existed to clear the sticky rail; with nothing
+   pinned but the navbar, only the navbar height needs clearing. */
+.menu-category-section {
+  scroll-margin-top: calc(var(--nav-height) + 12px) !important;
+}
+
+@media (max-width: 768px) {
+  .afc-catrail { position: static !important; }
+  .menu-category-section { scroll-margin-top: 12px !important; }
+}
+
+/* --- Transparent navbar over the banner ---------------------------------- */
+.exact-navbar {
+  background: transparent !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border-bottom: none !important;
+  box-shadow: none !important;
+  /* Stays sticky so the nav is always reachable; `absolute` let it scroll
+     away, and a low z-index let the hero's image layer paint over it. */
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 1000 !important;
+}
+
+/* Pull the hero up behind the sticky transparent nav so the banner runs to
+   the very top of the page. */
+.order-now-page { margin-top: calc(-1 * var(--nav-height)) !important; }
+.afc-hero { padding-top: var(--nav-height); }
+.order-now-page::after,
+.order-now-page::before { top: 0 !important; }
+
+/* Light text with a soft shadow so links read against the photograph */
+.navbar-links a {
+  color: rgba(255, 255, 255, 0.92) !important;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.55);
+}
+
+.navbar-links a:hover,
+.navbar-links a.active { color: #FFFFFF !important; }
+.navbar-links a::after { background: #FFFFFF !important; }
+
+.navbar-install-btn {
+  color: #FFFFFF !important;
+  border-color: rgba(255, 255, 255, 0.7) !important;
+  background: rgba(0, 0, 0, 0.18) !important;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.5);
+}
+
+.navbar-install-btn:hover { background: rgba(255, 255, 255, 0.2) !important; }
+
+.profile-login-btn {
+  color: #FFFFFF !important;
+  filter: drop-shadow(0 1px 4px rgba(0, 0, 0, 0.6));
+}
+
+.navbar-user-name { color: #FFFFFF !important; text-shadow: 0 1px 6px rgba(0, 0, 0, 0.55); }
+
+/* Wordmark inverts to sit on the photograph */
+.navbar-logo .afc-wordmark-top { color: var(--afc-cream) !important; }
+.navbar-logo .afc-wordmark-main {
+  color: #FFFFFF !important;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+}
+.navbar-logo .afc-wordmark-sub { color: rgba(255, 255, 255, 0.78) !important; }
+.navbar-logo .afc-crest { box-shadow: 0 0 0 1px rgba(255,255,255,0.5), 0 2px 10px rgba(0,0,0,0.4) !important; }
+
+
+/* A soft dark gradient behind the transparent nav. It is not a bar — there is
+   no edge or fill — but it gives the links enough separation from the busy
+   crest artwork directly behind them, which a text-shadow alone could not. */
+.exact-navbar::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(10, 12, 20, 0.55) 0%,
+    rgba(10, 12, 20, 0.28) 60%,
+    rgba(10, 12, 20, 0) 100%
+  );
+  pointer-events: none;
+  z-index: -1;
+}
+
+.navbar-container { position: relative; z-index: 1; }
+
+/* Stronger shadow on the links themselves for the brightest parts of the photo */
+.navbar-links a,
+.navbar-user-name {
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.85), 0 2px 10px rgba(0, 0, 0, 0.5) !important;
+}
+
+
+/* Past the banner the nav becomes a solid light bar with dark text, because
+   light-on-transparent links are unreadable over the white menu cards. */
+.exact-navbar.is-scrolled {
+  background: rgba(255, 255, 255, 0.97) !important;
+  box-shadow: var(--shadow-soft) !important;
+  border-bottom: 1px solid var(--border-color) !important;
+  transition: background var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.exact-navbar.is-scrolled::before { display: none; }
+
+.exact-navbar.is-scrolled .navbar-links a,
+.exact-navbar.is-scrolled .navbar-user-name {
+  color: var(--text-muted) !important;
+  text-shadow: none !important;
+}
+
+.exact-navbar.is-scrolled .navbar-links a:hover,
+.exact-navbar.is-scrolled .navbar-links a.active { color: var(--afc-gold) !important; }
+.exact-navbar.is-scrolled .navbar-links a::after { background: var(--afc-gold) !important; }
+
+.exact-navbar.is-scrolled .navbar-logo .afc-wordmark-top { color: var(--afc-red) !important; }
+.exact-navbar.is-scrolled .navbar-logo .afc-wordmark-main {
+  color: var(--text-main) !important;
+  text-shadow: none !important;
+}
+.exact-navbar.is-scrolled .navbar-logo .afc-wordmark-sub { color: var(--text-muted) !important; }
+.exact-navbar.is-scrolled .navbar-logo .afc-crest { box-shadow: 0 0 0 1px var(--border-color) !important; }
+
+.exact-navbar.is-scrolled .navbar-install-btn {
+  color: var(--afc-gold) !important;
+  border-color: var(--afc-gold) !important;
+  background: transparent !important;
+  text-shadow: none !important;
+}
+
+.exact-navbar.is-scrolled .profile-login-btn {
+  color: var(--text-muted) !important;
+  filter: none !important;
+}
+
+
+/* ==========================================================================
+   40. SMALLER CARDS + ICON SEPARATION
+   ========================================================================== */
+
+/* --- Cards: another step down -------------------------------------------- */
+.menu-item-card .item-image-wrapper { height: 96px !important; }
+
+.menu-item-card .item-details {
+  padding: 8px 10px 34px !important;
+  gap: 1px;
+}
+
+.menu-item-card .item-details h4 {
+  font-size: 0.8rem !important;
+  line-height: 1.22;
+}
+
+.menu-item-card .item-desc {
+  font-size: 0.66rem !important;
+  line-height: 1.35;
+  -webkit-line-clamp: 2;
+}
+
+.menu-item-card .item-price { font-size: 0.88rem !important; }
+
+.menu-item-card .add-btn {
+  width: 24px;
+  height: 24px;
+  right: 8px;
+  bottom: 8px;
+}
+
+.menu-item-card .add-btn svg { width: 12px; height: 12px; }
+
+/* More columns now the cards are smaller again */
+@media (min-width: 1440px) {
+  .items-grid { grid-template-columns: repeat(5, 1fr) !important; gap: 12px !important; }
+}
+
+@media (min-width: 1100px) and (max-width: 1439px) {
+  .items-grid { grid-template-columns: repeat(4, 1fr) !important; gap: 12px !important; }
+}
+
+@media (min-width: 700px) and (max-width: 1099px) {
+  .items-grid { grid-template-columns: repeat(3, 1fr) !important; gap: 10px !important; }
+}
+
+@media (max-width: 699px) {
+  .items-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 9px !important; }
+  .menu-item-card .item-image-wrapper { height: 88px !important; }
+  .menu-item-card .item-details { padding: 7px 9px 32px !important; }
+  .menu-item-card .item-details h4 { font-size: 0.75rem !important; }
+  .menu-item-card .item-desc { font-size: 0.63rem !important; }
+  .menu-item-card .item-price { font-size: 0.82rem !important; }
+}
+
+/* Recommended tiles shrink to match */
+.recommended-card { width: 150px !important; min-width: 150px !important; }
+.recommended-card img { height: 96px !important; }
+.recommended-card .rec-info { padding: 8px 10px 10px !important; }
+.recommended-card .rec-info h4 { font-size: 0.76rem !important; }
+.recommended-card .rec-info p { font-size: 0.84rem !important; }
+
+/* --- Profile icon: clearly visible on the transparent nav ---------------- */
+/* It was a bare 26px glyph with only a drop-shadow, which disappeared into
+   the busy banner. It now sits in its own translucent disc, like the hero
+   controls, so it reads as a button at any point over the photograph. */
+.profile-login-btn {
+  width: 38px !important;
+  height: 38px !important;
+  border-radius: 50% !important;
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.18) !important;
+  border: 1px solid rgba(255, 255, 255, 0.55) !important;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: #FFFFFF !important;
+  filter: none !important;
+}
+
+.profile-login-btn svg { width: 19px; height: 19px; }
+
+.profile-login-btn:hover {
+  background: rgba(255, 255, 255, 0.34) !important;
+  border-color: #FFFFFF !important;
+}
+
+/* On the solid scrolled nav it becomes a quiet outlined button */
+.exact-navbar.is-scrolled .profile-login-btn {
+  background: transparent !important;
+  border-color: var(--border-color) !important;
+  color: var(--text-muted) !important;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+.exact-navbar.is-scrolled .profile-login-btn:hover {
+  border-color: var(--afc-gold) !important;
+  color: var(--afc-gold) !important;
+}
+
+/* --- Search moves down, clear of the profile icon ------------------------ */
+/* Profile sits at y≈21 in the nav; the search button was at y≈16, so the two
+   read as one crowded cluster in the top-right. Dropping search below the
+   nav band separates them. */
+.afc-hero .search-toggle {
+  top: calc(var(--nav-height) + 22px) !important;
+  right: 20px !important;
+}
+
+@media (max-width: 768px) {
+  /* No top nav on mobile, so the search button only needs to clear the
+     safe-area inset. */
+  .afc-hero .search-toggle {
+    top: calc(16px + env(safe-area-inset-top, 0px)) !important;
+    right: 16px !important;
+  }
+}
+
+
+/* ==========================================================================
+   41. REMOVE DEAD SPACE INSIDE CARDS
+   The text block reserved 34px of bottom padding so the absolutely-positioned
+   add button had somewhere to sit, and the card was taller than its content —
+   both showed as empty white at the bottom of every card.
+
+   The button now sits on the same row as the price, so no padding is
+   reserved, and the card height follows its content.
+   ========================================================================== */
+.menu-item-card {
+  height: auto !important;
+}
+
+.menu-item-card .item-details {
+  padding: 9px 10px 10px !important;
+  position: relative;
+  gap: 2px;
+}
+
+/* Price row: price left, add button right, on one line */
+.menu-item-card .item-price {
+  margin: 6px 0 0 !important;
+  padding-right: 32px;          /* clears the button */
+  line-height: 1.1;
+}
+
+.menu-item-card .add-btn {
+  position: absolute !important;
+  right: 10px !important;
+  bottom: 9px !important;
+  top: auto !important;
+  width: 24px;
+  height: 24px;
+}
+
+/* Rows stay even without stretching a short card's whitespace */
+.items-grid { align-items: start !important; }
+
+@media (max-width: 699px) {
+  .menu-item-card .item-details { padding: 8px 9px 9px !important; }
+  .menu-item-card .add-btn { right: 9px !important; bottom: 8px !important; }
+}
+
+
+/* The category page uses its own grid (.category-items), which was still a
+   single full-width column on phones — so its cards stayed large while the
+   home grid shrank. Match the two. */
+.category-items {
+  grid-template-columns: repeat(2, 1fr) !important;
+  gap: 9px !important;
+  align-items: start !important;
+}
+
+@media (min-width: 700px) {
+  .category-items { grid-template-columns: repeat(3, 1fr) !important; gap: 12px !important; }
+}
+
+@media (min-width: 1100px) {
+  .category-items { grid-template-columns: repeat(4, 1fr) !important; }
+}
+
+@media (min-width: 1440px) {
+  .category-items { grid-template-columns: repeat(5, 1fr) !important; }
+}
+
+/* The category hero was a tall square; a shallower band leaves more room for
+   the menu itself. */
+.category-hero {
+  height: 130px !important;
+  object-fit: cover !important;
+  border-radius: var(--radius-md) !important;
+}
+
+
+/* Sliced product photos are tight crops on white, so `cover` clips the top and
+   bottom of taller items (burgers especially). `contain` shows the whole
+   product, and a white plate keeps the card edge clean. */
+.menu-item-card .item-image {
+  object-fit: contain !important;
+  background: #FFFFFF;
+  padding: 4px;
+}
+
+
+/* ==========================================================================
+   42. MOBILE RESPONSIVENESS
+   Fixes found by auditing 412/390/375/360px across every route:
+     - a 348px-wide footer block overflowed anything under ~375px
+     - the info gallery was a fixed 6-column grid
+     - the category rail overflowed the page instead of scrolling
+     - several controls were below the 32px minimum tap size
+   ========================================================================== */
+
+@media (max-width: 768px) {
+  /* --- Global guard -----------------------------------------------------
+     Nothing may be wider than the viewport. Long words, URLs and emails in
+     the legal pages wrap instead of pushing the page sideways. */
+  html, body { overflow-x: hidden; max-width: 100%; }
+
+  p, li, td, a, h1, h2, h3, h4 {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+
+  /* --- Footer bottom bar: the 348px fixed block ------------------------- */
+  .footer-bottom-bar {
+    flex-direction: column;
+    gap: 22px;
+    padding: 24px 16px;
+  }
+
+  .fbb-section,
+  .fbb-app,
+  .fbb-center,
+  .fbb-payment {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    align-items: center;
+    text-align: center;
+  }
+
+  .fbb-app p { max-width: 100%; }
+
+  .store-badges,
+  .pay-logos {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .pay-item { flex: 0 0 auto; }
+
+  /* --- Info page gallery: 6 columns is desktop-only --------------------- */
+  .info-gallery {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 8px !important;
+  }
+
+  .info-gallery > img,
+  .gallery-more { width: 100% !important; max-width: 100%; }
+
+  .info-map, .info-map iframe { max-width: 100%; }
+
+  /* --- Category rail scrolls rather than overflowing -------------------- */
+  .afc-catrail { max-width: 100vw; overflow: hidden; }
+
+  .afc-catrail-inner {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    scroll-snap-type: x proximity;
+    -webkit-overflow-scrolling: touch;
+    padding-inline: 12px;
+  }
+
+  .afc-catrail-chip { scroll-snap-align: start; }
+
+  /* --- Tap targets: 40px minimum on touch ------------------------------- */
+  .close-cart,
+  .modal-close,
+  .category-back-btn,
+  .category-search-btn,
+  .search-close {
+    min-width: 40px !important;
+    min-height: 40px !important;
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .menu-item-card .add-btn {
+    width: 34px !important;
+    height: 34px !important;
+  }
+
+  .menu-item-card .add-btn svg { width: 15px; height: 15px; }
+
+  /* Footer and inline links get a comfortable touch height */
+  .footer-column a,
+  .footer-link-btn,
+  .footer-contact a,
+  .reviews-info-link {
+    display: inline-flex;
+    align-items: center;
+    min-height: 40px;
+  }
+
+  /* Hero pills were 26-27px tall */
+  .afc-hero-meta-item {
+    min-height: 36px;
+    padding: 8px 13px !important;
+  }
+
+  /* --- Modals fit the screen ------------------------------------------- */
+  .modal-content {
+    width: calc(100vw - 24px) !important;
+    max-width: calc(100vw - 24px) !important;
+    max-height: 88vh;
+    overflow-y: auto;
+  }
+
+  /* --- Tables and wide blocks in the legal pages ------------------------ */
+  .legal-card table,
+  .static-card table {
+    display: block;
+    overflow-x: auto;
+    max-width: 100%;
+  }
+
+  .legal-card, .static-card { max-width: 100%; overflow-wrap: anywhere; }
+}
+
+/* Very small phones (360px and below) need the grid to breathe */
+@media (max-width: 380px) {
+  .items-grid,
+  .category-items { gap: 8px !important; }
+
+  .menu-item-card .item-details { padding: 7px 8px 8px !important; }
+  .menu-item-card .item-details h4 { font-size: 0.72rem !important; }
+  .menu-item-card .item-desc { display: none; }
+
+  .afc-hero-meta-item { font-size: 0.68rem !important; padding: 7px 10px !important; }
+  .info-gallery { grid-template-columns: repeat(2, 1fr) !important; }
+}
+
+
+/* Remaining sub-40px controls, by their real class names. Legal-page links
+   are inline inside sentences, so they get vertical padding rather than a
+   forced height — a 40px inline-flex there would break the paragraph flow. */
+@media (max-width: 768px) {
+  .header-icon-btn,
+  .info-viewall,
+  .lang-select {
+    min-width: 40px !important;
+    min-height: 40px !important;
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .info-viewall,
+  .lang-select { padding-inline: 14px; }
+
+  /* Inline links in body copy: bigger hit area without breaking the line box */
+  .legal-card a,
+  .static-card a,
+  .info-address a,
+  .info-phone a {
+    padding-block: 10px;
+    display: inline-block;
+  }
+}
+
+
+/* ==========================================================================
+   43. REORDER PAGE BACKGROUND
+   Section 35 switched every non-home route to a plain ivory ground. The
+   reorder page gets its own banner back, so these rules have to re-enable
+   the layers it disabled.
+   ========================================================================== */
+.reorder-page {
+  position: relative;
+  background-color: transparent !important;
+  isolation: isolate;
+}
+
+.reorder-page::after {
+  content: "" !important;
+  display: block !important;
+  position: absolute !important;
+  inset: 0 !important;
+  background-image: url('/images/afc-reorder-desktop.webp') !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  background-position: center center !important;
+  background-attachment: fixed !important;
+  pointer-events: none;
+  z-index: -2;
+}
+
+/* Light veil: the banner is dark with its own headline, so panels need a
+   little separation without washing the artwork out. */
+.reorder-page::before {
+  content: "" !important;
+  display: block !important;
+  position: absolute !important;
+  inset: 0 !important;
+  background: rgba(11, 11, 15, 0.34) !important;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Page furniture sits on a dark photo here, so it inverts */
+.reorder-page h1,
+.reorder-page h2,
+.reorder-page .reorder-title {
+  color: #FFFFFF !important;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.6);
+}
+
+.reorder-page .reorder-empty,
+.reorder-page .reorder-sub {
+  color: rgba(255, 255, 255, 0.9) !important;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.6);
+}
+
+/* Cards stay solid so order details remain readable over the photo */
+.reorder-card {
+  background: var(--surface) !important;
+  box-shadow: var(--shadow-lg) !important;
+}
+
+@media (max-width: 768px) {
+  .reorder-page::after {
+    background-image: url('/images/afc-reorder-mobile.webp') !important;
+    background-attachment: scroll !important;
+    background-size: cover !important;
+  }
+}
+
+
+/* The About gallery holds 8 items (two rows of four). The sliced product
+   photos are tight crops on white, so `contain` keeps each item whole rather
+   than cropping into it. */
+.about-gallery-item img {
+  object-fit: contain !important;
+  background: #FFFFFF;
+  padding: 10px;
+}
+
+@media (max-width: 768px) {
+  .about-gallery { grid-template-columns: repeat(2, 1fr) !important; }
+}
+
+
+/* The empty state was a full-width white slab that covered the banner's own
+   headline. A compact translucent card sits lower and lets the artwork read. */
+.reorder-empty {
+  max-width: 420px;
+  margin: 34vh auto 0 !important;
+  background: rgba(255, 255, 255, 0.94) !important;
+  border-radius: var(--radius-lg) !important;
+  box-shadow: var(--shadow-lg) !important;
+  padding: 26px 24px !important;
+  text-align: center;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.reorder-empty-title {
+  color: var(--text-main) !important;
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-size: 1.05rem;
+  text-shadow: none !important;
+}
+
+.reorder-empty-sub {
+  color: var(--text-muted) !important;
+  font-size: 0.86rem;
+  text-shadow: none !important;
+}
+
+@media (max-width: 768px) {
+  .reorder-empty { margin-top: 30vh !important; max-width: none; }
+}
+
+
+/* ==========================================================================
+   44. NAVBAR SCOPED TO THE HOME PAGE
+   The transparent navbar, its dark scrim and its light link text were written
+   for the home page, where the nav floats over the banner photograph. They
+   applied on every route, so pages like /reorder inherited a dark band and
+   white links that did not belong to them.
+
+   Everything below restores the solid navbar off the home page; the
+   transparent treatment is re-applied only under `.home-route`.
+   ========================================================================== */
+
+/* --- Default (every route except home): solid light bar ------------------ */
+.exact-navbar {
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 1000 !important;
+  background: rgba(255, 255, 255, 0.97) !important;
+  border-bottom: 1px solid var(--border-color) !important;
+  box-shadow: var(--shadow-soft) !important;
+}
+
+.exact-navbar::before { display: none !important; }
+
+.exact-navbar .navbar-links a,
+.exact-navbar .navbar-user-name {
+  color: var(--text-muted) !important;
+  text-shadow: none !important;
+}
+
+.exact-navbar .navbar-links a:hover,
+.exact-navbar .navbar-links a.active { color: var(--afc-gold) !important; }
+.exact-navbar .navbar-links a::after { background: var(--afc-gold) !important; }
+
+.exact-navbar .navbar-logo .afc-wordmark-top { color: var(--afc-red) !important; }
+.exact-navbar .navbar-logo .afc-wordmark-main {
+  color: var(--text-main) !important;
+  text-shadow: none !important;
+}
+.exact-navbar .navbar-logo .afc-wordmark-sub { color: var(--text-muted) !important; }
+.exact-navbar .navbar-logo .afc-crest { box-shadow: 0 0 0 1px var(--border-color) !important; }
+
+.exact-navbar .navbar-install-btn {
+  color: var(--afc-gold) !important;
+  border-color: var(--afc-gold) !important;
+  background: transparent !important;
+  text-shadow: none !important;
+}
+
+.exact-navbar .profile-login-btn {
+  background: transparent !important;
+  border-color: var(--border-color) !important;
+  color: var(--text-muted) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  filter: none !important;
+}
+
+.exact-navbar .profile-login-btn:hover {
+  border-color: var(--afc-gold) !important;
+  color: var(--afc-gold) !important;
+}
+
+/* Non-home pages start below the nav rather than behind it */
+.app-container:not(.home-route) .main-content { padding-top: 0; }
+
+/* --- Home page only: transparent over the banner ------------------------- */
+.banner-route .exact-navbar:not(.is-scrolled) {
+  background: transparent !important;
+  border-bottom: none !important;
+  box-shadow: none !important;
+}
+
+.banner-route .exact-navbar:not(.is-scrolled)::before {
+  display: block !important;
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(10, 12, 20, 0.55) 0%,
+    rgba(10, 12, 20, 0.28) 60%,
+    rgba(10, 12, 20, 0) 100%
+  );
+  pointer-events: none;
+  z-index: -1;
+}
+
+.banner-route .exact-navbar:not(.is-scrolled) .navbar-links a,
+.banner-route .exact-navbar:not(.is-scrolled) .navbar-user-name {
+  color: rgba(255, 255, 255, 0.92) !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.85), 0 2px 10px rgba(0, 0, 0, 0.5) !important;
+}
+
+.banner-route .exact-navbar:not(.is-scrolled) .navbar-links a:hover,
+.banner-route .exact-navbar:not(.is-scrolled) .navbar-links a.active { color: #FFFFFF !important; }
+.banner-route .exact-navbar:not(.is-scrolled) .navbar-links a::after { background: #FFFFFF !important; }
+
+.banner-route .exact-navbar:not(.is-scrolled) .navbar-logo .afc-wordmark-top { color: var(--afc-cream) !important; }
+.banner-route .exact-navbar:not(.is-scrolled) .navbar-logo .afc-wordmark-main {
+  color: #FFFFFF !important;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6) !important;
+}
+.banner-route .exact-navbar:not(.is-scrolled) .navbar-logo .afc-wordmark-sub { color: rgba(255,255,255,0.78) !important; }
+.banner-route .exact-navbar:not(.is-scrolled) .navbar-logo .afc-crest {
+  box-shadow: 0 0 0 1px rgba(255,255,255,0.5), 0 2px 10px rgba(0,0,0,0.4) !important;
+}
+
+.banner-route .exact-navbar:not(.is-scrolled) .navbar-install-btn {
+  color: #FFFFFF !important;
+  border-color: rgba(255, 255, 255, 0.7) !important;
+  background: rgba(0, 0, 0, 0.18) !important;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.5) !important;
+}
+
+.banner-route .exact-navbar:not(.is-scrolled) .profile-login-btn {
+  background: rgba(255, 255, 255, 0.18) !important;
+  border-color: rgba(255, 255, 255, 0.55) !important;
+  color: #FFFFFF !important;
+  backdrop-filter: blur(8px) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
+}
+
+/* The hero is pulled up behind the nav only on the home page */
+.home-route .order-now-page { margin-top: calc(-1 * var(--nav-height)) !important; }
+.app-container:not(.home-route) .order-now-page { margin-top: 0 !important; }
+
+
+/* ==========================================================================
+   45. REORDER PAGE UNDER THE TRANSPARENT NAVBAR
+   The navbar is transparent on banner routes, so the reorder artwork is
+   pulled up behind it the same way the home hero is — otherwise the top of
+   the banner sits hidden beneath the bar.
+   ========================================================================== */
+.banner-route .reorder-page {
+  margin-top: calc(-1 * var(--nav-height)) !important;
+  padding-top: calc(var(--nav-height) + 40px) !important;
+}
+
+/* A deeper scrim at the very top keeps the nav links legible against the
+   lighter parts of this particular banner. */
+.banner-route .reorder-page::before {
+  background: linear-gradient(
+    180deg,
+    rgba(11, 11, 15, 0.52) 0%,
+    rgba(11, 11, 15, 0.34) 18%,
+    rgba(11, 11, 15, 0.34) 100%
+  ) !important;
+}
+
+@media (max-width: 768px) {
+  /* No top navbar on mobile, so nothing to clear */
+  .banner-route .reorder-page {
+    margin-top: 0 !important;
+    padding-top: 24px !important;
+  }
+}
+
+
+/* ==========================================================================
+   46. REORDER PAGE: one banner, no second image
+   Two problems showed as a repeated/messy backdrop:
+     1. `.app-container` paints the HOME page's street-scene background on
+        every route, so below the reorder page's own layer a second, different
+        photo appeared.
+     2. `.reorder-page` was only as tall as its content (900px) while the
+        document ran to 1770px, leaving a hard seam where its banner stopped.
+   ========================================================================== */
+
+/* The reorder route uses its own banner, so suppress the shared page image */
+.app-container:has(.reorder-page) {
+  background-image: none !important;
+  background-color: var(--bg-color) !important;
+}
+
+.app-container:has(.reorder-page)::before { display: none !important; }
+
+/* The banner layer covers the viewport, not just the element, so it never
+   runs out however short the page content is. */
+.reorder-page::after,
+.reorder-page::before {
+  position: fixed !important;
+  inset: 0 !important;
+  height: auto !important;
+}
+
+/* Fill the space between the content and the footer so no seam shows */
+.banner-route .reorder-page {
+  min-height: calc(100vh - var(--nav-height)) !important;
+}
+
+@media (max-width: 768px) {
+  .reorder-page::after { background-attachment: scroll !important; }
+  .banner-route .reorder-page { min-height: 100vh !important; }
+}
+
+
+/* ==========================================================================
+   47. COMPACT FOOTER
+   The footer ran to 830px on desktop: 40px section padding wrapping 26/30px
+   card padding, a 194px brand band, and link rows forced to 40px tall by the
+   mobile tap-target rule (which only needs to apply on touch screens).
+   ========================================================================== */
+
+/* --- Brand band --------------------------------------------------------- */
+.footer-brand-band { padding: 20px 24px 16px !important; }
+.footer-brand-inner { gap: 7px !important; }
+.footer-brand-inner .afc-crest { width: 42px !important; height: 42px !important; }
+.footer-tagline { font-size: 0.82rem !important; }
+.footer-contact { font-size: 0.8rem !important; gap: 4px 18px !important; }
+
+/* --- Link columns ------------------------------------------------------- */
+.footer-columns-section { padding: 22px 24px !important; }
+.footer-grid { gap: 16px !important; }
+
+.footer-column {
+  padding: 16px 18px !important;
+  border-radius: var(--radius-md) !important;
+}
+
+.footer-column h4 {
+  font-size: 0.86rem !important;
+  margin-bottom: 8px !important;
+}
+
+/* Desktop has a mouse, so links do not need the 40px touch height that the
+   mobile rule gives them. */
+@media (min-width: 769px) {
+  .footer-column a,
+  .footer-link-btn {
+    min-height: 0 !important;
+    display: block !important;
+    font-size: 0.82rem !important;
+    margin-bottom: 6px !important;
+    padding: 2px 0 !important;
+  }
+
+  .footer-contact a { min-height: 0 !important; }
+}
+
+/* --- Bottom bar --------------------------------------------------------- */
+.footer-bottom-bar { padding: 18px 24px 8px !important; gap: 16px !important; }
+.fbb-app p { font-size: 0.8rem !important; margin-bottom: 8px; }
+.footer-install-btn { padding: 9px 18px !important; font-size: 0.72rem !important; }
+.hygiene-card-footer { padding: 10px 12px !important; }
+.hcf-title { font-size: 0.78rem !important; }
+.hcf-date { font-size: 0.72rem !important; }
+
+/* --- Powered-by strip --------------------------------------------------- */
+.footer-foodhub { padding: 10px 24px 14px !important; }
+.omnireach-logo-img { height: 18px !important; }
+
+/* --- Mobile: keep touch heights, trim the padding ------------------------ */
+@media (max-width: 768px) {
+  .footer-brand-band { padding: 18px 16px 14px !important; }
+  .footer-columns-section { padding: 18px 16px !important; }
+  .footer-column { padding: 14px 16px !important; }
+  .footer-bottom-bar { padding: 16px 16px 8px !important; gap: 16px !important; }
+  .footer-foodhub { padding: 10px 16px 14px !important; }
+
+  /* Links keep a usable tap height but lose the extra stacking space */
+  .footer-column a,
+  .footer-link-btn { min-height: 36px !important; margin-bottom: 0 !important; }
+}
+
+
+/* Columns sized to their own content: the Legal column has three links where
+   Customer Service has five, so stretching them to equal height left a large
+   empty block. */
+.footer-grid { align-items: start !important; }
+.footer-column { height: auto !important; }
+
+/* --- Mobile: the sections stack, so trim harder ------------------------- */
+@media (max-width: 768px) {
+  .footer-brand-band { padding: 14px 16px 12px !important; }
+  .footer-brand-inner { gap: 5px !important; }
+  .footer-brand-inner .afc-crest { width: 38px !important; height: 38px !important; }
+  .footer-tagline { font-size: 0.76rem !important; }
+  .footer-contact { font-size: 0.74rem !important; gap: 2px 12px !important; }
+
+  .footer-columns-section { padding: 14px 16px !important; }
+  .footer-grid { gap: 10px !important; }
+  .footer-column { padding: 12px 14px !important; }
+  .footer-column h4 { font-size: 0.8rem !important; margin-bottom: 4px !important; }
+  .footer-column a,
+  .footer-link-btn { min-height: 34px !important; font-size: 0.8rem !important; }
+
+  .footer-bottom-bar { padding: 14px 16px 6px !important; gap: 12px !important; }
+  .fbb-app p { font-size: 0.76rem !important; }
+  .hygiene-card-footer { padding: 8px 10px !important; }
+  .footer-foodhub { padding: 8px 16px 12px !important; }
+
+  /* The bottom nav already sits fixed over the page; this padding only needs
+     to clear it, not add a second gap. */
+  .exact-footer { padding-bottom: calc(62px + env(safe-area-inset-bottom)) !important; }
+}
+
+
+/* The mobile rules set a min-height on footer links but left them as the
+   inline-flex the tap-target rule applied, so they ran together on one line.
+   They must be block-level to stack. */
+@media (max-width: 768px) {
+  .footer-column a,
+  .footer-link-btn {
+    display: flex !important;
+    align-items: center;
+    width: 100%;
+  }
+}
+
+/* Same guard on desktop, where the tap-target rule does not apply but the
+   inline-flex could still leak in. */
+@media (min-width: 769px) {
+  .footer-column a,
+  .footer-link-btn { display: block !important; width: 100%; }
+}
+
+
+/* ==========================================================================
+   48. MOBILE TEXT LEGIBILITY
+   An audit for sub-11px text found several strings that are fine at desktop
+   size but too small to read on a phone. Raised to a floor of 11px, with the
+   wordmark lines given proportionate tracking so they still read as a lockup.
+   ========================================================================== */
+@media (max-width: 768px) {
+  .afc-wordmark-top {
+    font-size: 0.7rem !important;   /* was 8.8px */
+    letter-spacing: 0.18em !important;
+  }
+
+  .afc-wordmark-sub {
+    font-size: 0.62rem !important;  /* was 8px */
+    letter-spacing: 0.12em !important;
+  }
+
+  .afc-wordmark-main { font-size: 1rem !important; }
+
+  /* Food hygiene rating badge */
+  .hcf-verygood { font-size: 0.7rem !important; padding: 3px 7px !important; }
+  .hcf-dot { font-size: 0.72rem !important; }
+
+  /* Hero info pills */
+  .afc-hero-meta-item { font-size: 0.74rem !important; }
+
+  /* Card descriptions: readable, or hidden entirely on the narrowest phones
+     where there is genuinely no room (handled in section 42). */
+  .menu-item-card .item-desc { font-size: 0.7rem !important; }
+
+  /* Catch-all floor so nothing drops below 11px on a phone */
+  .footer-contact,
+  .fbb-app p,
+  .hcf-date,
+  .rec-info p,
+  .search-result-info span { font-size: 0.72rem !important; }
+}
+
+/* On the smallest phones the wordmark shrinks, but not below the 11px floor —
+   the earlier 0.66rem override was what kept it unreadable at 360/375px. */
+@media (max-width: 380px) {
+  .afc-wordmark-main { font-size: 0.94rem !important; }
+  .afc-wordmark-top { font-size: 0.7rem !important; letter-spacing: 0.14em !important; }
+  .afc-wordmark-sub { font-size: 0.7rem !important; letter-spacing: 0.1em !important; }
+}
+
+
+/* The Visa Electron sub-label is drawn small by the card-brand mark itself.
+   Bring it to the legibility floor on phones. */
+@media (max-width: 768px) {
+  .electron-text, .vbv-text, .mc-text { font-size: 0.7rem !important; }
+  .afc-wordmark-sub { font-size: 0.7rem !important; }
+}
+
+
+/* Bottom tab labels: 10px matches the iOS tab-bar convention, but 11px reads
+   noticeably better on Android without changing the bar's height. */
+@media (max-width: 768px) {
+  .bottom-nav-item { font-size: 11px !important; letter-spacing: 0.04em !important; }
+}
+
+
+/* ==========================================================================
+   49. MOBILE: BANNER NO LONGER CLIPPED AT THE TOP
+   `.home-route .order-now-page` carries `margin-top: -68px` so the hero tucks
+   behind the transparent desktop navbar. The navbar is hidden on mobile, so
+   that negative margin just pulled the banner 68px off the top of the screen
+   and cut the crest off.
+   ========================================================================== */
+@media (max-width: 768px) {
+  .home-route .order-now-page,
+  .banner-route .order-now-page,
+  .order-now-page {
+    margin-top: 0 !important;
+  }
+
+  /* The hero padding existed to clear that same navbar */
+  .afc-hero { padding-top: 0 !important; }
+
+  /* Reorder page had the same treatment */
+  .banner-route .reorder-page {
+    margin-top: 0 !important;
+    padding-top: 24px !important;
+  }
+
+  /* With the offset gone, the banner band matches the image's own ratio so
+     the whole scene shows rather than being cropped. */
+  .order-now-page::after,
+  .order-now-page::before {
+    height: 62vw !important;
+    background-size: 100% auto !important;
+    background-position: center top !important;
+  }
+
+  .afc-hero { min-height: 62vw !important; }
+}
+
+
+/* The banner band is sized to the image ratio, so the hero content sits right
+   under the crest. A little more height gives the tagline and pills their own
+   clear space below the food rather than overlapping it. */
+@media (max-width: 768px) {
+  .order-now-page::after,
+  .order-now-page::before { height: 76vw !important; }
+  .afc-hero { min-height: 76vw !important; }
+  .afc-hero-inner { padding-bottom: 14px !important; gap: 7px !important; }
+}
+
+
+/* ==========================================================================
+   50. ADMIN BACKGROUND
+   The supplied "Admin Dashboard" artwork on both the login screen and the
+   dashboard itself. The login page previously pointed at bg-desktop.webp,
+   which was the previous shop's customer photo.
+   ========================================================================== */
+
+/* --- Login screen -------------------------------------------------------- */
+.adminlogin-page {
+  background-color: #0d0d11;
+  background-image:
+    linear-gradient(rgba(10, 10, 14, 0.62), rgba(10, 10, 14, 0.78)),
+    url('/images/afc-admin-desktop.webp') !important;
+  background-size: cover, cover !important;
+  background-position: center, center !important;
+  background-repeat: no-repeat !important;
+  background-attachment: fixed !important;
+}
+
+@media (max-width: 768px) {
+  .adminlogin-page {
+    background-image:
+      linear-gradient(rgba(10, 10, 14, 0.66), rgba(10, 10, 14, 0.82)),
+      url('/images/afc-admin-mobile.webp') !important;
+    background-attachment: scroll !important;
+  }
+}
+
+/* --- Dashboard ----------------------------------------------------------- */
+/* The artwork is busy, so inside the dashboard it sits behind a heavier
+   scrim: this is a working tool and the tables must stay readable. */
+.adm {
+  position: relative;
+  background-color: #0d0d11;
+  isolation: isolate;
+}
+
+.adm::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(12, 12, 16, 0.86), rgba(12, 12, 16, 0.93)),
+    url('/images/afc-admin-desktop.webp');
+  background-size: cover, cover;
+  background-position: center, center;
+  background-repeat: no-repeat;
+  pointer-events: none;
+  z-index: -1;
+}
+
+@media (max-width: 768px) {
+  .adm::before {
+    background-image:
+      linear-gradient(rgba(12, 12, 16, 0.88), rgba(12, 12, 16, 0.94)),
+      url('/images/afc-admin-mobile.webp');
+  }
+}
+
+/* Panels sit above the backdrop, translucent enough to let it show through */
+.adm-side,
+.adm-top {
+  background: rgba(18, 18, 24, 0.9) !important;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.adm-body { background: transparent !important; }
+
+
+/* Inside the dashboard the artwork is decoration, not the subject: the tables
+   and forms are. Raise the scrim so the backdrop reads as texture rather than
+   competing with the data, and keep the login screen as the place the full
+   image shows. */
+.adm::before {
+  background-image:
+    linear-gradient(rgba(12, 12, 16, 0.94), rgba(12, 12, 16, 0.97)),
+    url('/images/afc-admin-desktop.webp') !important;
+}
+
+@media (max-width: 768px) {
+  .adm::before {
+    background-image:
+      linear-gradient(rgba(12, 12, 16, 0.95), rgba(12, 12, 16, 0.975)),
+      url('/images/afc-admin-mobile.webp') !important;
+  }
+}
+
+/* Content panels need a touch more opacity against the darker ground */
+.adm-card,
+.adm-panel,
+.adm-table-wrap {
+  background: rgba(22, 22, 28, 0.92) !important;
+}
+
+
+/* ==========================================================================
+   51. LIGHT FOOTER (optional)
+   Inverts the footer from the dark charcoal band to a white/ivory ground.
+   Everything here re-states a colour that was written for a dark ground —
+   remove this whole section to go back.
+   ========================================================================== */
+.exact-footer,
+.footer-columns-section,
+.footer-bottom-bar,
+.footer-brand-band {
+  background: var(--surface) !important;
+}
+
+/* A hairline top rule replaces the tonal shift that used to separate the
+   footer from the page. */
+.exact-footer { border-top: 1px solid var(--border-color); }
+
+.footer-brand-band { border-bottom: 1px solid var(--border-color) !important; }
+
+.footer-column {
+  background: var(--surface-alt) !important;
+  border: 1px solid var(--border-color) !important;
+}
+
+.footer-column h4 { color: var(--afc-gold) !important; }
+.footer-column a,
+.footer-link-btn { color: var(--text-muted) !important; }
+.footer-column a:hover,
+.footer-link-btn:hover { color: var(--afc-gold) !important; }
+
+.footer-tagline { color: var(--afc-gold) !important; }
+.footer-contact { color: var(--text-muted) !important; }
+.footer-contact a { color: var(--afc-gold) !important; }
+
+.fbb-app p, .fbb-section { color: var(--text-muted) !important; }
+
+.footer-brand-inner .afc-wordmark-top { color: var(--afc-red) !important; }
+.footer-brand-inner .afc-wordmark-main { color: var(--text-main) !important; }
+.footer-brand-inner .afc-wordmark-sub { color: var(--text-muted) !important; }
+.footer-brand-inner .afc-crest { box-shadow: 0 0 0 1px var(--border-color) !important; }
+
+.footer-bottom-bar { border-top: 1px solid var(--border-color) !important; }
+
+.lang-select {
+  border: 1px solid var(--border-color) !important;
+  color: var(--text-main) !important;
+}
+
+/* The payment marks needed a light plate to read on the dark band; on white
+   they sit directly on the ground. */
+.pay-item { background: transparent !important; padding: 0 !important; }
+.vbv-text, .electron-text { color: #1A1F71 !important; }
+.mc-text { color: var(--text-main) !important; }
+
+.omnireach-ltd, .omnireach-powered, .fh-powered { color: var(--text-muted) !important; }
+.footer-foodhub { border-top: 1px solid var(--border-color); }
+
+/* The hygiene badge already had a white card; it now needs a border to stay
+   distinct from the footer behind it. */
+.hygiene-card-footer { border: 1px solid var(--border-color) !important; }
+
+
+/* ==========================================================================
+   52. FOOTER — compact light layout
+   Replaces four stacked full-width bands with one grid plus two thin strips.
+   The old structure spent most of its height on section padding rather than
+   content.
+   ========================================================================== */
+
+.exact-footer {
+  background: var(--surface) !important;
+  border-top: 1px solid var(--border-color);
+  padding-bottom: 0 !important;
+}
+
+/* --- Main grid ----------------------------------------------------------- */
+.footer-main { padding: 26px 24px 20px; }
+
+.footer-main-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1.3fr;
+  gap: 28px;
+  align-items: start;
+}
+
+.footer-col { display: flex; flex-direction: column; gap: 7px; min-width: 0; }
+
+.footer-col h4 {
+  font-family: 'Source Serif 4', Georgia, serif !important;
+  font-size: 0.86rem !important;
+  font-weight: 600 !important;
+  color: var(--text-main) !important;
+  margin: 0 0 4px !important;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--border-color);
+  letter-spacing: 0 !important;
+  text-transform: none !important;
+}
+
+.footer-col a,
+.footer-link-btn {
+  color: var(--text-muted) !important;
+  font-size: 0.8rem !important;
+  text-align: left;
+  background: none;
+  border: none;
+  padding: 0 !important;
+  min-height: 0 !important;
+  display: block !important;
+  width: auto !important;
+  margin: 0 !important;
+  cursor: pointer;
+  transition: color var(--transition-fast);
+}
+
+.footer-col a:hover,
+.footer-link-btn:hover { color: var(--afc-gold) !important; }
+
+/* Brand column */
+.footer-col-brand { gap: 10px; }
+
+.footer-col-brand .footer-tagline {
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-style: italic;
+  font-size: 0.82rem !important;
+  color: var(--text-muted) !important;
+  margin: 0 !important;
+  max-width: 30ch;
+  line-height: 1.45;
+}
+
+.exact-footer .footer-install-btn {
+  align-self: flex-start;
+  padding: 9px 18px !important;
+  font-size: 0.7rem !important;
+  border-radius: var(--radius-full) !important;
+}
+
+/* Contact column: icon + text rows */
+.footer-detail {
+  display: flex !important;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 0.8rem;
+  color: var(--text-muted) !important;
+  margin: 0 !important;
+  line-height: 1.45;
+  text-decoration: none;
+}
+
+.footer-detail svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: var(--afc-gold);
+}
+
+a.footer-detail:hover { color: var(--afc-gold) !important; }
+
+/* --- Strip: hygiene, payment, language ----------------------------------- */
+.footer-strip {
+  border-top: 1px solid var(--border-color);
+  background: var(--surface-alt);
+  padding: 12px 24px;
+}
+
+.footer-strip-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+/* Hygiene rating as one inline lockup rather than a boxed card */
+.footer-hygiene {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.fh-score {
+  display: grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #2E7D32;
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.78rem;
+}
+
+.fh-verdict {
+  color: #2E7D32;
+  font-weight: 600;
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.footer-pay { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+.footer-pay .pay-item { background: transparent !important; padding: 0 !important; }
+
+.exact-footer .lang-select {
+  background: var(--surface) !important;
+  border: 1px solid var(--border-color) !important;
+  color: var(--text-muted) !important;
+  border-radius: var(--radius-full) !important;
+  padding: 6px 13px !important;
+  font-size: 0.74rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* --- Legal line ---------------------------------------------------------- */
+.footer-legal {
+  border-top: 1px solid var(--border-color);
+  padding: 11px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}
+
+.footer-legal-sep { opacity: 0.5; }
+.footer-legal .omnireach-logo-img { height: 15px; opacity: 0.75; }
+.footer-legal .omnireach-powered { color: var(--text-muted); }
+
+/* --- Mobile -------------------------------------------------------------- */
+@media (max-width: 768px) {
+  .footer-main { padding: 20px 16px 16px; }
+
+  .footer-main-inner {
+    grid-template-columns: 1fr 1fr;
+    gap: 18px 16px;
+  }
+
+  /* Brand and contact span the full width; the two link lists sit side by
+     side, which keeps the footer short without cramping anything. */
+  .footer-col-brand,
+  .footer-col-contact { grid-column: 1 / -1; }
+
+  .footer-col a,
+  .footer-link-btn { min-height: 30px !important; display: flex !important; align-items: center; }
+
+  .footer-strip { padding: 12px 16px; }
+  .footer-strip-inner { justify-content: center; gap: 14px; }
+  .footer-legal { padding: 10px 16px; text-align: center; }
+
+  /* Clear the fixed bottom nav */
+  .exact-footer { padding-bottom: calc(58px + env(safe-area-inset-bottom)) !important; }
+}
+
+
+/* Mobile footer was 845px, almost all of it gaps between link rows. Tighter
+   spacing throughout while keeping tap targets usable. */
+@media (max-width: 768px) {
+  .footer-main { padding: 16px 16px 12px; }
+  .footer-main-inner { gap: 14px 14px; }
+
+  .footer-col { gap: 2px; }
+  .footer-col h4 { font-size: 0.8rem !important; padding-bottom: 5px; margin-bottom: 2px !important; }
+
+  .footer-col a,
+  .footer-link-btn {
+    min-height: 32px !important;
+    font-size: 0.78rem !important;
+    line-height: 1.2;
+  }
+
+  .footer-col-brand { gap: 7px; }
+  .footer-col-brand .footer-tagline { font-size: 0.76rem !important; max-width: none; }
+  .exact-footer .footer-install-btn { padding: 8px 15px !important; font-size: 0.66rem !important; }
+
+  .footer-col-contact { gap: 8px; }
+  .footer-detail { font-size: 0.76rem; }
+
+  .footer-strip { padding: 10px 16px; }
+  .footer-strip-inner { gap: 10px; }
+  .footer-pay { gap: 10px; }
+  .footer-pay svg { height: 16px; }
+
+  .footer-legal { padding: 9px 16px; font-size: 0.7rem; }
+}
+
+/* The brand crest and wordmark were sized for the old wide band */
+@media (max-width: 768px) {
+  .footer-col-brand .afc-crest { width: 38px !important; height: 38px !important; }
+  .footer-col-brand .afc-wordmark-main { font-size: 0.92rem !important; }
+}
+
+
+/* ==========================================================================
+   53. ADMIN INPUT CONTRAST FIX
+   Section 23 restyled every input in the app to a light pill (#F1F3F5) for
+   the customer UI. The admin dashboard is dark and its own CSS sets white
+   input text — so typed text became white-on-light-grey (~1.07:1) and
+   effectively invisible.
+
+   The customer styling is scoped away from `.adm`, and admin inputs get a
+   proper dark-field treatment instead.
+   ========================================================================== */
+.adm input,
+.adm textarea,
+.adm select {
+  background: #1C1C24 !important;
+  border: 1px solid rgba(255, 255, 255, 0.14) !important;
+  color: #F2EEE6 !important;
+  border-radius: var(--radius-sm) !important;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.adm input::placeholder,
+.adm textarea::placeholder { color: rgba(242, 238, 230, 0.42) !important; }
+
+.adm input:focus,
+.adm textarea:focus,
+.adm select:focus {
+  border-color: var(--afc-gold) !important;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(201, 162, 39, 0.22) !important;
+}
+
+/* Checkboxes and radios keep the browser's own control — a background and
+   text colour on them only breaks the tick. */
+.adm input[type="checkbox"],
+.adm input[type="radio"] {
+  background: initial !important;
+  border: initial !important;
+  border-radius: initial !important;
+  padding: 0 !important;
+  accent-color: var(--afc-gold);
+  width: 16px;
+  height: 16px;
+}
+
+/* Select dropdown options render on the OS layer and need their own colours */
+.adm select option {
+  background: #1C1C24;
+  color: #F2EEE6;
+}
+
+/* Number inputs in the menu editor (prices) sit in tight table cells */
+.adm input[type="number"] { text-align: right; }
+
+
+/* ==========================================================================
+   54. PREMIUM REFINEMENTS
+   No new colours — the same ivory/sage/terracotta palette, applied with more
+   care: finer type, layered shadows instead of flat ones, gold hairlines,
+   and considered hover states.
+   ========================================================================== */
+
+/* --- Typography: a touch more refinement ---------------------------------- */
+.menu-item-card .item-details h4,
+.recommended-card .rec-info h4 {
+  letter-spacing: -0.012em !important;
+  line-height: 1.24 !important;
+}
+
+/* Prices in tabular figures so columns of numbers align down the grid */
+.item-price, .price, .total-price, .summary-total, .modal-total-price {
+  font-variant-numeric: tabular-nums !important;
+  letter-spacing: -0.01em !important;
+}
+
+/* --- Cards: layered depth, gold hairline on hover ------------------------- */
+.menu-item-card {
+  box-shadow:
+    0 1px 2px rgba(42, 38, 34, 0.05),
+    0 6px 16px rgba(42, 38, 34, 0.05) !important;
+  transition: transform 0.22s cubic-bezier(0.22, 1, 0.36, 1),
+              box-shadow 0.22s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.menu-item-card:hover {
+  transform: translateY(-4px) !important;
+  box-shadow:
+    0 2px 4px rgba(42, 38, 34, 0.06),
+    0 14px 32px rgba(42, 38, 34, 0.13),
+    inset 0 0 0 1px rgba(79, 122, 91, 0.18) !important;
+}
+
+/* The product photo lifts very slightly with the card */
+.menu-item-card .item-image {
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.menu-item-card:hover .item-image { transform: scale(1.04); }
+
+/* --- Add button: fills from the centre ------------------------------------ */
+.menu-item-card .add-btn {
+  transition: background 0.2s ease, transform 0.2s cubic-bezier(0.22, 1, 0.36, 1),
+              box-shadow 0.2s ease;
+}
+
+.menu-item-card:hover .add-btn {
+  transform: scale(1.1);
+  box-shadow: 0 3px 12px rgba(79, 122, 91, 0.4) !important;
+}
+
+/* --- Section headings: gold hairline rule --------------------------------- */
+.afc-section-head {
+  position: relative;
+  padding-bottom: 2px;
+}
+
+.afc-section-head > span {
+  position: relative;
+  padding-bottom: 7px !important;
+}
+
+/* A short gold underline anchored to the text, not the full row */
+.afc-section-head > span::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 26px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--afc-gold);
+}
+
+/* --- Buttons: subtler, more considered ------------------------------------ */
+.modal-add-btn,
+.primary-btn,
+.checkout-btn,
+.place-order-btn,
+.app-install-btn,
+.info-order-now,
+.reviews-order-now {
+  transition: background 0.2s ease, transform 0.2s cubic-bezier(0.22, 1, 0.36, 1),
+              box-shadow 0.2s ease !important;
+}
+
+.modal-add-btn:hover:not(:disabled),
+.primary-btn:hover,
+.checkout-btn:hover,
+.app-install-btn:hover,
+.info-order-now:hover,
+.reviews-order-now:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(79, 122, 91, 0.32) !important;
+}
+
+/* --- Deal strip: a quiet gold sheen --------------------------------------- */
+.afc-dealstrip {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.22s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.22s ease;
+}
+
+.afc-dealstrip::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(105deg, transparent 40%, rgba(201, 162, 39, 0.14) 50%, transparent 60%);
+  transform: translateX(-100%);
+  transition: transform 0.7s ease;
+  pointer-events: none;
+}
+
+.afc-dealstrip:hover::after { transform: translateX(100%); }
+
+/* --- Hero pills: crisper glass -------------------------------------------- */
+.afc-hero-meta-item {
+  transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.afc-hero-meta-item:hover { transform: translateY(-1px); }
+
+/* --- Category rail: gold indicator ---------------------------------------- */
+.afc-catrail-chip {
+  position: relative;
+  transition: color 0.18s ease;
+}
+
+.afc-catrail-chip.active::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 6px;
+  width: 18px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--afc-gold);
+  transform: translateX(-50%);
+}
+
+/* --- Footer: gold hairline under column headings -------------------------- */
+.footer-col h4 {
+  position: relative;
+  border-bottom-color: var(--border-color) !important;
+}
+
+.footer-col h4::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  width: 22px;
+  height: 1px;
+  background: var(--afc-gold);
+}
+
+/* --- Modals: softer entrance ---------------------------------------------- */
+.modal-content {
+  box-shadow:
+    0 2px 6px rgba(42, 38, 34, 0.08),
+    0 24px 60px rgba(42, 38, 34, 0.18) !important;
+}
+
+/* --- Selection colour ------------------------------------------------------ */
+::selection {
+  background: rgba(79, 122, 91, 0.22);
+  color: var(--text-main);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .menu-item-card, .menu-item-card .item-image, .afc-dealstrip::after { transition: none !important; }
+  .menu-item-card:hover { transform: none !important; }
+  .menu-item-card:hover .item-image { transform: none !important; }
+}
+
+
+/* ==========================================================================
+   55. ADMIN LOGIN INPUTS
+   The dashboard fix in section 53 was scoped to `.adm`, but the login screen
+   is `.adminlogin-page` — so its fields kept the customer light pill with
+   white text AND a white caret, making both the typed text and the cursor
+   invisible.
+   ========================================================================== */
+.adminlogin-page input,
+.adminlogin-page .adminlogin-input {
+  background: #1C1C24 !important;
+  border: 1px solid rgba(255, 255, 255, 0.16) !important;
+  color: #F2EEE6 !important;
+  caret-color: #F2EEE6 !important;  /* ivory — matches the field text */
+  border-radius: var(--radius-sm) !important;
+}
+
+.adminlogin-page input::placeholder { color: rgba(242, 238, 230, 0.42) !important; }
+
+.adminlogin-page input:focus {
+  border-color: var(--afc-gold) !important;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(201, 162, 39, 0.22) !important;
+}
+
+/* Chrome's autofill repaints the field with its own colours, which would
+   bring the invisible-text problem straight back. */
+.adminlogin-page input:-webkit-autofill,
+.adminlogin-page input:-webkit-autofill:hover,
+.adminlogin-page input:-webkit-autofill:focus,
+.adm input:-webkit-autofill,
+.adm input:-webkit-autofill:hover,
+.adm input:-webkit-autofill:focus {
+  -webkit-text-fill-color: #F2EEE6 !important;
+  -webkit-box-shadow: 0 0 0 1000px #1C1C24 inset !important;
+  caret-color: #F2EEE6 !important;  /* ivory — matches the field text */
+}
+
+/* An explicit caret everywhere, so it never inherits an invisible colour:
+   gold on the dark admin fields, ink on the light customer ones. */
+.adm input,
+.adm textarea,
+.adm select { caret-color: #F2EEE6 !important;  /* ivory — matches the field text */ }
+
+input, textarea { caret-color: var(--text-main); }
+
+
+/* ==========================================================================
+   56. ADMIN BACKDROP — image visible, content still readable
+   Previously the whole backdrop sat under a 94-97% scrim, which kept tables
+   readable but reduced the artwork to a faint texture.
+
+   The scrim now drops to ~55% so the photograph actually reads, and the
+   contrast the content needs comes from the PANELS instead: the sidebar, top
+   bar and cards become near-opaque with a blur behind them. The image shows
+   in the open areas; text never sits directly on it.
+   ========================================================================== */
+.adm::before {
+  background-image:
+    linear-gradient(rgba(10, 10, 14, 0.52), rgba(10, 10, 14, 0.60)),
+    url('/images/afc-admin-desktop.webp') !important;
+  background-size: cover, cover !important;
+  background-position: center center, center center !important;
+  background-attachment: fixed, fixed !important;
+}
+
+@media (max-width: 768px) {
+  .adm::before {
+    background-image:
+      linear-gradient(rgba(10, 10, 14, 0.58), rgba(10, 10, 14, 0.66)),
+      url('/images/afc-admin-mobile.webp') !important;
+  }
+}
+
+/* --- Panels carry the contrast now --------------------------------------- */
+.adm-side,
+.adm-top {
+  background: rgba(16, 16, 22, 0.93) !important;
+  backdrop-filter: blur(16px) saturate(140%);
+  -webkit-backdrop-filter: blur(16px) saturate(140%);
+  border-color: rgba(255, 255, 255, 0.09) !important;
+}
+
+/* Content cards: glass panels that float over the photograph */
+.adm-card,
+.adm-panel,
+.adm-table-wrap,
+.adm-body > div:not(.adm-note):not(.adm-err) {
+  background: rgba(18, 18, 24, 0.90) !important;
+  backdrop-filter: blur(14px) saturate(130%);
+  -webkit-backdrop-filter: blur(14px) saturate(130%);
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-radius: var(--radius-md) !important;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.42) !important;
+}
+
+/* Tables sit inside those panels, so they stay transparent and inherit */
+.adm table,
+.adm thead,
+.adm tbody,
+.adm tr { background: transparent !important; }
+
+.adm th {
+  background: rgba(255, 255, 255, 0.04) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.10) !important;
+}
+
+.adm td { border-bottom: 1px solid rgba(255, 255, 255, 0.06) !important; }
+.adm tbody tr:hover td { background: rgba(255, 255, 255, 0.03) !important; }
+
+/* A soft vignette keeps the edges of the photograph from fighting the
+   sidebar, without dimming the middle where the artwork is strongest. */
+.adm::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(
+    120% 90% at 50% 40%,
+    transparent 30%,
+    rgba(10, 10, 14, 0.45) 100%
+  );
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Fallback where backdrop-filter is unsupported: panels go near-opaque so
+   nothing is left unreadable over the photograph. */
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .adm-side, .adm-top { background: rgba(16, 16, 22, 0.98) !important; }
+  .adm-card, .adm-panel, .adm-table-wrap,
+  .adm-body > div:not(.adm-note):not(.adm-err) { background: rgba(18, 18, 24, 0.97) !important; }
+}

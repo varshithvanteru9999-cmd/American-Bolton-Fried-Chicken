@@ -1,0 +1,321 @@
+/* ==========================================================================
+   AMERICAN FRIED CHICKEN LTD — Bolton
+   Design system / global tokens.
+
+   PROFESSIONAL THEME — "Ivory & Sage".
+   White cards on a warm off-white ground, warm grey-brown text, muted sage
+   green for actions and terracotta for prices. Light and clean, but with
+   warm neutrals so it reads as a restaurant rather than a software product.
+
+   Typography pairs a warm serif (Source Serif 4) for headings with Inter for
+   body copy. Source Serif is lower-contrast and friendlier than the previous
+   display face, which suited near-black but looks brittle on ivory.
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  /* --- Brand colours: "Ivory & Sage" -------------------------------------
+     A light, professional palette. Warm off-white surfaces, warm grey-brown
+     text, a muted sage green as the action colour and terracotta for prices.
+     Warm neutrals (not cool greys) are what make it read as hospitality
+     rather than as a software product.
+
+     The `--afc-*` names are historical: they were coined for the crest's
+     navy/red/cream and are now the app's generic ramps, so the ~250 existing
+     references across the codebase pick up this palette without being
+     rewritten. `navy` = the ink/structure ramp, `red` = the warm accent ramp,
+     `gold` = the action ramp, `cream` = the ground ramp.
+     ---------------------------------------------------------------------- */
+
+  /* Ink / structure — warm charcoal through taupe */
+  --afc-navy: #2A2622;        /* primary text      */
+  --afc-navy-dark: #1B1815;   /* deepest ink       */
+  --afc-navy-light: #4A443C;  /* secondary ink     */
+
+  /* Warm accent — terracotta, used for prices and emphasis */
+  --afc-red: #B4552D;
+  --afc-red-dark: #91421F;
+  --afc-red-light: #C96A42;
+
+  /* Ground — warm ivory */
+  --afc-cream: #F8F6F1;
+  --afc-cream-dark: #EFEBE2;
+
+  /* Action — muted sage green (kept under the `gold` names) */
+  --afc-gold: #4F7A5B;        /* primary action    */
+  --afc-gold-soft: #5F8F6C;   /* hover             */
+  --afc-gold-deep: #3E6249;   /* pressed           */
+
+  /* --- Semantic aliases (what components actually reference) --- */
+  --primary: var(--afc-gold);
+  --primary-hover: var(--afc-gold-soft);
+  --secondary: var(--afc-red);
+  --accent: var(--afc-gold);
+
+  --bg-color: #F8F6F1;
+  --surface: #FFFFFF;
+  --surface-alt: #FBFAF7;
+  --surface-hover: #F4F1EA;
+  --surface-raised: #FFFFFF;
+
+  --text-main: #2A2622;
+  --text-muted: #7A736A;
+  --text-on-dark: #F8F6F1;
+  --text-on-gold: #FFFFFF;    /* text on a sage fill */
+
+  --border-color: #E8E3D9;
+  --border-strong: #D5CEC0;
+
+  --success: #4F7A5B;
+  --danger: #B4552D;
+
+  /* --- Layout --- */
+  --max-width: 1240px;
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --spacing-2xl: 48px;
+
+  /* Heights of the fixed chrome, referenced by sticky offsets everywhere */
+  --nav-height: 68px;
+  --nav-height-mobile: 58px;
+  --catrail-height: 52px;
+
+  /* --- Radius: soft-UI. Panels are generously rounded and every control is
+     a full pill, which is what gives the reference style its character. --- */
+  --radius-sm: 12px;
+  --radius-md: 18px;
+  --radius-lg: 24px;
+  --radius-full: 999px;
+
+  /* --- Shadows: wide, diffuse and low-opacity. In soft UI the shadow does
+     the work a border used to do, so panels carry no outline at all —
+     separation comes from the lift, not from a drawn edge. --- */
+  --shadow-sm: 0 2px 8px rgba(42, 38, 34, 0.05);
+  --shadow-md: 0 6px 20px rgba(42, 38, 34, 0.07);
+  --shadow-lg: 0 14px 38px rgba(42, 38, 34, 0.10);
+  --shadow-float: 0 22px 56px rgba(42, 38, 34, 0.14);
+
+  /* The signature soft-UI card lift: a tight contact shadow plus a wide
+     ambient one, so the panel reads as resting just above the page. */
+  --shadow-soft: 0 1px 2px rgba(42, 38, 34, 0.04),
+                 0 8px 24px rgba(42, 38, 34, 0.06);
+  --shadow-soft-lift: 0 2px 4px rgba(42, 38, 34, 0.05),
+                      0 16px 40px rgba(42, 38, 34, 0.11);
+
+  /* Frosted glass, used only where a surface floats over imagery */
+  --glass-bg: rgba(255, 255, 255, 0.72);
+  --glass-bg-strong: rgba(255, 255, 255, 0.86);
+  --glass-edge: rgba(255, 255, 255, 0.85);
+  --glass-blur: saturate(180%) blur(20px);
+
+  --rim-gold: inset 0 0 0 1px rgba(79, 122, 91, 0.22);
+
+  /* --- Transitions --- */
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.3s ease;
+
+  /* Mandatory screenshot viewports */
+  --vp-412: 412px; /* Samsung Galaxy S20 Ultra */
+  --vp-390: 390px; /* iPhone 14              */
+  --vp-375: 375px; /* iPhone SE              */
+  --vp-360: 360px; /* Small Android          */
+
+  /* Z-index ladder */
+  --z-rail:   90;
+  --z-drawer: 100;
+  --z-modal:  200;
+  --z-toast:  300;
+
+  /* PWA theme */
+  --theme-color: #F8F6F1;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* --- Typography ---------------------------------------------------------
+   A high-contrast serif carries the headings. Premium type is set tight and
+   in mixed case — the shouty uppercase of the previous theme is gone.
+   ------------------------------------------------------------------------ */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-weight: 600;
+  line-height: 1.18;
+  letter-spacing: -0.01em;
+  color: var(--text-main);
+}
+
+h1 { font-size: 3.1rem; }
+h2 { font-size: 2.2rem; }
+h3 { font-size: 1.45rem; }
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+/* --- Utilities --------------------------------------------------------- */
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--spacing-lg);
+}
+
+/* Eyebrow label: small caps rule used above section titles */
+.afc-eyebrow {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--afc-gold);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.afc-eyebrow::after {
+  content: '';
+  flex: 1;
+  height: 2px;
+  background: linear-gradient(90deg, var(--afc-gold), transparent);
+}
+
+/* Section divider: a single fine gold rule that fades at both ends. The
+   stars-and-stripes band read as novelty, not premium. */
+.afc-stripe {
+  height: 1px;
+  width: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(201, 162, 39, 0.55) 22%,
+    rgba(201, 162, 39, 0.85) 50%,
+    rgba(201, 162, 39, 0.55) 78%,
+    transparent 100%
+  );
+}
+
+/* --- Buttons -----------------------------------------------------------
+   The primary action is gold on near-black. The chunky 3px "hard shadow"
+   press effect of the diner theme is replaced by a quiet lift.
+   ----------------------------------------------------------------------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  padding: 14px 30px;
+  border-radius: var(--radius-full);
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  transition: background var(--transition-fast), color var(--transition-fast),
+              transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.btn-primary {
+  background: linear-gradient(180deg, var(--afc-gold-soft) 0%, var(--afc-gold) 100%);
+  color: var(--text-on-gold);
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-primary:hover {
+  background: var(--afc-gold-soft);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-primary:active { transform: translateY(0); }
+
+.btn-navy {
+  background: var(--surface-raised);
+  color: var(--text-main);
+  box-shadow: var(--rim-gold);
+}
+
+.btn-navy:hover { background: var(--surface-hover); }
+
+/* Outline: a hairline gold rule, filling softly on hover */
+.btn-outline {
+  background: transparent;
+  color: var(--afc-gold);
+  border: 1px solid var(--border-strong);
+}
+
+.btn-outline:hover {
+  background: rgba(201, 162, 39, 0.10);
+  border-color: var(--afc-gold);
+}
+
+.btn-icon {
+  padding: 9px;
+  border-radius: var(--radius-sm);
+  background: var(--surface-raised);
+  border: 1px solid var(--border-color);
+  color: var(--text-main);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-icon:hover {
+  background: var(--surface-hover);
+  border-color: var(--border-strong);
+}
+
+/* --- Focus ring: one visible style across the whole app ----------------- */
+:focus-visible {
+  outline: 2px solid var(--afc-gold-soft);
+  outline-offset: 2px;
+}
+
+/* --- Animations -------------------------------------------------------- */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn var(--transition-normal) forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* --- Responsive -------------------------------------------------------- */
+@media (max-width: 768px) {
+  h1 { font-size: 2.1rem; }
+  h2 { font-size: 1.6rem; }
+  .container { padding: 0 var(--spacing-md); }
+}

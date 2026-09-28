@@ -1,0 +1,206 @@
+.category-page {
+  min-height: 100vh;
+  background: var(--surface-alt);
+  padding-bottom: 140px; /* room for basket bar + bottom nav */
+}
+
+.category-page-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  background: var(--surface);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+}
+
+.category-page-header h2 {
+  flex: 1;
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.header-icon-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-main);
+  padding: 4px;
+}
+
+.header-icon-btn:hover {
+  color: var(--afc-gold);
+}
+
+.category-filter-row {
+  padding: 10px 16px;
+  background: var(--surface);
+  border-bottom: 1px solid #eee;
+}
+
+.category-filter-row input {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  font-size: 15px;
+  font-family: inherit;
+  box-sizing: border-box;
+  outline: none;
+}
+
+.category-filter-row input:focus {
+  border-color: var(--afc-gold);
+}
+
+.category-hero {
+  display: block;
+  width: 100%;
+  height: 215px;
+  object-fit: cover;
+}
+
+.category-items {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  padding: 12px;
+}
+
+.category-empty {
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 14px;
+  padding: 40px 16px;
+  margin: 0;
+}
+
+/* Desktop: constrain width and use two columns */
+@media (min-width: 769px) {
+  .category-hero {
+    max-width: 900px;
+    margin: 0 auto;
+    height: 260px;
+    border-radius: 0 0 12px 12px;
+  }
+
+  .category-items {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 16px;
+  }
+
+  .category-page {
+    padding-bottom: 80px;
+  }
+}
+
+/* ==========================================================================
+   AMERICAN FRIED CHICKEN — shared page theme layer
+   Appended to each page stylesheet so the brand palette and type reach every
+   route without rewriting the structural rules underneath.
+   ========================================================================== */
+
+/* --- Page headers ------------------------------------------------------- */
+.info-header,
+.reviews-header,
+.about-hero,
+.static-page-header {
+  background: var(--afc-navy);
+  border-bottom: 3px solid var(--afc-red);
+  color: var(--afc-cream);
+}
+
+.info-header h1,
+.reviews-header h1,
+.about-hero h1,
+.static-page-header h1 {
+  font-family: 'Source Serif 4', Georgia, serif;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #fff;
+}
+
+.info-order-now {
+  background: var(--afc-red);
+  color: #fff;
+  font-family: 'Source Serif 4', Georgia, serif;
+  letter-spacing: 0.08em;
+  border-radius: var(--radius-sm);
+}
+
+.info-order-now:hover { background: var(--afc-red-light); }
+
+/* --- Cards / panels ----------------------------------------------------- */
+.info-card,
+.review-card,
+.about-card,
+.static-card {
+  background: var(--surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+}
+
+.info-card-head {
+  font-family: 'Source Serif 4', Georgia, serif;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--afc-navy);
+  border-bottom: 2px solid var(--afc-gold);
+}
+
+/* --- Section headings across static pages ------------------------------- */
+.static-page h2,
+.about-page h2,
+.reviews-page h2 {
+  font-family: 'Source Serif 4', Georgia, serif;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--afc-navy);
+}
+
+/* --- Buttons ------------------------------------------------------------ */
+.primary-btn,
+.checkout-btn,
+.place-order-btn,
+.review-submit-btn {
+  background: var(--afc-red);
+  color: #fff;
+  font-family: 'Source Serif 4', Georgia, serif;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  border-radius: var(--radius-sm);
+  box-shadow: 0 3px 0 var(--afc-red-dark);
+  border: none;
+}
+
+.primary-btn:hover,
+.checkout-btn:hover,
+.place-order-btn:hover,
+.review-submit-btn:hover { background: var(--afc-red-light); }
+
+/* --- Ratings ------------------------------------------------------------ */
+.info-rating,
+.review-stars,
+.rating-star { color: var(--afc-gold); }
+
+/* --- Prices ------------------------------------------------------------- */
+.price,
+.item-price,
+.total-price,
+.summary-total {
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-weight: 600;
+  color: var(--afc-red);
+}

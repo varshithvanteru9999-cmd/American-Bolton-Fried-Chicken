@@ -1,0 +1,752 @@
+{
+  "initConfig": "{\"api_version\":\"v2022_05_05\",\"address_search\":\"postcode\",\"region\":{\"id\":1,\"name\":\"UK\",\"time_zone\":\"Europe\\/London\"},\"country\":{\"id\":1,\"name\":\"United Kingdom\",\"code\":826,\"iso\":\"GB\",\"syncInitialConfig\":0,\"alias\":\"united kingdom\",\"tax_type\":\"EXCLUDED\",\"customer_care_number\":\"+441782444282\",\"phone_number_starts_with\":\"07,08,44\",\"short_name\":\"UK\",\"distance_type\":\"miles\",\"phone_code\":44,\"iso3\":\"GBR\",\"support_email\":\"\",\"distance_label\":\"mi\"},\"currency\":{\"id\":2,\"value\":1,\"name\":\"Pound\",\"symbol\":\"£\",\"iso\":\"GBP\",\"currency_unit\":\"pence\",\"sign\":\"£\",\"currency_symbol\":\"&pound;\",\"iso_alpha_code\":\"GBP\",\"country_id\":1},\"landing_page\":\"ordernow\",\"extra_page\":null,\"post_code\":{\"fusion_reg_ex\":\"([a-z]{1}[a-y]{0,1}[0-9]{1,2})([ ]{0,})([0-9]{1}[a-z]{2}$)|([a-z]{1}[0-9]{1}[a-w]{1})([ ]{0,})([0-9]{1}[a-z]{2}$)|([a-z]{1}[a-y][0-9]{1}[a-y])([ ]{0,})([0-9]{1}[a-z]{2}$)|((gir)([ ]{0,})(0aa)$)|((bfpo)([ ]{0,})[0-9]{1,4}$)|((bfpo)([ ]{0,})(c\\/o([ ]{0,})[0-9]{1,3})$)|(([a-z]{4})([ ]{0,})(1zz)$)\",\"reg_ex\":\"[a-zA-Z0-9 ]{2,45}$\",\"min_length\":\"2\",\"max_length\":\"45\",\"message\":\"The :attribute format is invalid\",\"available\":true,\"name\":\"Postcode\",\"keyboard\":\"NUMERIC\"},\"mobile\":{\"message\":\"Valid mobile number required for :attribute\",\"min_length\":10,\"max_length\":11,\"reg_ex\":\"^0[7|8|9]{1}[0-9]{9}$\"},\"phone\":{\"message\":\"Valid phone number required for :attribute\",\"min_length\":10,\"max_length\":14,\"reg_ex\":\"^0[1-9]{1}[0-9]{9,12}$\"},\"search\":{\"name\":\"Enter your Postcode\",\"type\":\"postcode\",\"min_length\":\"3\",\"max_length\":\"100\",\"reg_ex\":\"^[a-zA-Z0-9 -.,&:_\\\\\\/]+$\",\"message\":\"The :attribute format is invalid\"},\"house_number\":{\"name\":\"Door No\",\"available\":true,\"min_length\":\"1\",\"max_length\":\"100\",\"reg_ex\":\"^(?!0+$)(?!0.0+$)([0-9a-zA-Z ]{1,}$|[0-9a-zA-Z]{1}[0-9a-zA-Z -.,&:_\\\\\\/]{0,}[0-9a-zA-Z]{1}$)\",\"message\":\"The :attribute format is invalid\"},\"flat\":{\"name\":\"Flat\",\"available\":true,\"min_length\":0,\"max_length\":\"100\",\"reg_ex\":\"^[a-zA-Z0-9 -.,&:_\\\\\\/]+$\",\"message\":\"The :attribute format is invalid\"},\"address_line1\":{\"name\":\"Street\",\"available\":true,\"min_length\":\"1\",\"max_length\":\"100\",\"reg_ex\":\"^[a-zA-Z0-9 -.,&:_\\\\\\/]+$\",\"message\":\"The :attribute format is invalid\"},\"address_line2\":{\"name\":\"City\",\"available\":true,\"min_length\":\"1\",\"max_length\":\"100\",\"reg_ex\":\"^[a-zA-Z0-9 -.,&:_\\\\\\/]+$\",\"message\":\"The :attribute format is invalid\"},\"area\":{\"name\":\"State\",\"available\":false,\"min_length\":\"1\",\"max_length\":\"100\",\"reg_ex\":\"^[a-zA-Z0-9 -.,&:_\\\\\\/]+$\",\"message\":\"The :attribute format is invalid\"},\"map\":{\"latitude\":\"53.062790\",\"longitude\":\"-2.202990\",\"zoom_level\":\"3\",\"available\":false},\"analytics\":{\"gtm\":\"GTM-PCWKKR4\",\"facebook_pixel\":\"449874532221917\"},\"social_media\":{\"facebook\":\"https:\\/\\/www.facebook.com\\/Foodhub.co.uk\\/\",\"twitter\":\"https:\\/\\/twitter.com\\/FoodhubUK\",\"youtube\":\"https:\\/\\/www.youtube.com\\/channel\\/UC12E2pidPaspN8tWTvaRs-A\",\"instagram\":\"https:\\/\\/www.instagram.com\\/foodhub.co.uk\\/\"},\"language\":{\"default\":{\"name\":\"English (United Kingdom)\",\"code\":\"en-gb\",\"default\":true,\"title\":\"English (United Kingdom)\"},\"options\":[{\"name\":\"Chinese (Simplified)\",\"code\":\"zh\",\"title\":\"Chinese (Simplified)\"},{\"name\":\"香港\",\"code\":\"zh-hant\",\"title\":\"Chinese (Traditional) (zh-Hant)\"},{\"name\":\"English (United States)\",\"code\":\"en-us\",\"title\":\"English (United States)\"},{\"name\":\"Espanol (Spanish)\",\"code\":\"es\",\"title\":\"Spanish\"}]},\"self_signup\":[{\"id\":\"2761\",\"name\":\"Ultimate Android POS\",\"setupFee\":\"99\",\"weeklyFee\":\"7\",\"setupFeeDML\":\"150\",\"weeklyFeeDML\":\"18\",\"description\":\"<div><h5 class='small strong'>Ultimate Android POS<\\/h5><p>An all-in-one cost-effective Android POS system (A920) that streamlines your operations. Manage online orders easily with our handheld system that has integrated payments.<\\/p><p class='small'><span>Set Up Fee : £249<\\/span><\\/p><p class='small'><span>Weekly Rental : £25<\\/span><\\/p><p>3rd Party Payment Processing Fee (per transaction): 3.4% + 20p<\\/p><ul class='planlists'><li><span>Fully integrated Touch Screen EPOS<\\/span><\\/li><li><span>Online, Telephone and In-store order management<\\/span><\\/li><li><span>3rd Party Integration for Payment Processing**<\\/span><\\/li><li><span>Manual orders and Table management<\\/span><\\/li><li><span>Dedicated 24\\/7 Phone Support<\\/span><\\/li><li><span>Foodhub Marketplace Listing<\\/span><\\/li><\\/ul><\\/div>\"},{\"id\":\"2760\",\"name\":\"Ultimate EPOS Package\",\"setupFee\":\"125\",\"weeklyFee\":\"12\",\"setupFeeDML\":\"300\",\"weeklyFeeDML\":\"23\",\"description\":\"<div><h5 class='small strong'>Ultimate EPOS Package<\\/h5><p>Manage your orders from one touch screen POS terminal that can handle online, over the phone or in-store orders. Whether you're taking orders, assigning drivers for delivery or managing reservations and tables - you can do it all with ease<\\/p><p class='small'><span>Set Up Fee : £425<\\/span><\\/p><p class='small'><span>Weekly Rental : £35<\\/span><\\/p><p>3rd Party Payment Processing Fee (per transaction): 3.4% + 20p<\\/p><ul class='planlists'><li><span>Branded website for online orders<\\/span><\\/li><li><span>3rd Party Integration for Payment Processing**<\\/span><\\/li><li><span>Orders automatically sent to wi-fi printer*<\\/span><\\/li><li><span>24\\/7 Chat Support<\\/span><\\/li><li><span>Foodhub Marketplace Listing<\\/span><\\/li><\\/ul><\\/div>\"}],\"address_template\":{\"format\":\"No: <house_number>, ,<flat><address_line1>,<address_line2>\\r\\n<area>\\r\\n<country>\\r\\nZIP : <post_code>\"},\"ms_date_format\":{\"long_format\":{\"date\":\"F-d-Y\",\"time\":\"HH:i:ss\",\"date_time\":\"d\\/M\\/Y h:i:s A\"},\"short_format\":{\"date\":\"d\\/m\\/Y\",\"time\":\"HH:i:s\",\"date_time\":\"d\\/m\\/Y HH:i:s\"}},\"date_format\":{\"long_format\":{\"date\":\"DD\\/MM\\/YYYY\",\"time\":\"H:mm\",\"date_time\":\"DD\\/MM\\/YYYY H:mm\"},\"short_format\":{\"date\":\"DD\\/MM\\/YY\",\"time\":\"hh:mm A\",\"date_time\":\"DD\\/MM\\/YY hh:mm A\"}},\"municipality\":{\"name\":\"Municipality\",\"available\":false,\"min_length\":\"1\",\"max_length\":\"100\",\"reg_ex\":\"^[a-zA-Z0-9 -.,&:_\\/]+$\",\"message\":\"The :attribute format is invalid\"},\"neighborhood\":{\"name\":\"State\",\"available\":false,\"min_length\":\"1\",\"max_length\":\"100\",\"reg_ex\":\"^[a-zA-Z0-9 -.,&:_\\/]+$\",\"message\":\"The :attribute format is invalid\"},\"client_projects\":{\"MY-TAKEAWAY\":{\"coupon_avilable\":[\"ALL\"]}},\"sample_address\":[{\"house_number\":\"12\",\"address_line1\":\"VictoriaParkRoad\",\"address_line2\":\"Stoke-On-Trent\",\"postcode\":\"ST66DX\",\"latitude\":\"53.061129\",\"longitude\":\"-2.204682\"},{\"house_number\":\"13\",\"address_line1\":\"PebbleView\",\"address_line2\":\"Stoke-On-Trent\",\"postcode\":\"ST65SB\",\"latitude\":\"53.062759\",\"longitude\":\"-2.206596\"},{\"house_number\":\"31\",\"flat\":\"PipsTraditionalSweetShop\\/4\",\"address_line1\":\"MachineSt\",\"address_line2\":\"Stoke-On-Trent\",\"postcode\":\"ST66BT\",\"latitude\":\"53.061141\",\"longitude\":\"-2.207122\"},{\"house_number\":\"21\",\"address_line1\":\"ParkTerrace\",\"address_line2\":\"Stoke-On-Trent\",\"postcode\":\"ST66BP\",\"latitude\":\"53.059871\",\"longitude\":\"-2.207680\"},{\"house_number\":\"23\",\"address_line1\":\"ArthurSt\",\"address_line2\":\"Stoke-On-Trent\",\"postcode\":\"ST66BH\",\"latitude\":\"53.060516\",\"longitude\":\"-2.209354\"},{\"house_number\":\"23\",\"address_line1\":\"Tunstall\",\"address_line2\":\"Stoke-On-Trent\",\"postcode\":\"ST65EJ\",\"latitude\":\"53.062591\",\"longitude\":\"-2.211242\"},{\"house_number\":\"23\",\"address_line1\":\"Tunstall\",\"address_line2\":\"Stoke-On-Trent\",\"postcode\":\"ST65NZ\",\"latitude\":\"53.062410\",\"longitude\":\"-2.211564\"},{\"house_number\":\"23\",\"address_line1\":\"JayceanAve\",\"address_line2\":\"Stoke-On-Trent\",\"postcode\":\"ST65NJ\",\"latitude\":\"53.064447\",\"longitude\":\"-2.206833\"},{\"house_number\":\"23\",\"address_line1\":\"ClanwaySt\",\"address_line2\":\"Stoke-On-Trent\",\"postcode\":\"ST65UD\",\"latitude\":\"53.063809\",\"longitude\":\"-2.207895\"},{\"house_number\":\"23\",\"address_line1\":\"ButterfieldPl\",\"address_line2\":\"Stoke-On-Trent\",\"postcode\":\"ST66BA\",\"latitude\":\"53.058103\",\"longitude\":\"-2.208968\"}],\"promotion_campaigns\":{\"opt_in_opt_out_sms\":\"NO\",\"opt_in_opt_out_email\":\"NO\"},\"franchise_policy_clone\":[\"GDPR - ALL PROMO\",\"GB - GDPR -             ALLERGY INFORMATION             - ALLERGY\",\"GB - GDPR - FOODHUB - TERMS AND CONDITIONS\",\"GDPR - FOODHUB - Terms of use\",\"GB - GDPR - Foodhub - PRIVACY POLICY\",\"GB - GDPR - Aboutus - ABOUT US\",\"GDPR - SMS\",\"GDPR - EMAIL\",\"GDPR - PUSH NOTIFICATION\",\"GB - GDPR - FOODHUB - COOKIE POLICY\"],\"sms_provider\":{\"provider\":\"5\",\"from\":\"Foodhub\",\"notificationService\":\"true\"},\"account_number\":{\"min_length\":8,\"max_length\":8,\"pattern\":\"^[0-9]+$\",\"code\":{\"label\":\"Sort Code\",\"min_length\":6,\"max_length\":6,\"pattern\":\"^[0-9]+$\",\"required\":true,\"fields\":[]}},\"payment_provider\":{\"WALLET\":false,\"BARCLEYS\":false,\"SAGEPAY\":false,\"CCAVENUE\":false,\"PRO\":false,\"OPTOMANY\":false,\"STRIPE\":false,\"BARCLAYS_EURO\":false},\"driver_tip\":[5,10,15,20],\"campaign\":{\"campaignURL\":\"https:\\/\\/api-02.moengage.com\\/v1\\/\",\"campaignApiKey\":\"TEc1N1hLSlJYSDA4TjJMNEtKUVVFSDZZOllQb1lPNjE1aUFfUVowaG9BLTQ1X0tWZw==\",\"status\":\"ENABLED\",\"campaignAppID\":\"LG57XKJRXH08N2L4KJQUEH6Y\"},\"universal_coupon\":{\"status\":\"ENABLED\"},\"customer_masking\":{\"proxy_phone\":\"07723429965\",\"country_code\":\"GB\",\"status\":true},\"partial_refund\":{\"status\":\"ENABLED\"},\"global_tip\":{\"status\":\"ENABLED\"},\"customer_phone_verification\":{\"status\":\"DISABLED\"},\"password\":{\"min_length\":7,\"max_length\":100},\"address_components_mapping\":{\"house_number\":{\"map\":[[\"address_components.types.subpremise\"],[\"address_components.types.plus_code\"],[\"address_components.types.street_number\"]]},\"postcode\":{\"map\":[[\"address_components.types.postal_code\"]]},\"town\":{\"map\":[[\"address_components.types.postal_town\"],[\"address_components.types.locality\"]]},\"street\":{\"map\":[[\"address_components.types.route\"],[\"address_components.types.locality\"]]},\"state\":{\"map\":[[\"administrative_area_level_2\",\"administrative_area_level_1\"]]},\"flat\":{\"map\":[[\"address_components.types.subpremise\"]]},\"instructions\":{\"map\":[[\"formatted_address\"]]}},\"BASKET_ITEM_RECCOMENDATION\":{\"status\":\"DISABLED\"},\"BEST_SELLING_ITEM_RECCOMENDATION\":{\"status\":\"DISABLED\"},\"foodhub_wallet_display\":{\"status\":\"ENABLED\"},\"snappy_integration_check\":{\"status\":\"ENABLED\"},\"marketing_promotion_banner\":{\"status\":\"DISABLED\",\"url\":null},\"fh_list_takeaways_test_configuration\":{\"postcodes\":[\"AA11AA\"],\"ips\":[\"172.45.23.654.1\",\"49.249.62.242\",\"125.21.51.170\",\"125.18.36.166\",\"49.204.235.155\",\"103.219.207.67\",\"115.246.238.132\",\"31.24.230.11\",\"82.163.78.100\",\"178.79.166.50\",\"85.239.62.188\",\"198.244.224.116\",\"194.187.248.6\",\"45.146.221.10\",\"37.10.71.151\",\"194.187.248.100\",\"18.132.57.169\",\"35.177.51.175\",\"23.83.161.36\",\"23.83.161.37\",\"23.83.161.38\",\"122.185.69.226\"],\"email_suffix\":[\"foodhub.com\",\"touch2success.com\"]},\"address_2_0\":{\"dynamic_fields\":{\"House\":[{\"label\":\"HOUSE_DOOR_NO\",\"required\":true,\"type\":\"house_number\",\"onEdit\":true,\"reg_ex\":\"^(?!0+$)(?!0.0+$)([0-9a-zA-Z ]{1,}$|[0-9a-zA-Z]{1}[0-9a-zA-Z -.,&:_\\\\\\/]{0,}[0-9a-zA-Z]{1}$)\"},{\"label\":\"STREET\",\"type\":\"address_line1\",\"required\":true,\"onEdit\":false},{\"label\":\"CITY\",\"type\":\"address_line2\",\"required\":true,\"onEdit\":false},{\"label\":\"POSTCODE\",\"type\":\"postcode\",\"onChangeCheck\":true,\"required\":true,\"onEdit\":false}],\"Apartment\":[{\"label\":\"HOUSE_DOOR_NO\",\"required\":true,\"type\":\"house_number\",\"onEdit\":true,\"reg_ex\":\"^(?!0+$)(?!0.0+$)([0-9a-zA-Z ]{1,}$|[0-9a-zA-Z]{1}[0-9a-zA-Z -.,&:_\\\\\\/]{0,}[0-9a-zA-Z]{1}$)\"},{\"label\":\"APARTMENT_NAME\",\"type\":\"apartment_name\",\"required\":false,\"onEdit\":true},{\"label\":\"APT_UNIT_FLOOR\",\"type\":[\"suit_floor_door_no\"],\"required\":false,\"onEdit\":true},{\"label\":\"BUILDING_NAME\",\"type\":\"building_name\",\"required\":false,\"onEdit\":true},{\"label\":\"ENTRY_CODE\",\"type\":\"entry_code\",\"required\":false,\"onEdit\":true},{\"label\":\"STREET\",\"type\":\"address_line1\",\"required\":true,\"onEdit\":false},{\"label\":\"CITY\",\"type\":\"address_line2\",\"required\":true,\"onEdit\":false},{\"label\":\"POSTCODE\",\"type\":\"postcode\",\"required\":true,\"onChangeCheck\":true,\"onEdit\":false}],\"Office\":[{\"label\":\"HOUSE_DOOR_NO\",\"required\":true,\"type\":\"house_number\",\"onEdit\":true,\"reg_ex\":\"^(?!0+$)(?!0.0+$)([0-9a-zA-Z ]{1,}$|[0-9a-zA-Z]{1}[0-9a-zA-Z -.,&:_\\\\\\/]{0,}[0-9a-zA-Z]{1}$)\"},{\"label\":\"BUSINESS_NAME\",\"required\":false,\"type\":\"business_name\",\"onEdit\":true},{\"label\":\"SUITE_FLOOR_DOOR_NO\",\"required\":false,\"type\":[\"suit_floor_door_no\"],\"onEdit\":true},{\"label\":\"STREET\",\"type\":\"address_line1\",\"required\":true,\"onEdit\":false},{\"label\":\"CITY\",\"type\":\"address_line2\",\"required\":true,\"onEdit\":false},{\"label\":\"POSTCODE\",\"type\":\"postcode\",\"required\":true,\"onChangeCheck\":true,\"onEdit\":false}],\"Hotel\":[{\"label\":\"HOUSE_DOOR_NO\",\"required\":true,\"type\":\"house_number\",\"onEdit\":true,\"reg_ex\":\"^(?!0+$)(?!0.0+$)([0-9a-zA-Z ]{1,}$|[0-9a-zA-Z]{1}[0-9a-zA-Z -.,&:_\\\\\\/]{0,}[0-9a-zA-Z]{1}$)\"},{\"label\":\"HOTEL_NAME\",\"required\":false,\"type\":\"hotel_name\",\"onEdit\":true},{\"label\":\"ROOM_FLOOR\",\"type\":[\"room_floor\"],\"required\":false,\"onEdit\":true},{\"label\":\"STREET\",\"type\":\"address_line1\",\"required\":true,\"onEdit\":false},{\"label\":\"CITY\",\"type\":\"address_line2\",\"required\":true,\"onEdit\":false},{\"label\":\"POSTCODE\",\"type\":\"postcode\",\"required\":true,\"onChangeCheck\":true,\"onEdit\":false}],\"Others\":[{\"label\":\"HOUSE_DOOR_NO\",\"required\":true,\"type\":\"house_number\",\"onEdit\":true,\"reg_ex\":\"^(?!0+$)(?!0.0+$)([0-9a-zA-Z ]{1,}$|[0-9a-zA-Z]{1}[0-9a-zA-Z -.,&:_\\\\\\/]{0,}[0-9a-zA-Z]{1}$)\"},{\"label\":\"APT_SUITE_FLOOR_DOOR_NO\",\"type\":[\"apt_suit_floor_door_no\"],\"required\":false,\"onEdit\":true},{\"label\":\"BUSINESS_BUILDING_NAME\",\"type\":\"building_name\",\"required\":false,\"onEdit\":true},{\"label\":\"STREET\",\"type\":\"address_line1\",\"required\":true,\"onEdit\":false},{\"label\":\"CITY\",\"type\":\"address_line2\",\"required\":true,\"onEdit\":false},{\"label\":\"POSTCODE\",\"type\":\"postcode\",\"required\":true,\"onChangeCheck\":true,\"onEdit\":false}]},\"additional_info\":[],\"additional_common_fields\":[{\"label\":\"ADDRESS_LABEL\",\"required\":false,\"type\":\"label\",\"onEdit\":true,\"suggestions\":[\"Home\",\"Office\",\"Other\"]},{\"label\":\"INSTRUCTION_FOR_DELIVERY_PERSON\",\"required\":false,\"type\":\"delivery_instructions\",\"onEdit\":true,\"modified_ui\":true}],\"reversed_mapping_rules\":{\"Hotel\":[],\"House\":[],\"Apartment\":[],\"Office\":[]},\"address_country_configs\":{\"1\":{\"latitude\":\"55.378051\",\"longitude\":\"-3.435973\",\"FULL_ADDRESS_MAPPING\":{\"House\":\"${house_number} ${address_line1}, ${address_line2}, ${postcode}\",\"Hotel\":\"${house_number} ${address_line1}, ${address_line2}, ${postcode}\",\"Apartment\":\"${house_number} ${address_line1}, ${address_line2}, ${postcode}\",\"Office\":\"${house_number} ${address_line1}, ${address_line2}, ${postcode}\",\"Others\":\"${house_number} ${address_line1}, ${address_line2}, ${postcode}\",\"Default\":\"${house_number} ${address_line1}, ${address_line2}, ${postcode}\"}}},\"map_radius\":\"200\",\"flatExclude\":[\"house_number\",\"address_line1\",\"address_line2\",\"postcode\",\"additional_info\",\"label\",\"delivery_instructions\",\"entry_code\",\"latitude\",\"location_accuracy\",\"longitude\",\"instructions\",\"place_id\",\"building_type\",\"entry_code\"],\"default_address_format\":\"${houseNo} ${addressLine1}, ${addressLine2}, ${zipcode}\"},\"dynamic_order_tracking_config\":[{\"component\":\"OrderTrackingWidget\",\"status\":\"ENABLED\"},{\"component\":\"OrderStatusAnimation\",\"status\":\"ENABLED\"},{\"component\":\"ItemSubstitutedInfoWidget\",\"status\":\"ENABLED\"},{\"component\":\"FootballBanner\",\"status\":\"DISABLED\"},{\"component\":\"ImageComponent\",\"status\":\"DISABLED\",\"platform\":\"FOODHUB\",\"props\":{\"customImageStyle\":{\"borderWidth\":1,\"borderColor\":\"#EF901C\",\"borderRadius\":10,\"marginHorizontal\":5},\"imageUrl\":\"https:\\/\\/t2s-android.s3.amazonaws.com\\/foodhub\\/banner\\/app\\/banner_cheaper.jpg\",\"webImageUrl\":\"https:\\/\\/t2s-android.s3.amazonaws.com\\/foodhub\\/banner\\/web\\/banner_cheaper.jpg\"}},{\"component\":\"CouponPromotion\",\"status\":\"ENABLED\"},{\"component\":\"LiveTrackingMap\",\"status\":\"ENABLED\"},{\"component\":\"MapTracker\",\"status\":\"ENABLED\"},{\"component\":\"CustomerExperience\",\"status\":\"ENABLED\"},{\"component\":\"ImageComponent\",\"status\":\"DISABLED\",\"platform\":\"FOODHUB\",\"props\":{\"resizeMode\":\"contain\",\"customImageStyle\":{\"marginHorizontal\":10},\"imageUrl\":\"https:\\/\\/t2s-android.s3.amazonaws.com\\/foodhub\\/banner\\/app\\/zoho_review_banner.jpg\",\"webImageUrl\":\"https:\\/\\/t2s-android.s3.amazonaws.com\\/foodhub\\/banner\\/web\\/zoho_review_banner.jpg\",\"linkingUrl\":\"https:\\/\\/zfrmz.com\\/WJz6XQZpNWKRvOIR9BI9\"}},{\"component\":\"ImageComponent\",\"status\":\"ENABLED\",\"platform\":\"FOODHUB\",\"props\":{\"resizeMode\":\"contain\",\"customImageStyle\":{\"marginHorizontal\":10},\"imageUrl\":\"https:\\/\\/t2s-android.s3.amazonaws.com\\/foodhub\\/banner\\/app\\/driver_tracking.png\",\"webImageUrl\":\"https:\\/\\/t2s-android.s3.amazonaws.com\\/foodhub\\/banner\\/web\\/driver_tracking.png\"}},{\"component\":\"OrderExperience\",\"status\":\"ENABLED\"},{\"component\":\"ReceiveOffers\",\"status\":\"ENABLED\"},{\"component\":\"JoinBetaView\",\"status\":\"ENABLED\"}],\"enable_datman_wallet_to_card\":{\"status\":\"ENABLED\"},\"address_components_mapping_2_0\":{\"house_number\":{\"map\":[[\"address_components.types.subpremise\",\"address_components.types.premise\",\"address_components.types.street_number\"],[\"address_components.types.plus_code\"],[\"address_components.types.street_number\"]]},\"postcode\":{\"map\":[[\"address_components.types.postal_code\"]]},\"town\":{\"map\":[[\"address_components.type.sublocality_level_1\",\"address_components.types.neighborhood\",\"address_components.types.locality\",\"address_components.types.postal_town\"],[\"address_components.type.sublocality_level_1\",\"address_components.types.neighborhood\",\"address_components.types.locality\",\"address_components.types.political\"]]},\"street\":{\"map\":[[\"address_components.types.route\"]]},\"state\":{\"map\":[[\"administrative_area_level_2\",\"administrative_area_level_1\"]]},\"flat\":{\"map\":[[\"address_components.types.subpremise\",\"address_components.types.premise\"]]},\"instructions\":{\"map\":[[\"formatted_address\"]]}},\"animated_cuisines_banner\":{\"status\":\"ENABLED\",\"url\":\"https:\\/\\/assets.foodhub.com\\/static\\/Cuisine_banner.png\",\"web_url\":null,\"takeaway_list_cuisines_position\":4},\"gamification_data\":{\"stadium_url\":\"https:\\/\\/t2s-android.s3.amazonaws.com\\/foodhub\\/banner\\/app\\/app_stadium_new.jpg\",\"stadium_web_url\":\"https:\\/\\/assets.foodhub.com\\/static\\/gamification\\/stadium_web.png\",\"goal_post_animation\":\"https:\\/\\/assets.foodhub.com\\/static\\/goal_post_animation.json\"},\"groceries_position\":{\"status\":\"ENABLED\",\"position\":7},\"phoneNumberValidation\":{\"status\":true},\"order_tracking_dynamic_config\":[{\"component\":\"OrderTrackingWidget\",\"status\":\"ENABLED\"},{\"component\":\"OrderStatusAnimation\",\"status\":\"ENABLED\"},{\"component\":\"ItemSubstitutedInfoWidget\",\"status\":\"ENABLED\"},{\"component\":\"FootballBanner\",\"status\":\"DISABLED\"},{\"component\":\"CouponPromotion\",\"status\":\"ENABLED\"},{\"component\":\"ImageComponent\",\"status\":\"ENABLED\",\"platform\":\"FOODHUB\",\"props\":{\"resizeMode\":\"contain\",\"imageUrl\":\"https:\\/\\/t2s-android.s3.amazonaws.com\\/foodhub\\/banner\\/app\\/f2y_valentine_app.png\",\"webImageUrl\":\"https:\\/\\/t2s-android.s3.amazonaws.com\\/foodhub\\/banner\\/web\\/f2y_valentine_web.png\",\"deepLinkParams\":{\"defaults\":{\"screen\":\"menu_screen\",\"routeParams\":{\"town\":\"newcastle\",\"slug_name\":\"flowers2you-next-day-delivery\"}}}}},{\"component\":\"LiveTrackingMap\",\"status\":\"ENABLED\"},{\"component\":\"MapTracker\",\"status\":\"ENABLED\"},{\"component\":\"CustomerExperience\",\"status\":\"ENABLED\"},{\"component\":\"OrderExperience\",\"status\":\"ENABLED\"},{\"component\":\"ReceiveOffers\",\"status\":\"ENABLED\"},{\"component\":\"JoinBetaView\",\"status\":\"ENABLED\"}],\"osb_notification\":{\"vipClientThresholdValue\":\"-50\",\"nonVipClientThresholdValue\":\"-50\",\"status\":\"ENABLED\"},\"fallback\":null,\"postcode\":{\"message\":\"The :attribute format is invalid\",\"min_length\":\"2\",\"max_length\":\"45\",\"fusion_reg_ex\":\"([a-z]{1}[a-y]{0,1}[0-9]{1,2})([ ]{0,})([0-9]{1}[a-z]{2}$)|([a-z]{1}[0-9]{1}[a-w]{1})([ ]{0,})([0-9]{1}[a-z]{2}$)|([a-z]{1}[a-y][0-9]{1}[a-y])([ ]{0,})([0-9]{1}[a-z]{2}$)|((gir)([ ]{0,})(0aa)$)|((bfpo)([ ]{0,})[0-9]{1,4}$)|((bfpo)([ ]{0,})(c\\/o([ ]{0,})[0-9]{1,3})$)|(([a-z]{4})([ ]{0,})(1zz)$)\",\"reg_ex\":\"[a-zA-Z0-9 ]{2,45}$\"}}",
+  "store": {
+    "id": 864232,
+    "host": "favouritechickenms.co.uk",
+    "currency": 1,
+    "country_id": 1,
+    "region_id": 1,
+    "wait": "30",
+    "name": "Favourite Chicken M's",
+    "url": "favouritechickenms.co.uk",
+    "number": "60",
+    "description": "Order your food online from the #1 takeaway in the town. When it comes to Chelmsford, Favourite Chicken M's is the obvious choice for 100’s of families. Try once, love it forever.",
+    "postcode": "CM1 2LQ",
+    "gifttype": "item",
+    "discount": "0.00",
+    "frontend": 1,
+    "online": "true",
+    "cuisines": [
+      {
+        "name": "Burgers",
+        "image_url": "https://assets.foodhub.com/static/core/img/1730293225a0671f7a4b352d521582d10ba9d3a3ad-61045.png",
+        "config_id": 864232
+      },
+      {
+        "name": "BBQ",
+        "image_url": "https://assets.foodhub.com/static/core/img/1730293136415860493291e41642850a8afff072d1-46636.png",
+        "config_id": 864232
+      },
+      {
+        "name": "Grill",
+        "image_url": "https://assets.foodhub.com/static/core/img/1730293936b843674f1d6384af7c8cd7200abfbd0e-16659.png",
+        "config_id": 864232
+      }
+    ],
+    "online_closed_till": null,
+    "online_msg": "",
+    "min_order": "5",
+    "delivery_charge": 2,
+    "merchant_id": 663212226,
+    "open_hours_type": "ADVANCED",
+    "ask_postcode_first": 0,
+    "delivery_time": "30",
+    "collection_time": 15,
+    "lat": "51.74723878146043",
+    "lng": "0.43997078421717184",
+    "booking_page": 1,
+    "start_time_table_booking": "17:30",
+    "end_time_table_booking": "22:30",
+    "start_time_table_booking_slot2": null,
+    "end_time_table_booking_slot2": null,
+    "table_booking_slot_checkbox": 0,
+    "interval_table_booking": "30",
+    "cash_payment": "ENABLED",
+    "show_delivery": 1,
+    "show_collection": 1,
+    "phone_number_min": 11,
+    "phone_number_max": 11,
+    "paypal_pro": "1",
+    "promo": "0",
+    "preorder": "ENABLED",
+    "preorder_date": 0,
+    "preorder_opendate": "DISABLED",
+    "time_interval": 15,
+    "online_discount_min_value": "0.00",
+    "collection_discount_min_value": "0.00",
+    "review_category": "YES",
+    "bogoff_free_addon": "DISABLED",
+    "bogof_type": "FULL",
+    "wallet_payment": "ENABLED",
+    "loyalty_point_disabled_at": null,
+    "loyalty_status": "ENABLED",
+    "points_per_pound": 5,
+    "points_per_pound_to_redeem": 100,
+    "redeem_at": 0,
+    "charge_free_item_addon": "NO",
+    "our_recommendations": "ENABLED",
+    "previous_order": "ENABLED",
+    "map_image_url": "https://assets.foodhub.com/site/ff3734e9c1b713ffb57968567e7017a3/staticmaps/map6976d8d346b4a.png",
+    "payment_provider": "OPTOMANY",
+    "optomany_web_view": "NO",
+    "new_merchant": 1,
+    "collection": 15,
+    "food_hub_portal": "ACTIVE",
+    "social_apple_signin": "ENABLED",
+    "website_hygiene_ratings_toggle": "ENABLED",
+    "template_css_version": 1,
+    "responsive_css_version": 1,
+    "website_logo_url": "https://assets.foodhub.com/static/ff3734e9c1b713ffb57968567e7017a3/img/1674224016phpYbJool.jpg",
+    "logo_url": "",
+    "ios_link": "https://apps.apple.com/us/app/favourite-chicken-ms/id1661799290",
+    "android_link": "https://play.google.com/store/apps/details?id=com.fh864232",
+    "reorder": "HIDE",
+    "facebook": null,
+    "twitter": null,
+    "google_conversion": null,
+    "webmaster_tools": "<meta name=\"google-site-verification\" content=\"4vHWd_ZMZEniswABcqWqZ_tt4IxKp5JlagPdOuVj2Nk\" />",
+    "page1_content": "",
+    "contact_us_map": "ENABLED",
+    "collection_percent": "0",
+    "analytics_code": "",
+    "tag_manager": null,
+    "feedback": "1",
+    "table_selection": 0,
+    "restaurant_toggle": "DISABLED",
+    "client_type": "ULTIMATE-UK",
+    "title": "Favourite Chicken M's | Takeaway Restaurant | Chelmsford | CM1",
+    "keywords": "",
+    "basket_recommendation": "ENABLED",
+    "facebook_pixel_id": null,
+    "homepage_showcase": "NONE",
+    "preorder_asap_label": "NO",
+    "discount_type": "ADVANCED",
+    "town": "Chelmsford",
+    "thumbnail_url": "https://assets.foodhub.com/static/ff3734e9c1b713ffb57968567e7017a3/img/1674224016phpYbJool.jpg",
+    "assign_driver_through": "DRIVER_SCREEN",
+    "slug_name": "Favourite-Chicken-M's",
+    "offer_status": "INACTIVE",
+    "checkout_template": "1STEP",
+    "uk_frontend": "0",
+    "min_order_toggle": 1,
+    "franchise_id": null,
+    "portal_version": "4.0",
+    "customer_level": "7",
+    "business_type": "TAKEAWAY",
+    "carrybag_toggle": "DISABLED",
+    "price_per_bag": "0.50",
+    "registered_phone_number": null,
+    "business_phone_number": "+441245901873",
+    "owner_phone_number": null,
+    "phone": "01245901873",
+    "street": "Trent Rd",
+    "city": "Chelmsford",
+    "card_payment": "YES",
+    "loyalty_status_message": "",
+    "loyalty_status_message_translation": {
+      "message": ""
+    },
+    "offline": "DISABLED",
+    "charge": {
+      "length": 5,
+      "charge": "2.49",
+      "status": "Include",
+      "minimum_order": "10.00"
+    },
+    "country": [
+      {
+        "id": 1,
+        "name": "United Kingdom",
+        "code": 826,
+        "phone_code": 44,
+        "iso3": "GBR",
+        "iso": "GB",
+        "distance_type": "miles",
+        "phone_number_starts_with": "07,08,44"
+      }
+    ],
+    "region": [
+      {
+        "id": 1,
+        "country_id": 1,
+        "region_name": "UK",
+        "time_zone": "Europe/London",
+        "status": "ACTIVE",
+        "is_tax_included": "YES"
+      }
+    ],
+    "rating": 4.7,
+    "total_reviews": 159,
+    "rating_value": "5",
+    "pre_order_asap": "DISABLED",
+    "images": {
+      "app_logo_image_url": "https://assets.foodhub.com/static/ff3734e9c1b713ffb57968567e7017a3/img/1743861035php5hTxsJ.jpg",
+      "app_launch_image_url": null
+    },
+    "store_status": {
+      "collection": "open",
+      "delivery": "open",
+      "restaurant": "open"
+    },
+    "collection_next_open": null,
+    "collection_next_open_message": null,
+    "restaurant_next_open": null,
+    "restaurant_next_open_message": null,
+    "delivery_next_open": null,
+    "delivery_next_open_message": null,
+    "takeaway_open_status": "open",
+    "takeaway_closed": "open",
+    "next_open": null,
+    "online_closed_message": "",
+    "preorder_status": "ENABLED",
+    "preorder_hours": {
+      "restaurant": {
+        "status": "open",
+        "pre_order": "yes",
+        "next_open": null,
+        "next_open_message": null,
+        "slot": {
+          "2026-06-08": [
+            "2026-06-08 14:55",
+            "2026-06-08 15:10",
+            "2026-06-08 15:25",
+            "2026-06-08 15:40",
+            "2026-06-08 15:55",
+            "2026-06-08 16:10",
+            "2026-06-08 16:25",
+            "2026-06-08 16:40",
+            "2026-06-08 16:55",
+            "2026-06-08 17:10",
+            "2026-06-08 17:25",
+            "2026-06-08 17:40",
+            "2026-06-08 17:55",
+            "2026-06-08 18:10",
+            "2026-06-08 18:25",
+            "2026-06-08 18:40",
+            "2026-06-08 18:55",
+            "2026-06-08 19:10",
+            "2026-06-08 19:25",
+            "2026-06-08 19:40",
+            "2026-06-08 19:55",
+            "2026-06-08 20:10",
+            "2026-06-08 20:25",
+            "2026-06-08 20:40",
+            "2026-06-08 20:55",
+            "2026-06-08 21:10",
+            "2026-06-08 21:25",
+            "2026-06-08 21:40",
+            "2026-06-08 21:55",
+            "2026-06-08 22:10",
+            "2026-06-08 22:25",
+            "2026-06-08 22:40",
+            "2026-06-08 22:55"
+          ]
+        }
+      },
+      "collection": {
+        "status": "open",
+        "pre_order": "yes",
+        "next_open": null,
+        "next_open_message": null,
+        "slot": {
+          "2026-06-08": [
+            "2026-06-08 14:55",
+            "2026-06-08 15:10",
+            "2026-06-08 15:25",
+            "2026-06-08 15:40",
+            "2026-06-08 15:55",
+            "2026-06-08 16:10",
+            "2026-06-08 16:25",
+            "2026-06-08 16:40",
+            "2026-06-08 16:55",
+            "2026-06-08 17:10",
+            "2026-06-08 17:25",
+            "2026-06-08 17:40",
+            "2026-06-08 17:55",
+            "2026-06-08 18:10",
+            "2026-06-08 18:25",
+            "2026-06-08 18:40",
+            "2026-06-08 18:55",
+            "2026-06-08 19:10",
+            "2026-06-08 19:25",
+            "2026-06-08 19:40",
+            "2026-06-08 19:55",
+            "2026-06-08 20:10",
+            "2026-06-08 20:25",
+            "2026-06-08 20:40",
+            "2026-06-08 20:55",
+            "2026-06-08 21:10",
+            "2026-06-08 21:25",
+            "2026-06-08 21:40",
+            "2026-06-08 21:55",
+            "2026-06-08 22:10",
+            "2026-06-08 22:25",
+            "2026-06-08 22:40",
+            "2026-06-08 22:55"
+          ]
+        }
+      },
+      "delivery": {
+        "status": "open",
+        "pre_order": "yes",
+        "next_open": null,
+        "next_open_message": null,
+        "slot": {
+          "2026-06-08": [
+            "2026-06-08 15:10",
+            "2026-06-08 15:25",
+            "2026-06-08 15:40",
+            "2026-06-08 15:55",
+            "2026-06-08 16:10",
+            "2026-06-08 16:25",
+            "2026-06-08 16:40",
+            "2026-06-08 16:55",
+            "2026-06-08 17:10",
+            "2026-06-08 17:25",
+            "2026-06-08 17:40",
+            "2026-06-08 17:55",
+            "2026-06-08 18:10",
+            "2026-06-08 18:25",
+            "2026-06-08 18:40",
+            "2026-06-08 18:55",
+            "2026-06-08 19:10",
+            "2026-06-08 19:25",
+            "2026-06-08 19:40",
+            "2026-06-08 19:55",
+            "2026-06-08 20:10",
+            "2026-06-08 20:25",
+            "2026-06-08 20:40",
+            "2026-06-08 20:55",
+            "2026-06-08 21:10",
+            "2026-06-08 21:25",
+            "2026-06-08 21:40",
+            "2026-06-08 21:55",
+            "2026-06-08 22:10",
+            "2026-06-08 22:25",
+            "2026-06-08 22:40",
+            "2026-06-08 22:55"
+          ]
+        }
+      }
+    },
+    "setting": {
+      "id": 47116,
+      "config_id": 864232,
+      "host": "favouritechickenms.co.uk",
+      "logo_url": "https://assets.foodhub.com/static/ff3734e9c1b713ffb57968567e7017a3/img/1674224016phpjqPG8w.jpg",
+      "logo_url_backup": null,
+      "discount": 0,
+      "min_order": "0.00",
+      "admin_fee": "0.00",
+      "description": null,
+      "created_at": "2022-11-25 16:43:41",
+      "modified_at": "2025-06-06 16:31:15",
+      "upload_type": "UPLOAD",
+      "additional_info": null,
+      "cuisines": null,
+      "banner_url": "https://assets.foodhub.com/static/ff3734e9c1b713ffb57968567e7017a3/img/1721158552phpLk10aY.jpg",
+      "banner_url_backup": null,
+      "priority": "NEW",
+      "priority_start_date": "2024-07-09",
+      "priority_end_date": "2025-06-30",
+      "web_view": "NO",
+      "near_by_takeaway": "ENABLED",
+      "apple_pay": "ENABLED",
+      "portal_version": "4.0",
+      "redshift_updated_at": "2025-06-06 16:31:15",
+      "banner_template_url": null
+    },
+    "opening_hours": {
+      "advanced": {
+        "Collection": {
+          "MON": [
+            "MON 10:00 - 22:59"
+          ],
+          "TUE": [
+            "TUE 10:00 - 22:59"
+          ],
+          "WED": [
+            "WED 10:00 - 22:59"
+          ],
+          "THU": [
+            "THU 10:00 - 22:59"
+          ],
+          "FRI": [
+            "FRI 10:00 - 22:59"
+          ],
+          "SAT": [
+            "SAT 10:00 - 22:59"
+          ],
+          "SUN": [
+            "SUN 10:00 - 22:59"
+          ]
+        },
+        "Restaurant": {
+          "MON": [
+            "MON 10:00 - 22:59"
+          ],
+          "TUE": [
+            "TUE 10:00 - 22:59"
+          ],
+          "WED": [
+            "WED 10:00 - 22:59"
+          ],
+          "THU": [
+            "THU 10:00 - 22:59"
+          ],
+          "FRI": [
+            "FRI 10:00 - 22:59"
+          ],
+          "SAT": [
+            "SAT 10:00 - 22:59"
+          ],
+          "SUN": [
+            "SUN 10:00 - 22:59"
+          ]
+        },
+        "Delivery": {
+          "MON": [
+            "MON 10:00 - 22:59"
+          ],
+          "TUE": [
+            "TUE 10:00 - 22:59"
+          ],
+          "WED": [
+            "WED 10:00 - 22:59"
+          ],
+          "THU": [
+            "THU 10:00 - 22:59"
+          ],
+          "FRI": [
+            "FRI 10:00 - 22:59"
+          ],
+          "SAT": [
+            "SAT 10:00 - 22:59"
+          ],
+          "SUN": [
+            "SUN 10:00 - 22:59"
+          ]
+        }
+      },
+      "gpin": {
+        "Collection": {
+          "MON": [
+            "10:00 - 22:59"
+          ],
+          "TUE": [
+            "10:00 - 22:59"
+          ],
+          "WED": [
+            "10:00 - 22:59"
+          ],
+          "THU": [
+            "10:00 - 22:59"
+          ],
+          "FRI": [
+            "10:00 - 22:59"
+          ],
+          "SAT": [
+            "10:00 - 22:59"
+          ],
+          "SUN": [
+            "10:00 - 22:59"
+          ]
+        },
+        "Restaurant": {
+          "MON": [
+            "10:00 - 22:59"
+          ],
+          "TUE": [
+            "10:00 - 22:59"
+          ],
+          "WED": [
+            "10:00 - 22:59"
+          ],
+          "THU": [
+            "10:00 - 22:59"
+          ],
+          "FRI": [
+            "10:00 - 22:59"
+          ],
+          "SAT": [
+            "10:00 - 22:59"
+          ],
+          "SUN": [
+            "10:00 - 22:59"
+          ]
+        },
+        "Delivery": {
+          "MON": [
+            "10:00 - 22:59"
+          ],
+          "TUE": [
+            "10:00 - 22:59"
+          ],
+          "WED": [
+            "10:00 - 22:59"
+          ],
+          "THU": [
+            "10:00 - 22:59"
+          ],
+          "FRI": [
+            "10:00 - 22:59"
+          ],
+          "SAT": [
+            "10:00 - 22:59"
+          ],
+          "SUN": [
+            "10:00 - 22:59"
+          ]
+        }
+      }
+    },
+    "orders_count": "0",
+    "POSTCODE-SEARCH": "ENABLED",
+    "CALLER-ID": "ENABLED",
+    "FACEBOOK-ORDERING": "ENABLED",
+    "ORDER_COUNT_FOR_CASH": "DISABLED",
+    "OTP-STRICT-RESTRICTION": "DISABLED",
+    "SERVICE_CHARGE_TYPE": "DISABLED",
+    "STATUS_AUTOMATION_IVR_TAKEAWAY_CLOSE": "ENABLED",
+    "BILLING_2.0": "ENABLED",
+    "CLIENT_APP_VERSION": "ENABLED",
+    "PAY_LATER": "ENABLED",
+    "GUEST_CHECKOUT": "ENABLED",
+    "HYBRID_DELIVERY": "ENABLED",
+    "ADVANCED_LOYALTY_SCHEME": "ENABLED",
+    "IE_MIGRATION_DATE": "ENABLED",
+    "LOYALTY_HUB_PROVIDER": "DISABLED",
+    "ENABLE_OFFLINE_CARD_PAYMENTS": "ENABLED",
+    "DRIVER_FUND_TRANSFER": "ENABLED",
+    "QUICK_DISCOUNTS_OFFLINE": "ENABLED",
+    "holiday_opening_hours": [],
+    "app_config": {
+      "id": 14751,
+      "host": "favouritechickenms.co.uk",
+      "config_id": 864232,
+      "mobile_footer_colour_1": "#ffffff",
+      "mobile_footer_colour_2": "#ffffff",
+      "mobile_header_colour_1": "#0088cc",
+      "mobile_header_colour_2": "#0088cc",
+      "theme_color": null,
+      "theme_text_color": null,
+      "nav_bar_color": null,
+      "nav_item_color": null,
+      "mobile_home_title": "Favourite Chicken M's",
+      "mobile_home_content": "",
+      "gallery": 1,
+      "contact": 1,
+      "splashscreen": null,
+      "splashscreen_backup": null,
+      "native_app": "0",
+      "tab_bar_default_color": "#000000",
+      "tab_bar_background_color": "#FFFFFF",
+      "tab_bar_tint_color": "#7AB360",
+      "tab_bar_selected_text_color": "#7AB360",
+      "badge_text_color": "#FFFFFF",
+      "basket_bar_color": "#7AB360",
+      "basket_bar_text_color": "#FFFFFF",
+      "miscellaneous_items_color": "#7AB360",
+      "basket_bar_border_color": "#7AB360",
+      "review_category": "1",
+      "ios_app_store_url": null,
+      "is_forced_android": "NO",
+      "is_forced_ios": "NO",
+      "ios_crashlytics": "DISABLED",
+      "android_crashlytics": "DISABLED",
+      "versionCode": null,
+      "versionName": null,
+      "fcmsenderid": null,
+      "fcmserverkey": null,
+      "google_server_auth_id": null,
+      "google_services_json_path": null,
+      "buildInitiated": 0,
+      "buildSucceeded": 0,
+      "bundle_id": "com.t2s.favouritechickenms864232",
+      "app_logo": null
+    },
+    "syncMenu": 1780417691,
+    "review_categories": [
+      {
+        "id": 1,
+        "name": "Compliment"
+      },
+      {
+        "id": 2,
+        "name": "Suggestion"
+      },
+      {
+        "id": 3,
+        "name": "Complaint"
+      }
+    ],
+    "seo_details": {
+      "index": {
+        "title": "Favourite Chicken M's | Burgers Takeaway in Chelmsford | Order Food Online",
+        "description": "Favourite Chicken M's is your go-to for authentic Burgers takeaway in Chelmsford. Order online and enjoy delicious food delivered straight to your door.",
+        "keywords": "Burgers,BBQ,Grill, Chelmsford, order food online, food delivery near me, food delivery Chelmsford"
+      },
+      "ordernow": {
+        "title": "Favourite Chicken M's Menu | Get 20% Off | Order Takeaway Online",
+        "description": "Favourite Chicken M's in Chelmsford offers a mouthwatering menu and exclusive online deals. Order now and satisfy your cravings.",
+        "keywords": "Favourite Chicken M's menu, Favourite Chicken M's Chelmsford, Favourite Chicken M's delivery, Favourite Chicken M's deals"
+      },
+      "review": {
+        "title": "Favourite Chicken M's Takeaway Reviews | Top Rated Restaurant in Chelmsford",
+        "description": "Read customer reviews of Favourite Chicken M's. Savour the best flavours in Chelmsford with our top-rated food takeaway, tried and tested by happy customers.",
+        "keywords": "Favourite Chicken M's reviews, top rated restaurants near me, best reviewed restaurants near me, top rated restaurants Chelmsford"
+      },
+      "booktable": {
+        "title": "Book A Table at Favourite Chicken M's in Chelmsford",
+        "description": "Avoid the last-minute rush and secure your table online at Favourite Chicken M's in Chelmsford. Make your dining experience unforgettable by planning ahead.",
+        "keywords": "book restaurant table online, book table restaurant near me, book table restaurant Chelmsford"
+      },
+      "contact-us": {
+        "title": "Favourite Chicken M's | Contact Us",
+        "description": "Want to get in touch with Favourite Chicken M's? Discover Favourite Chicken M's's location, opening hours, delivery & contact details easily in one click!",
+        "keywords": "Favourite Chicken M's phone number, Favourite Chicken M's contact"
+      },
+      "login": {
+        "title": "Log in",
+        "description": "",
+        "keywords": ""
+      },
+      "extra-page": {
+        "title": "Favourite Chicken M's | Extra Page",
+        "description": "",
+        "keywords": ""
+      },
+      "termsandcond": {
+        "title": "Favourite Chicken M's | Terms and Conditions",
+        "description": "Terms and Conditions, and the relationship between you and us (whether contractual or otherwise) shall be governed by and construed in accordance with the laws.",
+        "keywords": "Favourite Chicken M's, Terms and conditions, Restaurant terms and conditions, website T&C"
+      },
+      "unsubscribe": {
+        "title": "Favourite Chicken M's | Unsubscribe SMS or Email",
+        "description": "",
+        "keywords": ""
+      },
+      "privacy": {
+        "title": "Favourite Chicken M's | Privacy Policy",
+        "description": "All users of the website are protected under this privacy policy. Please read this privacy policy carefully and ensure that you understant it.",
+        "keywords": "Favourite Chicken M's, privacy policy, Restaurant Privacy Policy"
+      },
+      "reset-password": {
+        "title": "Favourite Chicken M's | Reset Password",
+        "description": "",
+        "keywords": ""
+      },
+      "allergy": {
+        "title": "Favourite Chicken M's | Allergy Information",
+        "description": "Please inform us of any allergies or food conditions before ordering. Read the FAQ for more informations.",
+        "keywords": "Favourite Chicken M's, Allergy information, Allergy information foods online, Allergy foods info, food conditions"
+      },
+      "register": {
+        "title": "Register",
+        "description": "",
+        "keywords": ""
+      },
+      "profile": {
+        "title": "Favourite Chicken M's | Profile",
+        "description": "Profile contains your name and contact information is required for you to place the order. You can track your orders.",
+        "keywords": "Favourite Chicken M's Profile, Takeaway Name my account"
+      },
+      "orderHistory": {
+        "title": "Favourite Chicken M's | Order History",
+        "description": "Find your previous order information on Order History.",
+        "keywords": "Favourite Chicken M's, Order history, Restaurant Order History Restaurant, Find your existing order"
+      },
+      "about-us": {
+        "title": "Favourite Chicken M's | About Us",
+        "description": "",
+        "keywords": ""
+      },
+      "termsanduse": {
+        "title": "Favourite Chicken M's | Terms of Use",
+        "description": "Please read these website terms of use carefully and ensure that you understand them. You are bound within these terms of use while using the website.",
+        "keywords": "Favourite Chicken M's, website Term of use, Restaurant Terms of use"
+      },
+      "wallet": {
+        "title": "Foodhub Wallet",
+        "description": "",
+        "keywords": ""
+      },
+      "order-tracking": {
+        "title": "Favourite Chicken M's | Order Tracking",
+        "description": "Check the status of your order. If you need any support feel free to contact Favourite Chicken M's.",
+        "keywords": "Favourite Chicken M's, Order tracking, restaurant order tracking"
+      },
+      "campaign": {
+        "title": "Campaign",
+        "description": "",
+        "keywords": ""
+      },
+      "paybylink": {
+        "title": "Pay By Link",
+        "description": "",
+        "keywords": ""
+      },
+      "social": {
+        "title": "Social",
+        "description": "",
+        "keywords": ""
+      },
+      "cookies": {
+        "title": "Favourite Chicken M's | Cookies",
+        "description": "",
+        "keywords": ""
+      },
+      "item": {
+        "title": "Order tasty <item name> in <location name> | <app name>",
+        "description": "Enjoy delicious <item name> from <app name> in <location name>. Explore different dishes available from the <category name> menu and order treats from this takeaway near you."
+      },
+      "giftcards": {
+        "title": "Favourite Chicken M's Gift Cards",
+        "description": "Make someone’s day special with a Favourite Chicken M's gift card—instantly delivered, easy to redeem, and perfect for any occasion."
+      },
+      "giftcards_purchase": {
+        "title": "Buy a Giftcard from Favourite Chicken M's - Perfect for Food Lovers!",
+        "description": "Treat someone special with a Favourite Chicken M's gift card! Enjoy delicious meals at their favorite takeaway. Buy now, redeem with ease, and share the joy of great food!"
+      },
+      "giftcards_check_balance": {
+        "title": "Check your Gift Card balance | A delicious gift, perfect for food lovers everywhere.",
+        "description": "Treat the food lover in your life to a delicious meal with a Favourite Chicken M's Gift Card! Enjoy amazing takeaway deals and easily check your gift card balance anytime. Order now for the ultimate tasty delight!"
+      }
+    },
+    "best_match": "2.23",
+    "banner_url": "https://assets.foodhub.com/images/thumbnails/bbq_burgers_grill_003_692x306.jpg",
+    "brand": null,
+    "order_volume": false,
+    "flash_sale_store_type": 1,
+    "global_tip": {
+      "restaurant_tip": false,
+      "driver_tip": false
+    },
+    "advanced_discounts": [
+      {
+        "value": 20,
+        "min_order": "20.00",
+        "service_type": 3,
+        "platform": "BOTH",
+        "days": "1,2,3,4,5,6,7",
+        "type": "PERCENTAGE",
+        "amount": "0.00",
+        "order_type": "BOTH",
+        "menu_item_id": null,
+        "start_date": null,
+        "end_date": null,
+        "start_time": null,
+        "end_time": null,
+        "first_time_user": "NO",
+        "one_per_customer": "NO",
+        "maximum_discount_value": "25.00",
+        "minimum_discount_value": "0.00",
+        "maximum_number_of_usage": null
+      }
+    ],
+    "store_charges": [],
+    "show_customer_website_powered_by": {
+      "show": "NO",
+      "reseller_logo": null,
+      "reseller_host": null
+    },
+    "menu_version": null,
+    "is_event_ordering_enabled": false,
+    "businessType": "restaurant",
+    "opt_in_opt_out_sms": "NO",
+    "opt_in_opt_out_email": "NO",
+    "isStoreAccessible": true,
+    "order_time": [],
+    "is_reseller": false
+  }
+}

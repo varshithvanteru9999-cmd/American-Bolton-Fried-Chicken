@@ -1,0 +1,451 @@
+/* ===== About page ===== */
+.about-page {
+  background: #f1f1f1;
+}
+
+/* ---- Hero ---- */
+.about-hero {
+  display: flex;
+  align-items: center;
+  min-height: 520px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 24px;
+  gap: 40px;
+}
+
+.about-hero-left {
+  flex: 1;
+}
+
+.about-hero-left h1 {
+  font-size: 72px;
+  font-weight: 300;
+  line-height: 1.05;
+  margin: 0 0 40px;
+  color: #2a2a2a;
+  letter-spacing: 0.02em;
+}
+
+.btn-order {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 28px;
+  border: 1px solid #e0a82e;
+  color: var(--text-main);
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 0.05em;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: all 0.25s;
+}
+
+.btn-order:hover {
+  background: #e0a82e;
+  color: #fff;
+}
+
+.about-hero-right {
+  flex: 1;
+  position: relative;
+  height: 460px;
+}
+
+.img-front {
+  position: absolute;
+  width: 58%;
+  height: 100%;
+  object-fit: cover;
+  left: 0;
+  z-index: 2;
+  border-radius: 2px;
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+.img-back {
+  position: absolute;
+  width: 46%;
+  height: 78%;
+  object-fit: cover;
+  right: 0;
+  top: 11%;
+  z-index: 1;
+  border-radius: 2px;
+}
+
+/* ---- How it works (split grey/yellow background) ---- */
+.how-it-works-wrap {
+  background: linear-gradient(to bottom, #f1f1f1 0%, #f1f1f1 42%, #f8e2a0 42%, #f8e2a0 100%);
+  padding: 0 24px 40px;
+}
+
+.how-it-works {
+  display: flex;
+  align-items: stretch;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.step-card {
+  flex: 1;
+  padding: 56px 30px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.12);
+}
+
+.step-card.dark {
+  background: #3a3a3a;
+  color: #fff;
+}
+
+.step-card.yellow {
+  background: #f5a623;
+  color: var(--text-main);
+  margin: -22px 0;          /* elevated middle card */
+  padding: 78px 30px;
+}
+
+.step-icon {
+  margin-bottom: 22px;
+}
+
+.step-card h3 {
+  margin: 0 0 10px;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.step-card p {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.5;
+  opacity: 0.92;
+  max-width: 230px;
+}
+
+/* ---- Passionate ---- */
+.about-passion {
+  background: #f8e2a0;
+  padding: 60px 24px 80px;
+}
+
+.about-passion-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  align-items: center;
+}
+
+.passion-left h2 {
+  margin: 0;
+  font-size: 2.6rem;
+  font-weight: 800;
+  line-height: 1.2;
+  color: #2a2a3a;
+}
+
+.passion-right {
+  border-left: 1px solid rgba(0, 0, 0, 0.3);
+  padding-left: 50px;
+}
+
+.passion-right p {
+  margin: 0 0 22px;
+  color: #3a3a48;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.passion-right p:last-child {
+  margin-bottom: 0;
+}
+
+/* ---- Branding banner ---- */
+.about-banner {
+  background: #f1f1f1;
+  padding: 50px 24px 70px;
+}
+
+.about-banner-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr auto 0.7fr;
+  align-items: center;
+  gap: 30px;
+}
+
+.about-banner-img img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 2px;
+  display: block;
+}
+
+.about-banner-divider {
+  width: 1px;
+  align-self: stretch;
+  background: rgba(0, 0, 0, 0.25);
+  justify-self: center;
+}
+
+.about-banner-chicken img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 2px;
+  display: block;
+}
+
+/* ---- Gallery strip with hover labels ---- */
+.about-gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 6px;
+  background: #f1f1f1;
+}
+
+.about-gallery-item {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 1 / 1;
+}
+
+.about-gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.about-gallery-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.45);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.about-gallery-overlay span {
+  color: #fff;
+  font-size: 1.7rem;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  text-align: center;
+  padding: 0 12px;
+  line-height: 1.2;
+}
+
+.about-gallery-item:hover .about-gallery-overlay {
+  opacity: 1;
+}
+
+.about-gallery-item:hover img {
+  transform: scale(1.04);
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 880px) {
+  .about-hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 40px 18px;
+  }
+  .about-hero-left h1 {
+    font-size: 48px;
+  }
+  .about-hero-right {
+    width: 100%;
+    height: 320px;
+  }
+  .how-it-works-wrap {
+    background: #f8e2a0;
+    padding: 30px 18px;
+  }
+  .how-it-works {
+    flex-direction: column;
+    gap: 18px;
+  }
+  .step-card.yellow {
+    margin: 0;
+    padding: 56px 30px;
+  }
+  .about-passion-inner {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .passion-left h2 {
+    font-size: 1.9rem;
+  }
+  .passion-right {
+    border-left: none;
+    padding-left: 0;
+  }
+  .about-banner-inner {
+    grid-template-columns: 1fr;
+  }
+  .about-banner-divider {
+    display: none;
+  }
+  .about-banner-img img,
+  .about-banner-chicken img {
+    height: 200px;
+  }
+  .about-gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .about-gallery-overlay span {
+    font-size: 1.2rem;
+  }
+}
+
+/* ==========================================================================
+   AMERICAN FRIED CHICKEN — shared page theme layer
+   Appended to each page stylesheet so the brand palette and type reach every
+   route without rewriting the structural rules underneath.
+   ========================================================================== */
+
+/* --- Page headers ------------------------------------------------------- */
+.info-header,
+.reviews-header,
+.about-hero,
+.static-page-header {
+  background: var(--afc-navy);
+  border-bottom: 3px solid var(--afc-red);
+  color: var(--afc-cream);
+}
+
+.info-header h1,
+.reviews-header h1,
+.about-hero h1,
+.static-page-header h1 {
+  font-family: 'Source Serif 4', Georgia, serif;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #fff;
+}
+
+.info-order-now {
+  background: var(--afc-red);
+  color: #fff;
+  font-family: 'Source Serif 4', Georgia, serif;
+  letter-spacing: 0.08em;
+  border-radius: var(--radius-sm);
+}
+
+.info-order-now:hover { background: var(--afc-red-light); }
+
+/* --- Cards / panels ----------------------------------------------------- */
+.info-card,
+.review-card,
+.about-card,
+.static-card {
+  background: var(--surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+}
+
+.info-card-head {
+  font-family: 'Source Serif 4', Georgia, serif;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--afc-navy);
+  border-bottom: 2px solid var(--afc-gold);
+}
+
+/* --- Section headings across static pages ------------------------------- */
+.static-page h2,
+.about-page h2,
+.reviews-page h2 {
+  font-family: 'Source Serif 4', Georgia, serif;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--afc-navy);
+}
+
+/* --- Buttons ------------------------------------------------------------ */
+.primary-btn,
+.checkout-btn,
+.place-order-btn,
+.review-submit-btn {
+  background: var(--afc-red);
+  color: #fff;
+  font-family: 'Source Serif 4', Georgia, serif;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  border-radius: var(--radius-sm);
+  box-shadow: 0 3px 0 var(--afc-red-dark);
+  border: none;
+}
+
+.primary-btn:hover,
+.checkout-btn:hover,
+.place-order-btn:hover,
+.review-submit-btn:hover { background: var(--afc-red-light); }
+
+/* --- Ratings ------------------------------------------------------------ */
+.info-rating,
+.review-stars,
+.rating-star { color: var(--afc-gold); }
+
+/* --- Prices ------------------------------------------------------------- */
+.price,
+.item-price,
+.total-price,
+.summary-total {
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-weight: 600;
+  color: var(--afc-red);
+}
+
+/* ==========================================================================
+   AFC corrections: the hero is navy now, so the outline button needs light
+   text, and the step cards move onto the brand palette.
+   ========================================================================== */
+.btn-order {
+  border-color: var(--afc-gold);
+  color: var(--afc-cream);
+  font-family: 'Source Serif 4', Georgia, serif;
+  text-transform: uppercase;
+}
+
+.btn-order:hover {
+  background: var(--afc-gold);
+  color: var(--bg-color);
+}
+
+/* Step cards: navy / red instead of grey / orange */
+.step-card.dark {
+  background: var(--afc-navy);
+  color: var(--afc-cream);
+}
+
+.step-card.yellow {
+  background: var(--afc-red);
+  color: #fff;
+}
+
+.step-card h3 {
+  font-family: 'Source Serif 4', Georgia, serif;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: inherit;
+}
+
+.step-card p { color: inherit; opacity: 0.88; }
+.step-card svg { color: var(--afc-gold); }
+.step-card.yellow svg { color: #fff; }
